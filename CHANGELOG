@@ -1,0 +1,289 @@
+openDCIM is an Open Source Software alternative for Data Center Infrastructure Management.
+
+This is a list of changes made from version to version.  This is not intended to be a
+comprehensive bug tracking list.  Issues (bugs, enhancements, etc) are tracked on
+GitHub, at http://github.com/samilliken/openDCIM/issues, where you can also download
+the latest development version.  However, it is not advised to pull from GitHub unless you
+are simply testing, as some functionality can break between releases.
+
+Changes in 18.01
+----------------
+* Nomenclature for releases has changed to YY.nn, as this ends the debate over what warrants a major vs minor number change
+* Added some error logging for LDAP authentication failures
+* Added in more bulk import functions - Users and Departments
+* Converted some more reports over to Excel as we move away from PDF reports
+* Network map updated to differentiate between front and rear ports
+* Updated DataTables to the latest compatible release
+* HUGE performance improvements by caching device imaging and the navigation tree HTML, rather than building on the fly
+* Other bug fixes, as usual.
+
+Changes in 4.5
+--------------
+* Reservation is no longer a yes/no field.  Has been replaced with a user customizable list of Device Status values.
+* The PathDrawing image for connections now has a print screen option.
+* Fixtures, such as power panels, can now be mapped onto a data center drawing.
+* Salvage process has been completely redone - now you can create Disposition Methods and when something leaves your custody, you can attach the device to that disposition method.  (Such as e-cycler, or returned to customer)
+* New report added that will allow you to see all devices from a specific vendor and/or by a device type.
+* Improvements to the API in terms of custom device attributes - they now work the same as native device attributes
+* BUGS!  Several of them were fixed.
+
+Changes in 4.4
+--------------
+* Fixed collision detection in the bulk importer
+* Corrected issues where parent power panels didn't roll up inherited meter values
+* Make Path now only shows available ports instead of all ports
+* Allow PowerSupplyCount to be overridden for children of a Chassis Device.  This is helpful for the VTRAY and HTRAY hacks (shelves).
+* Switched the whole dependency system over to PHP Composer and implemented AutoLoad.  This will only load the class files into the server that are actually being used by a page, thereby decreasing the overall load on the server and memory footprint.
+* Updated all libraries to latest version supported by PHP 5.5, which also allows us to be compatible with PHP 7.0 (previously it threw fatal errors)
+* Added some buttons on the work order screen to do some mass updates, like clearing the reservation flag on a bunch of devices at once
+* Fixed the search box so that it doesn't send the whole db if you accidentally hit the down arrow with an empty search string
+* Automagic conversion to/from English/Metric when talking to the Repository.
+* Fixed the Repo Sync screen to acknowledge when you send a template to the repository
+* Fixed an error that caused the Port Notes field to clear out when a color code wasn't chosen
+* Added ability to search on Custom Attributes/Values, in both the UI and the API
+* Allow for the creation of a Default Rights template, applied to any new user that authenticates past Apache, but doesn't exist in openDCIM database
+* Fixed the Center of Gravity calculation.  It was a huge fan of Stranger Things, and calculated everything in the Upside Down.
+* The port naming pattern maker from the devices.php screen has been copied over to the Template Maker screen.
+* New option in Configuration to draw rectangles around the defined cabinet coordinates, as well as apply the label to the map.  Handy for users who simply want to upload a blank floor plan and draw with openDCIM.
+* New option in the right click context menu - can align all cabinets in the selected row with a given edge of the current cabinet.  Strictly for OCD folks.
+* Expanded some of the fields to larger containers.
+* Fixed the Available RU calculation in the data center stats.  It was counting items in the Storage Room.
+* Power Outage Simulation Report has been completely reworked and now outputs an Excel spreadsheet that is much easier to follow.
+* Added an email report (must be added to crontab) that will notify you of devices disabled from SNMP Polling due to 3 consecutive failures.  Includes a button to reset all counters back to 0.
+* If you add a tag of "NoPoll" to a switch device, it won't try to poll the status of it, even if you have a hostname/IP defined.
+* Support for a BusWay type of power panel.  You still need to give each circuit a name, but it doesn't try to make it fit within the scope of a 42 pole panel - can be alphanumeric.
+* Created a bulk importer for cabinets
+
+Changes in 4.3.1
+----------------
+* Bug fixes (No DB changes or new functionality)
+
+Changes in 4.3
+--------------
+* Removed support for repository_sync.php job - all synchronization to be done through the UI at this point.
+* Addition of Bulk Upload operations (import, move, delete).  I hate you people.
+* Added some more fields in the LDAP config so that it will play nice with Active Directory (see the WIKI for what to change)
+* Expanded the rights so that you can give someone the ability to do Bulk Operations without being a Site Admin
+* Ability to search by model name in the quick search bar
+* Added a few statistics to the main home page
+* Classes have been moved to the classes/ folder and broken into a single class per file.  Hopefully this will make it simpler for new contributors to find what they're looking for.
+* Updated the main API searches (datacenter, people, cabinet, device) to support wildcards and also specify which attributes are returned.  See the WIKI.
+* Major, major performance improvements, especially for installations with 10,000+ cabinets spread across multiple data centers.  Less of an improvement for large sites built out as very few data centers, but still some improvement.
+* Added in a Project / Service Catalog capability.  Can now limit some reports based on the project.  (ie - These 35 servers make up my Exchange environment)
+* Some more bug fixes, because bugs always pop up
+
+Changes in 4.2
+--------------
+* Rollup of bug fixes since 4.1.1
+* Added support for use of LDAP server for not only Authentication, but also Authorization
+
+Changes in 4.1.1
+----------------
+* Rollup of bug fixes since 4.1
+* Added a progress meter for the Excel Asset Report, since it takes a while to run
+
+Changes in 4.1
+--------------
+* Drag and Drop Support!  Move a device by dragging and dropping.  Copy by holding down Shift+Click.
+* "Smart Naming" on device copies.  name[nn-NN] and nameNN are special patterns that get incremented, including children.
+* Copy of a device now copies the tags as well
+* Support for reverse cabinet ordering for people who like to stand on their head
+* Data Center/Zone now shows the RCI Low/High index values
+* Support for SNMPv3
+* Primary Contact added for Virtual Machines
+* Sidebar is now loaded asymetrically (better performance)
+* Devices loaded into cabinet asymetrically (better performance)
+* Ability to turn off filtering of cabinet tree based on rights (major performance boost for large installations)
+* Corrected the Audit reports
+* Fix where Epoch date was different depending on timezone
+* Fixed the Power Outage Simulation report
+* Slot devices added to a chassis with only rear slots automatically selects the Rear attribute
+* Fixed tooltip for Contact (was showing ID rather than name)
+* More API expansions (yes, we need to document it much, much more)
+* When transferring devices to another contact, only non-disabled ones are in the selection box
+* Correction of labeling (Rear) shows up on the correct side
+* Pre-flight check is now available as a tab on the Configuration screen, has been moved to be separate from installer
+* More bug fixes
+
+Changes in 4.0
+--------------
+* New online repository for templates and images (requires internet connection, requires an API key if you wish to contribute)
+* New reports
+* CDUs and Sensors are now simply devices.  That means you can have ports and power connections just like anything else.
+* Improvement to image uploads
+* Ability to nest chassis devices
+* Ability to limit scope when making port connections (major performance boost for large installations)
+* Upgraded PDF library to mPDF for better feature support
+* Update to operational log.  No longer runs out of memory.
+* Support for nested power panels (Power Sources are now simply Power Panels with no defined parent)
+* There are no more contacts.  Users and contacts have been merged.  Many improvements in the management of such.
+* RESTful API - there is a basic set of API calls available today and it will be expanded based upon user requests
+* SNMP Calls have been converted to use the OSS_SNMP class.  Command line SNMP tools are no longer supported.
+* Support for SNMPv3
+* Ability to poll power sources (using same templates as CDUs) for real time data
+* OAuth2 Support for login
+* More language translations from English source (Currently Azerbaijani, Chinese, French, Galician, German, Italian, Portuguese/Brazil, Russian, Slovenian, Spanish, Ukrainian)
+* Bug fixes
+
+Changes in 3.3
+--------------
+* Primarily bug fixes
+* Upgraded PHPExcel to 1.8.0
+* Improvements to device template import/export functions
+* More streamlined upgrade procedure
+* SQL Optimizations for some of the roll-up statistics screens
+* Chassis devices within a chassis now supported
+* Ability to mass edit port names via patterns
+* Ability to delete device templates, and assign any devices using that template to another
+* Creation of a Shopping-Cart like feature for building work orders, exports to Excel (for label printers)
+* Improvements to the UI for device images
+* Ability to turn Rack Requests on/off at a site level
+
+Changes in 3.2
+--------------
+* Ability to track spare/consumable parts supplies in a basic bin system with min/max quantities
+* Full audit log of every transaction
+* Per-device auditing
+* Storage Room view per Data Center
+* Auto-Transfer Switches will poll SNMP for redundancy status
+* XML Export for Computational Fluid Dynamic Analysis software
+* Per-device running operational log of notes
+* Allow for customized port names
+* Allow templates for devices to pre-define ports and names
+* Ability to upload images for devices (similar to designing cabinet elevations in Visio)
+* Added Primary IP as a searchable field
+* Complete redesign of the menu - functions grouped together
+* When looking at a port connected to a patch panel, full path to endpoint is displayed automatically
+* Ability to specify front edge of a cabinet to indicate airflow
+* Ability to manually enter values for power strip load
+* Ability to make patch panels a chassis device
+* Ability to delete Containers, Zones, Rows, Data Centers, Power Panels, and Power Sources
+
+Changes in 3.1
+--------------
+* Expanded UserID field (80 characters)
+* When viewing a zone, will now compile statistics based upon cabinets defined for that zone
+* Added a new data center asset report in Excel format with full device and rack inventory
+* Zones are now highlighted on the map when hovering over them with the mouse, tooltip generated
+* Sensor Templates added
+* Temperature/Humidity polling function added, and display in tooltips
+* Ability to set sitewide default SNMP community
+* New email report for switch capacity alerts
+* Many bug fixes
+
+Changes in 3.0
+--------------
+* Complete rewrite of objects to move away from deprecated mysql* calls.  Using PDO library.
+* Complete rewrite of security model
+-- Ability to give rights to users to admin own devices, but not others
+-- Read and Write rights are now global, otherwise user inherit view of their own devices only
+-- Device details are completely hidden from users without proper rights
+* Updated SNMP calls for VMware installations
+* Configuration screen lets you now define cable colors and media types
+* Devices now have more port options
+-- User defined names
+-- User defined cable color
+-- User defined media type
+* Any IF-MIB compliant switch can now be polled for link status and port names
+* CDUs can now be deleted
+* Path view - clicking on the port name of a connection will show the path from end to end
+* Auto path making - will find the least weight connection between two points utilizing patch panels
+* Half-depth support and front/rear cabinet views
+* New email report on switch capacity, configured as either OptIn or OptOut
+* Support multi-level containers for data centers grouping
+* Support for defining zones and rows within data center
+* Tooltips for CDUs with user defined data to display
+* Enhanced search functions
+* Export network connections in Excel format for importing into label software
+* Many bug fixes
+
+Changes in 2.1
+--------------
+* Export assets by data center to Excel / CSV
+* Configurable unit of measure (English/Metric)
+* Device names are no longer forced to uppercase - the admin can select a site preference between UPPER, lower, CamelCase, or unchanged
+* ToolTip sneak peak in the cabinet view, with user defined fields to show
+* Cooling capacity metric is added to each data center for capacity planning
+* Search results will now show in the Data Center / Cabinet / Device heirarchy.  Previously the Data Center was not included.
+* Tag searches now support multiple tags, as well as negation (tagA tagB !tagC)
+* Cabinets now have a Notes field (general text entry) and can also be tagged
+* When removing the Reservation checkbox on a device, the Install Date is automatically set to the current date
+* Functionality added to allow an "English Only" version to run if gettext is not available (specifically helps Mac OSX installations)
+* Storage arrays can now be targes of connections from switches and patch panels
+* Nominal Wattage correctly saved when creating a new device
+* Cabinet weight and moment now take into account the weight of child devices
+* Other minor bug fixes
+
+Changes in 2.0
+--------------
+* Inclusion of locale files for several areas represented by our known install base
+* Better error-checking - eliminating duplicates in several tables
+* Complete re-write of the Cabinet Distribution Unit code
+-- Now uses templates to define each model of CDU
+-- Graphs the last read load value in kW on the Cabinet Navigator
+-- Support for various means of calculating kW, including 3-phase
+* Support for hyperlinks and images in Notes for devices
+* Calculation of load for cabinets includes child devices of chassis
+* Auto-fill the device owner when creating a device in a cabinet assigned to a specific customer
+* Tagging support for devices (further support in 2.1 for reporting by tags - currently you can only search by tags)
+* Fixed logic bug in the Aging Report to use the Installation Date is the Manufacture Date is set to pre-epoch
+* Added a Copy button for making reservations of devices that need to move to a new location
+* Language mapping ability - includes Slovenian as the first translated language
+* Added the vmState and Last Polled timestamp in the Assets by Owner report
+* No forced uppercase, now a configuration parameter
+* When you make a switch connection to another switch, it automatically adds the reciprocal connection
+* Support for documenting patch panel connections (front and rear as separate connections)
+* Added report-em_new_installs.php to be manually added to crontab for display of new installations (suggested every 7 days)
+
+Changes in 1.5
+--------------
+* Database charset changed from latin1 to utf8 to better support localization/internationalization
+* Better error-checking
+* Ability to disable users (don't delete them since they are foreign keys for auditing)
+* Chassis/Blade tracking for front and rear slots
+* Ability to enter SNMP temperature sensor information with each cabinet
+* Barcode scanning for Serial # and Asset Tag in devices
+-- Requires the ZXing app on mobile device
+-- Does not work correctly with Chrome Browser on Android
+-- Works perfectly with Dolphin Browser on Android
+-- Need testers for other platforms
+
+Changes in 1.4
+--------------
+* Style sheet colors are now configuration items
+* Added a visual placement picker for devices when putting into a cabinet.  Displays available spaces rather than simply allowing an arbitrary number to be entered.
+* Added database structure for a very rudimentary spare stock inventory
+* Added in support for chassis devices in a parent/child relationship.  Renamed the the device type of 'Routing Chassis' to simply 'Chassis' in support of this.
+* Additional bug fixes and security auditing of the code
+
+Changes in 1.3
+--------------
+* Added an optional reservation color for the cabinet view to the configuration options
+* Added the ability to color code the cabinet view by department (default is no colorization)
+* Changed out button interface for a more tab friendly click interface
+* Added Warranty Company and Warranty Expiration to devices
+* Added Key/Lock Information field to Cabinets
+* PDUs and Racks are now included in the search results
+* Added report for Cabinet Audit frequency
+* Added report for Cabinet Audit by data center
+* Added report for showing the Surplus/Salvage logs
+* Added report for Departments and Contacts
+* Added a Default Panel Voltage to the configuration directives
+* Any devices entered with a height of zero are now shown in a section for Zero-U devices (Cabinet Navigator)
+
+Changes in 1.2
+--------------
+* Added a version number to the database, which is displayed in the Configuration screen
+* Installation and Upgrading are now done through a wizard type of interface. (setup.php)
+* Enhanced the Device Templates to include more fields to fill in as default values
+* Corrected the calculation of Allocated space to use the Reservation field
+* Changed the power distribution to allow for user input of panel voltages, and calculate the 1-pole voltage from there
+* Added color coding to the Cabinet Navigator to show reservations with a cyan background
+* Corrected the permissions check on the Rack Request Form
+
+Changes in 1.1
+--------------
+* Corrected a bug that kept the Certify Audit button from working
+* Replaced Rmail library (no longer supported) with SwiftMail, and added fields to the
+  configuration table that allow for SMTPS authentication for sending messages
+* Added the ability to delete a cabinet
