@@ -462,7 +462,7 @@
 
 		function colorchange(hex,id){
 			if(id==='HeaderColor'){
-				$('#header').css('background-color',hex);
+				$('#header3').css('background-color',hex);
 			}else if(id==='BodyColor'){
 				$('.main').css('background-color',hex);
 			}

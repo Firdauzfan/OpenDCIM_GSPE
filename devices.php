@@ -1681,7 +1681,7 @@ print "		var dialog=$('<div>').prop('title',\"".__("Verify Delete Device")."\").
 <?php
 	include( 'sidebar.inc.php' );
 
-echo '<div class="main">
+echo '<div class="main" style="margin-top:10px">
 <button id="layout" onClick="swaplayout()">'.__("Portrait").'</button>';
 echo($copy)?"<h3>$copyerr</h3>":'';
 echo '<div class="center"><div>

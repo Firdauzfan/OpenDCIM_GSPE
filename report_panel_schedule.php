@@ -43,7 +43,7 @@
 <?php include( 'header.inc.php' ); ?>
 <div class="page">
 <?php include( 'sidebar.inc.php' ); ?>
-<div class="main">
+<div class="main" style="margin-top:10px">
 <div class="center"><div>
 <form method="post" id="panelform">
 

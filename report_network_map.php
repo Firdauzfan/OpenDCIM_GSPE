@@ -613,7 +613,7 @@ overlap = scale;
         <div class="page">
 <?php
         include('sidebar.inc.php');
-echo '          <div class="main">
+echo '          <div class="main" style="margin-top:10px">
                         <label for="containmenttype">',__("Filter type:"),'</label>
                         <select name="containmenttype" id="containmenttype">
                                 <option value="">',__("Select filter type"),'</option>

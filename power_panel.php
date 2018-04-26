@@ -234,7 +234,7 @@
 	include( "sidebar.inc.php" );
 
 echo '<div class="main">
-<div class="center"><div>
+<div class="center" style="margin-top:20px;"><div>
 <form method="POST">
 <div class="table">
 <div>

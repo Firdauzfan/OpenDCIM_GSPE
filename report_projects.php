@@ -134,11 +134,11 @@
                 $sheet->setCellValue( 'A2', __("Project Sponsor:"));
                 $sheet->setCellValue( 'B2', $p->ProjectSponsor );
                 $sheet->setCellValue( 'A3', __("Start Date:"));
-                $sheet->setCellValue( 'B3', mangleDate( $p->ProjectStartDate ));
+                $sheet->setCellValue( 'B3', $p->ProjectStartDate );
                 $sheet->setCellValue( 'A4', __("Expiration Date:"));
-                $sheet->setCellValue( 'B4', mangleDate( $p->ProjectExpirationDate ));
+                $sheet->setCellValue( 'B4', $p->ProjectExpirationDate);
                 $sheet->setCellValue( 'A5', __("Actual End:"));
-                $sheet->setCellValue( 'B5', mangleDate( $p->ProjectActualEndDate ));
+                $sheet->setCellValue( 'B5', $p->ProjectActualEndDate );
 
                 $currRow = 7;
 
@@ -235,7 +235,7 @@
     <div class="page">
 <?php
     include('sidebar.inc.php');
-echo '      <div class="main">
+echo '      <div class="main" style="margin-top:10px">
             <form>
             <label for="projectid">',__("Project Name:"),'</label>
             <select name="projectid" id="projectid" onchange="this.form.submit()">

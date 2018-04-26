@@ -298,7 +298,7 @@
 	include( 'sidebar.inc.php' );
 ?>
 <div class="main">
-<div class="center"><div>
+<div class="center" style="margin-top:20px;"><div>
 
 <?php
   echo $content;

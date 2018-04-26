@@ -34,6 +34,10 @@ class Department {
 	var $SDM;
 	var $Classification;
 	var $DeptColor;
+	var $FirstName;
+	var $LastName;
+	var $Phone1;
+	var $Email;
 
 	function MakeSafe(){
 		$this->DeptID=intval($this->DeptID);
@@ -45,6 +49,10 @@ class Department {
 		if($this->DeptColor==""){
 			$this->DeptColor="#FFFFFF"; // New color picker was allowing for an empty value
 		}
+		$this->FirstName=sanitize($this->FirstName);
+		$this->LastName=sanitize($this->LastName);
+		$this->Phone1=sanitize($this->Phone1);
+		$this->Email=sanitize($this->Email);
 	}
 
 	function MakeDisplay(){
@@ -53,6 +61,10 @@ class Department {
 		$this->SDM=stripslashes($this->SDM);
 		$this->Classification=stripslashes($this->Classification);
 		$this->DeptColor=stripslashes($this->DeptColor);
+		$this->FirstName=stripslashes($this->FirstName);
+		$this->LastName=stripslashes($this->LastName);
+		$this->Phone1=stripslashes($this->Phone1);
+		$this->Email=stripslashes($this->Email);
 	}
 
 	static function RowToObject($row){
@@ -63,6 +75,10 @@ class Department {
 		$dept->SDM=$row["SDM"];
 		$dept->Classification=$row["Classification"];
 		$dept->DeptColor=$row["DeptColor"];
+		$dept->FirstName=$row["FirstName"];
+		$dept->LastName=$row["LastName"];
+		$dept->Phone1=$row["Phone1"];
+		$dept->Email=$row["Email"];
 
 		$dept->MakeDisplay();
 
@@ -223,6 +239,17 @@ class Department {
 		}
 
 		return $deptList;
+	}
+
+	//Firdauz 25-04-2018
+	function GetDepartmentPeopleList() {
+		$sql="SELECT * FROM fac_Department JOIN fac_DeptContacts ON fac_Department.DeptID=fac_DeptContacts.DeptID JOIN fac_People ON fac_People.PersonID=fac_DeptContacts.ContactID;";
+		$deptpeopleList=array();
+		foreach($this->query($sql) as $row){
+			$deptpeopleList[]=Department::RowToObject($row);
+		}
+
+		return $deptpeopleList;
 	}
 
     /**

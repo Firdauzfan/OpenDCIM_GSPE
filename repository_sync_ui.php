@@ -1043,7 +1043,7 @@ function convertImgToBase64(url, imgobj) {
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main">
+<div class="main" style="margin-top:10px;">
 <button type="button" id="btn_pull_templates">Get Template List</button>
 <button type="button" id="btn_syncrepo">Sync Manufacturers</button>
 <div class="center"><div>

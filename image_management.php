@@ -59,7 +59,7 @@
 if($person->SiteAdmin || $person->WriteAccess){
 ?>
 
-<div class="center"><div>
+<div class="center" style="margin-top:20px;"><div>
 <div class="heading"><?php print __("Device Pictures");?></div>
 <input type="file" name="dev_file_upload" data-dir="pictures" id="dev_file_upload" />
 <div id="rebuild_image_cache" class="uploadifive-button" style="height: 30px; line-height: 30px; overflow: hidden; width: auto;display: inline-block; cursor: default;"><?php print __("Rebuild Image Cache");?></div>

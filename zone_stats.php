@@ -194,7 +194,7 @@ $(document).ready(function() {
 	include( "sidebar.inc.php" );
 
 echo '<div class="main">
-<div class="center"><div>
+<div class="center" style="margin-top:20px;"><div>
 <div class="centermargin" id="dcstats">
 <div class="table border">
   <div class="title">',$zone->Description,' (',$dc->Name,')</div>

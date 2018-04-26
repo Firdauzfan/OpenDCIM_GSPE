@@ -1093,7 +1093,7 @@ function BuildCabinet($cabid,$face="front"){
 				}
 				$rowspan=abs($top)+abs($bottom);
 				$height=(((abs($top)+abs($bottom))*ceil(220*(1.75/19))))."px";
-				$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: $height\" data-face=\"$face\"></div></td></tr>\n";
+				$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px\" data-face=\"$face\"></div></td></tr>\n";
 			}else{
 				$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td></tr>\n";
 			}

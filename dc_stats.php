@@ -182,7 +182,7 @@ $(document).ready(function() {
 	include( "sidebar.inc.php" );
 
 echo '<div class="main">
-<div class="center"><div>
+<div class="center" style="margin-top:20px;"><div>
 <div class="centermargin" id="dcstats">
 <div class="table border">
   <div class="title">',$dc->Name,'<span><a href="search_export.php?datacenterid=',$dc->DataCenterID,'">',__("Export"),'</a>&nbsp;,&nbsp;<a href="report_xml_CFD.php?datacenterid=',$dc->DataCenterID,'">',__("XML"),'</a></span><div class="hide" id="msg_show">',__("Click to show statistics"),'</div><div class="hide" id="msg_hide">',__("Click to hide statistics"),'</div></div>

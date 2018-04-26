@@ -175,7 +175,7 @@ $(function(){
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main">
+<div class="main" style="margin-top:10px">
 <div class="center"><div>
 <form method="post" id="auditform">
 <div class="table">

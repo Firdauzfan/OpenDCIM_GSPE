@@ -431,7 +431,7 @@ $(document).ready(function() {
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main">
+<div class="main" style="margin-top:10px">
 <?php echo '<div id="searchfilters"><button type="button" onclick="showall()">'.__("Show All").'</button><button type="button" onclick="hidedevices()">'.__("Racks Only").'</button></div>'; ?>
 <div class="center"><div>
 	<ol>

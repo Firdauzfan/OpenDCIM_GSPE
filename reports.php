@@ -32,7 +32,7 @@
 	include( "sidebar.inc.php" );
 
 echo '<div class="main">
-<div class="center"><div id="reports">
+<div class="center" style="margin-top:20px"><div id="reports">
 <div>
 <fieldset>
 	<legend>',__("Contact Reports"),'</legend>

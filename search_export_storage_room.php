@@ -230,7 +230,7 @@
 	<div class="page">
 <?php
 	include('sidebar.inc.php');
-echo '		<div class="main">
+echo '		<div class="main" style="margin-top:10px">
 			<label for="datacenterid">',__("Data Center:"),'</label>
 			<select name="datacenterid" id="datacenterid">
 				<option value="">',__("Select data center"),'</option>

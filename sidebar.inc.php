@@ -5,7 +5,7 @@
 <?php
 	$attrList=DeviceCustomAttribute::GetDeviceCustomAttributeList(true);
 	echo'
-<label for="searchname">',__("Search by Name:"),'</label><br>
+<label for="searchname" style="margin-left:10px;">',__("Search by Name:"),'</label><br>
 <input class="search" id="searchname" name="search"><button class="iebug" type="submit"><img src="css/searchbutton.png" alt="search"></button>
 </form>
 <span id="advsrch">',__("Advanced"),'</span>
@@ -54,7 +54,7 @@
 					var suggestions=[];
 					$.each(data, function(i,val){
 						suggestions.push(val);
-					});
+					});ey
 					add(suggestions);
 				});
 			},
@@ -96,9 +96,8 @@
 	
 	$menu=buildmenu(array_merge_recursive($rmenu,$rrmenu,$camenu,$wamenu,$samenu,$lmenu));
 	
-	print "<ul class=\"nav\">$menu</ul>
-	<hr>
-	<div>
+	print "
+	<div style='margin-left:10px;'>
 	<a href=\"index.php\">".__("Home")."</a>\n";
 
 	$lang=GetValidTranslations();
@@ -122,14 +121,6 @@
 ?>
 	</div>
 <script type="text/javascript">
-if (typeof jQuery == 'undefined') {
-	alert('jQuery is not loaded');
-	window.location.assign("http://opendcim.org/wiki/index.php?title=Errors:Operational");
-}
-if (typeof jQuery.ui == 'undefined') {
-	alert('jQueryUI is not loaded');
-	window.location.assign("http://opendcim.org/wiki/index.php?title=Errors:Operational");
-}
 
 $("#sidebar .nav a").each(function(){
 	var loc=window.location;

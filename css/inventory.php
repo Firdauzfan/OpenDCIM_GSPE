@@ -10,8 +10,8 @@
 html {
 	font-family: helvetica,arial;
 	font-size: .833em;
-	padding-left: 1.5%;
-	padding-right: .9em;
+	background-image: url(../images/background-dc.jpg);
+	background-size: cover;
 }
 select {padding: .05em;}
 fieldset table, table {border: 1px solid grey;}
@@ -93,10 +93,17 @@ textarea {white-space: pre;word-wrap: break-word;}
 /*  Header/logo */
 #header{
 	padding:5px 0;
-	background:<?php echo "#1d388c"; ?> url(../images/<?php echo $config->ParameterArray['PDFLogoFile']; ?>) no-repeat left center;
+	background:<?php echo $config->ParameterArray['HeaderColor']; ?> url(../images/<?php echo $config->ParameterArray['PDFLogoFile']; ?>) no-repeat left center;
 	height:66px;
 	position: relative;
 }
+
+<!-- Ganti Warna Header -->
+
+#header3{
+	background:<?php echo $config->ParameterArray['HeaderColor']; ?>;
+}
+
 #header > span {color: white;display: block;margin-top: 5px;text-align: center;
 	text-shadow: 1px 1px 0 #063, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
@@ -207,6 +214,7 @@ canvas#background { position: absolute; }
 	white-space: nowrap;
 	word-wrap: normal;
 	padding: 5px;
+	margin-left:10px;
 }
 #sidebar textarea {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -216,6 +224,7 @@ canvas#background { position: absolute; }
 	border-width: 1px 0 1px 1px;
 	border-color: black;
 	resize: none;
+	margin-left:10px;
 }
 #sidebar input + button, #sidebar .text-core + button, button.iebug, #sidebar textarea + button {
 	height: 27px;
@@ -234,14 +243,14 @@ canvas#background { position: absolute; }
 	border-radius: 0px;
 }
 #sidebar form { margin-bottom: 4px; }
-#sidebar input.search { height: 15px; padding: 5px; width: 141px; border: 1px solid black; border-right: 0; vertical-align: top;}
+#sidebar input.search { height: 27px; padding: 5px; width: 141px; border: 1px solid black; border-right: 0; vertical-align: top;}
 #sidebar input + button img, #sidebar .text-arrow + button img {height: 27px;}
-#sidebar div.text-core {width: 150px; height: 27px;}
-#sidebar div.text-core textarea{ width: 151px; height: 27px;}
+#sidebar div.text-core {width: 150px; height: 27px; margin-left:10px;}
+#sidebar div.text-core textarea{ width: 151px; height: 27px;margin-left:10px;}
 #sidebar .advsearch { background: white; display: block; height: 4.5em; position: absolute; top: 0px; width: 350px; z-index: 99; }
-#searchadv ~ select { padding: 5px; border: 1px solid black; }
+#searchadv ~ select { padding: 5px; border: 1px solid black; margin-left:10px;}
 #sidebar .advsearch.hide { display: none; }
-#advsrch { color: <?php echo $config->ParameterArray['LinkColor']; ?>; cursor: pointer; }
+#advsrch { color: <?php echo $config->ParameterArray['LinkColor']; ?>; cursor: pointer;margin-left:10px; }
 #advsrch:before {content:"[ ";}
 #advsrch:after {content:" ]";}
 #searchadv ~ .ui-icon.ui-icon-close { position: absolute; top: 0; right: 0; cursor: pointer;}
@@ -335,7 +344,7 @@ h3 + h3 {color: red;font-weight: bold;}
 h4 {font-size: 1.1em;text-align: center;}
 h3 + h5 {margin-bottom: 0.5em;}
 a:link, a:hover, a:visited:hover {color:<?php echo $config->ParameterArray['LinkColor']; ?>;}
-a:visited {color: <?php echo $config->ParameterArray['VisitedLinkColor']; ?>;}
+a:visited {color: black;}
 
 div.main {
 	display: inline-block;
@@ -344,7 +353,7 @@ div.main {
 	padding: 5px;
 	background-color: <?php echo $config->ParameterArray['BodyColor']; ?>;
 	border: 1px dotted #333;
-	margin-bottom: 2em;
+	margin-bottom: 0em;
 }
 .main > div {
 	margin-bottom: 2em;
@@ -1030,11 +1039,11 @@ div.cabinet {
 	border: 1px dotted gray;
 	padding: 0.25em;
 }
-//.device fieldset .custom-combobox{margin: 0;padding: 0 0 0 2px;}
+//.device fieldset .custom-combobox{margin: 0;padding: 0 0 0 0;}
 .device fieldset .custom-combobox{margin: 0;padding: 0;}
 .device fieldset .custom-combobox input{margin: 0;}
 .device fieldset .custom-combobox a {padding: 1px 0;position: absolute;}
-.device div.right { max-width: 495px; }
+.device div.right { max-width: 550px; }
 .device div.left, .device div.right {
 	margin-bottom: 1.5em;
 	display: inline-block;
@@ -1313,7 +1322,7 @@ div.cabinet {
 	ul.mktree  a.ZONE { color: #330066; }
 	ul.mktree  a.CABROW { color: #AA3300; }
 	ul.mktree  a.RACK { color: #660000; }
-	ul.mktree  a { text-decoration: none; white-space: pre;}
+	ul.mktree  a { text-decoration: none; white-space: pre;color:black}
 	ul.mktree  a:hover { color: red; }
 	ul.mktree  li ul li { font-family: arial, helvetica; font-size: 11pt; font-weight: normal;}
 }
@@ -1360,7 +1369,7 @@ fieldset[name=pdu] > div > img { vertical-align: text-bottom; }
 }
 .installer ul li{border: 1px dashed darkGray;}
 .installer #sidebar a, .nav a {text-decoration: none;}
-.installer #sidebar a:hover li.active, .nav a:hover li.active {background-color: white;border-color: lightGray;}
+.installer #sidebar a:hover li.active, .nav a:hover li.active {background-color: black;border-color: lightGray;}
 .installer .active, .nav .active {background-color: white;border: 1px solid darkGray;}
 .installer a.active span:first-child, .nav a.active span:first-child {background-position: -144px 0;}
 .installer div.table > div > div + div {width: 300px;}
@@ -1375,7 +1384,7 @@ div.page.installer .main{max-width: 850px;}
 
 /* Menu */
 ul.nav li {padding: .5em;}
-.nav a:visited {color: #000000;}
+.nav a:visited {color: black;}
 #sidebar .nav li a { border: 1px solid lightGray; margin: 0;}
 #sidebar .nav .ui-state-focus {
 	background: white;

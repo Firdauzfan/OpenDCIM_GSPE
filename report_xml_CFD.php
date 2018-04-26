@@ -51,7 +51,7 @@ if(!$person->SiteAdmin){
 	include( 'sidebar.inc.php' );
 
 echo '
-<div class="main">
+<div class="main" style="margin-top:10px">
 <div class="center"><div>
 <form method="post">
 <div class="table">

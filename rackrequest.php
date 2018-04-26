@@ -336,7 +336,7 @@ echo '<div class="main">';
 
 if($error!=""){echo '<fieldset class="exception border error"><legend>Errors</legend>'.$error.'</fieldset>';}
 
-echo '<div class="center"><div>
+echo '<div class="center" style="margin-top:20px"><div>
 <div id="Positionselector"></div>
 <form name="deviceform" id="deviceform" action="',$_SERVER["SCRIPT_NAME"],$formfix,'" method="POST">
 	<input type="hidden" name="requestid" value="',$req->RequestID,'">';

@@ -32,7 +32,7 @@ class PDF extends FPDF {
     	$this->Cell(30,20,__("Information Technology Services"),0,0,'C');
     	$this->Ln(25);
 		$this->SetFont( $this->pdfconfig->ParameterArray['PDFfont'],'',10 );
-		$this->Cell( 50, 6, __("Departmental Contacts Report"), 0, 1, 'L' );
+		$this->Cell( 50, 6, __("Department Contacts Report"), 0, 1, 'L' );
 		$this->Cell( 50, 6, __("Date").': ' . date('d F Y'), 0, 1, 'L' );
 		$this->Ln(10);
 	}
@@ -149,57 +149,49 @@ class PDF extends FPDF {
 
 	$pdf->Bookmark( 'Departments' );
 	$pdf->AddPage();
-	$deptList = $dept->GetDepartmentList();
+	$deptList = $dept->GetDepartmentPeopleList();
 
+    $getALL="SELECT * FROM fac_Department JOIN fac_DeptContacts ON fac_Department.DeptID=fac_DeptContacts.DeptID JOIN fac_People ON fac_People.PersonID=fac_DeptContacts.ContactID";
+
+// Ganti untuk report departement
+// Firdauz Fanani 23 April 2018
+    $pdf->SetFont( $config->ParameterArray['PDFfont'], '', 8 );
+
+    $headerTags = array(__("No"),__("Department"),__("Head of Department"),__("PIC"), __("Name"), __("Phone"), __("Email") );
+    $cellWidths = array( 5, 30, 30, 25, 25, 25, 50 );
+    $maxval = count( $headerTags );
+    for ( $col = 0; $col < $maxval; $col++ )
+        $pdf->Cell( $cellWidths[$col], 7, $headerTags[$col], 1, 0, 'C', 1 );
+
+    $pdf->Ln();
+
+    $count=1;
 	foreach( $deptList as $deptRow ) {
 		// Skip ITS for Now
 		// if ( $deptRow->Name == 'ITS' )
 		// 	continue;
 
-		$pdf->Bookmark( $deptRow->Name, 1, 0 );
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], 'B', 12 );
-		$pdf->Cell( 80, 5, __("Department").":" );
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], '', 12 );
-		$pdf->Cell( 0, 5, $deptRow->Name );
-		$pdf->Ln();
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], 'B', 12 );
-		$pdf->Cell( 80, 5, __("Executive Sponsor").":" );
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], '', 12 );
-		$pdf->Cell( 0, 5, $deptRow->ExecSponsor );
-		$pdf->Ln();
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], 'B', 12 );
-		$pdf->Cell( 80, 5, __("Service Delivery Manager").":" );
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], '', 12 );
-		$pdf->Cell( 0, 5, $deptRow->SDM );
-		$pdf->Ln();
 
-
-		$pdf->SetFont( $config->ParameterArray['PDFfont'], '', 8 );
-
-		$headerTags = array( __("UserName"), __("UserID"), __("Phone1"), __("Phone2"), __("Phone3"), __("Email") );
-		$cellWidths = array( 50, 20, 25, 25, 25, 50 );
-		$maxval = count( $headerTags );
-		for ( $col = 0; $col < $maxval; $col++ )
-			$pdf->Cell( $cellWidths[$col], 7, $headerTags[$col], 1, 0, 'C', 1 );
-
-		$pdf->Ln();
-
-		$contactList=$con->GetPeopleByDepartment($deptRow->DeptID);
+		//$contactList=$con->GetPeopleByDepartment($deptRow->DeptID);
 
 		$fill = 0;
 
-		foreach( $contactList as $contact ) {
-			$pdf->Cell( $cellWidths[0], 6, $contact->LastName . ', ' . $contact->FirstName, 'LBRT', 0, 'L', $fill );
-			$pdf->Cell( $cellWidths[1], 6, $contact->UserID, 'LBRT', 0, 'L', $fill );
-			$pdf->Cell( $cellWidths[2], 6, $contact->Phone1, 'LBRT', 0, 'L', $fill );
-			$pdf->Cell( $cellWidths[3], 6, $contact->Phone2, 'LBRT', 0, 'L', $fill );
-			$pdf->Cell( $cellWidths[4], 6, $contact->Phone3, 'LBRT', 0, 'L', $fill );
-			$pdf->Cell( $cellWidths[5], 6, $contact->Email, 'LBRT', 1, 'L', $fill );
+
+		//foreach( $contactList as $contact ) {
+
+            $pdf->Cell( $cellWidths[0], 6, $count, 'LBRT', 0, 'L', $fill );
+            $count+=1;
+			$pdf->Cell( $cellWidths[1], 6, $deptRow->Name, 'LBRT', 0, 'L', $fill );
+			$pdf->Cell( $cellWidths[2], 6, $deptRow->ExecSponsor, 'LBRT', 0, 'L', $fill );
+			$pdf->Cell( $cellWidths[3], 6, $deptRow->SDM, 'LBRT', 0, 'L', $fill );
+			$pdf->Cell( $cellWidths[4], 6, $deptRow->FirstName . ' ' . $deptRow->LastName, 'LBRT', 0, 'L', $fill );
+			$pdf->Cell( $cellWidths[5], 6, $deptRow->Phone1, 'LBRT', 0, 'L', $fill );
+            $pdf->Cell( $cellWidths[6], 6, $deptRow->Email, 'LBRT', 1, 'L', $fill );
 
 			$fill =! $fill;
-		}
+		//}
 
-		$pdf->Ln();
+		//$pdf->Ln();
 	}
 	
 	$pdf->Output();

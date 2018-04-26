@@ -61,7 +61,7 @@
     $content .= "<h3>" . __("Mouse over each field for help text.") . "</h3>";
 
     $content .= '<form method="POST">
-                    <input type="hidden" name="stage" value="validate">
+                    <input type="hidden" name="stage" value="process">
                     <div class="table">';
 
     // Find out how many columns are in the spreadsheet so that we can load them as possible values for the fields
@@ -97,7 +97,7 @@
       $fieldNum++;
     }
 
-    $content .= "<div><div></div><div><input type='submit' value='" . __("Validate") . "' name='submit'></div></div>";
+    $content .= "<div><div></div><div><input type='submit' value='" . __("Process") . "' name='submit'></div></div>";
 
     $content .= '</form>
         </div>';
@@ -150,7 +150,7 @@
     }
     if ( $valid ) {
       $values = array();
-      $fields = array( "DataCenterID", "Cabinet", "Manufacturer", "Model", "Owner", "PrimaryContact" );
+      $fields = array( "DataCenterID", "Cabinet", "Position", "Label", "Height", "Manufacturer", "Model", "Hostname", "SerialNo", "AssetTag", "HalfDepth", "BackSide", "Hypervisor", "InstallDate", "Status", "Owner", "PrimaryContact", "CustomTags");
       // Skip the first row, which has the headers in it
       for ( $n = 2; $n <= $highestRow; $n++ ) {
         foreach( $fields as $fname ) {
@@ -515,7 +515,7 @@
 	include( 'sidebar.inc.php' );
 ?>
 <div class="main">
-<div class="center"><div>
+<div class="center" style="margin-top:20px;"><div>
 
 <?php
   echo $content;

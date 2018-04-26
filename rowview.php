@@ -156,8 +156,8 @@ if($config->ParameterArray["ToolTips"]=='enabled'){
 <?php
 	include( "sidebar.inc.php" );
 ?>
-<div class="main rowview">
-<div class="center"><div>
+<div class="main rowview" style="margin-top:10px;">
+<div class="center" style="margin-top:20px;"><div>
 <div id="centeriehack">
 <?php
 	echo $body;

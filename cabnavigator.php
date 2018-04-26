@@ -638,7 +638,7 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 <?php
 	include( "sidebar.inc.php" );
 ?>
-<div class="main cabnavigator">
+<div class="main cabnavigator" style="margin-top:10px;">
 <div class="center"><div>
 <div id="centeriehack">
 <?php
