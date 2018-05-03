@@ -199,6 +199,7 @@ function renderUnassignedTemplateOwnership($noTemplFlag, $noOwnerFlag, $device) 
 	$noTemplFlag=false;
 	$noReservationFlag=false;
 	$backside=true;
+	$depanside=true;
 
 	// This function with no argument will build the front cabinet face. Specify
 	// rear and it will build the back.
@@ -206,7 +207,9 @@ function renderUnassignedTemplateOwnership($noTemplFlag, $noOwnerFlag, $device) 
 	// Generate rack view
 	$body.=BuildCabinet($cab->CabinetID);
 	// Generate rear rack view if needed
-	$body.=($backside)?BuildCabinet($cab->CabinetID,'rear'):'';
+	$body.=($backside)?BuildCabinet($cab->CabinetID,'front'):'';
+
+	//$body.=($backside)?BuildCabinetRear($cab->CabinetID,'rear'):'';
 
 	$used=$cab->CabinetOccupancy($cab->CabinetID);
 	@$SpacePercent=($cab->CabinetHeight>0)?number_format($used/$cab->CabinetHeight*100,0):0;
@@ -697,9 +700,9 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 		if($('.cabinet + .cabinet').length >0){
 			var width=$('#centeriehack > .cabinet:first-child').width();
 			$('.cabinet tr > td:first-child').addClass('pos');
-			$('.cabinet + .cabinet').find('tr').each(function(i){
-				$(this).prepend($('#centeriehack > .cabinet:first-child').find('tr').eq(i).find('td, th'));
-			});
+			// $('.cabinet + .cabinet').find('tr').each(function(i){
+			// 	$(this).prepend($('#centeriehack > .cabinet:first-child').find('tr').eq(i).find('td, th'));
+			// });
 			$('.cabinet td').each(function(){
 				$(this).css('width',($(this).hasClass('pos'))?'auto':'45%');
 			});
@@ -789,6 +792,34 @@ if ( $config->ParameterArray["WorkOrderBuilder"]=='enabled' ) {
 <?php
 }
 ?>
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="scripts/utils.js"></script>
+
+<script type="text/javascript">
+	var init = function() {
+      var box = document.querySelector('.container3d').children[0],
+          showPanelButtons = document.querySelectorAll('#show-buttons button'),
+          panelClassName = 'show-front',
+
+          onButtonClick = function( event ){
+            box.removeClassName( panelClassName );
+            panelClassName = event.target.className;
+            box.addClassName( panelClassName );
+          };
+
+      for (var i=0, len = showPanelButtons.length; i < len; i++) {
+        showPanelButtons[i].addEventListener( 'click', onButtonClick, false);
+      }
+      
+      document.getElementById('toggle-backface-visibility').addEventListener( 'click', function(){
+        box.toggleClassName('panels-backface-invisible');
+      }, false);
+      
+    };
+      
+    window.addEventListener( 'DOMContentLoaded', init, false);
 </script>
 </body>
 </html>

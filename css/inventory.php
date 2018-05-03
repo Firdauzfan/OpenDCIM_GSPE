@@ -504,10 +504,11 @@ div.error {margin-top: 2em;margin-bottom: 2em;border: 1px dotted gray;}
 div.cabinet {
 	display: inline-block;
 	vertical-align: top;
-	min-width: 200px;
-	max-width: 250px;
-	margin-right: 20px;
+	min-width: 120px;
+	max-width: 130px;
+	margin-right: 80px;
 }
+
 
 #servercontainer .dept0, #servercontainer-rear .dept0, #servercontainer-side .dept0 {background-color: #fff;}
 
