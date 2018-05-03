@@ -354,6 +354,7 @@ div.main {
 	background-color: <?php echo $config->ParameterArray['BodyColor']; ?>;
 	border: 1px dotted #333;
 	margin-bottom: 0em;
+	height:auto;
 }
 .main > div {
 	margin-bottom: 2em;
@@ -504,8 +505,8 @@ div.error {margin-top: 2em;margin-bottom: 2em;border: 1px dotted gray;}
 div.cabinet {
 	display: inline-block;
 	vertical-align: top;
-	min-width: 120px;
-	max-width: 130px;
+	min-width: 110px;
+	max-width: 120px;
 	margin-right: 80px;
 }
 

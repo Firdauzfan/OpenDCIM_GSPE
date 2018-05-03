@@ -1165,11 +1165,11 @@ if(!function_exists("BuildCabinet")){
 
 		$htmlcab.='<figure class="right" style="background-image:url(../images/Rack_Side.png);background-size: cover;"></figure><figure class="left" style="background-image:url(../images/Rack_Side.png);background-size: cover;"></figure><figure class="top" style="background-image:url(../images/top_rack.png);background-size: cover;"></figure><figure class="bottom" style="background-image:url(../images/Bot_rack.png);background-size: cover;"></figure>';
 		$htmlcab.='</div></section>';
-		$htmlcab.='<section id="options" style="margin-top:-30%; margin-left:-40%;">';
-		$htmlcab.='<p id="show-buttons" style="max-width:30%;">';
-		$htmlcab.='<button class="show-front" style="margin-bottom:3%;">Front</button><br/><button class="show-back" style="margin-bottom:3%;">Back</button><br/><button class="show-right" style="margin-bottom:3%;">Right Side</button><br/><button class="show-left">Left Side</button>';
-		$htmlcab.='</p>';
-		$htmlcab.='</section>';
+		// $htmlcab.='<section id="options" style="margin-top:-30%; margin-left:-40%;">';
+		// $htmlcab.='<p id="show-buttons" style="max-width:30%;">';
+		// $htmlcab.='<button class="show-front" style="margin-bottom:3%;">Front</button><br/><button class="show-back" style="margin-bottom:3%;">Back</button><br/><button class="show-right" style="margin-bottom:3%;">Right Side</button><br/><button class="show-left">Left Side</button>';
+		// $htmlcab.='</p>';
+		// $htmlcab.='</section>';
 		
 
 		// Wrap it in a nice div

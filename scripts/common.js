@@ -1104,7 +1104,7 @@ function cabinetimagecontrols(){
 	controlrow.td=controlrow.find('td');
 	var imgbtn=$('<button>').attr('type','button').css({'line-height': '1em', 'height': '1.5em'}).data('show',false).text('Images');
 	var lblbtn=imgbtn.clone().text('Labels');
-	var posbtn=imgbtn.clone().text('Position');
+	// var posbtn=imgbtn.clone().text('Position');
 	controlrow.td.append(imgbtn);
 	controlrow.td.append(lblbtn);
 	controlrow.td.append(posbtn);
