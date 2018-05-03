@@ -1107,7 +1107,7 @@ if(!function_exists("BuildCabinet")){
 
 		
 		$htmlcab.='<section class="container3d"><div id="box" class="show-front">';
-		$htmlcab.='<figure class="front" style="font-size:12px; line-height:21px;text-align:left; color: black">';
+		$htmlcab.='<figure class="front" style="font-size:12px; line-height:21px;text-align:left; color: black";>';
 
 		// if ($face=="") {
 

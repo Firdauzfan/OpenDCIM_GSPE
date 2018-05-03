@@ -307,13 +307,13 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
     #box .left,
     #box .right {
       width: 420px;
-      height: 1295px;
+      height: 1265px;
     }
 
     #box .back,
     #box .front {
       width: 260px;
-      height: 1295px;
+      height: 1260px;
       left: 100px;
     }
 
@@ -364,10 +364,10 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
               transform: rotateX(   90deg ) translateZ( 180px );
     }
     #box .bottom {
-      -webkit-transform: rotateX(  -90deg ) translateZ( 1110px );
-         -moz-transform: rotateX(  -90deg ) translateZ( 1110px );
-           -o-transform: rotateX(  -90deg ) translateZ( 1110px );
-              transform: rotateX(  -90deg ) translateZ( 1110px );
+      -webkit-transform: rotateX(  -90deg ) translateZ( 1080px );
+         -moz-transform: rotateX(  -90deg ) translateZ( 1080px );
+           -o-transform: rotateX(  -90deg ) translateZ( 1080px );
+              transform: rotateX(  -90deg ) translateZ( 1080px );
     }
 
 
