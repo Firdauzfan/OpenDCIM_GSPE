@@ -423,7 +423,7 @@ div.center div table {
 }
 div.center div table table{min-width: 150px;}
 div.center div table, div.center div tr, div.center div td {border: 1px solid gray;}
-.cabinet tr > td:first-child, .panelmgr .polenumber {padding: 0.25em 0.5em;text-align: center;}
+.cabinet tr > td:first-child, .panelmgr .polenumber {text-align: center;}
 .panelmgr .polelabel {
 	min-width: 150px;
 	max-width: 400px;
@@ -521,7 +521,7 @@ div.cabinet {
 .cabinet #servercontainer, .cabinet #servercontainer-rear, .cabinet #servercontainer-side { background-image: url("../images/racku-background.png"); position: relative; padding: 0px; margin: 0px;}
 .genericdevice {display: flex;justify-content: center; align-items: center; height: 100%; border: 2px black solid; background-color: inherit; overflow: hidden; white-space: nowrap;}
 
-.cabinet td + td {vertical-align: middle;width: 220px; }
+.cabinet td + td {vertical-align: middle;width: 240px; }
 .cabinet td.cabpos {text-align: center; vertical-align: middle;padding: 0.25em 0.5em;width: 10%;}
 .cabinet th{font-size: 1.5em;padding: 0.25em;text-align: center;}
 #zerou a{display: block;}

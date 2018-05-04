@@ -1094,9 +1094,9 @@ if(!function_exists("BuildCabinet")){
 
 					$rowspan=abs($top)+abs($bottom);
 					$height=(((abs($top)+abs($bottom))*ceil(220*(1.75/19))))."px";
-					$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px\" data-face=\"$face\"></div></td></tr>\n";
+					$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\" style=\"border-right: 2px solid black;\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px\" data-face=\"$face\"></div></td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td></tr>\n";
 				}else{
-					$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td></tr>\n";
+					$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\" style=\"border-right: 2px solid black;\">$x</td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td></tr>\n";
 				}
 			}
 		}
@@ -1117,8 +1117,8 @@ if(!function_exists("BuildCabinet")){
 
 			
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=2>$clickable$cab->Location$clickableend</th></tr>
-		<tr><td>Pos</td><td>Device</td></tr>\n";
+		<tr><th colspan=3 style=\"background-color:#4a4a4a; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
+		<tr><td style=\"border-right: 2px solid black;\">Pos</td><td>Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td></tr>\n";
 
 		
 		// loop here for the height
@@ -1143,8 +1143,8 @@ if(!function_exists("BuildCabinet")){
 		//if ($face=='rear') {
 
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=2>$clickable$cab->Location$clickableend</th></tr>
-		<tr><td>Pos</td><td>Device</td></tr>\n";
+		<tr><th colspan=3 style=\"background-color:#4a4a4a; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
+		<tr><td style=\"border-right: 2px solid black;\">Pos</td><td>Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td></tr>\n";
 
 		// loop here for the height
 		// numbered high to low, top to bottom

@@ -306,13 +306,13 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
     #box .left,
     #box .right {
-      width: 420px;
-      height: 1265px;
+      width: 426px;
+      height: 1260px;
     }
 
     #box .back,
     #box .front {
-      width: 260px;
+      width: 272px;
       height: 1260px;
       left: 100px;
     }
