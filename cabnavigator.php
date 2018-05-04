@@ -361,7 +361,7 @@ $body.='<div id="infopanel">
 	}
 
 	if($person->CanWrite($cab->AssignedTo)){
-		$body.="\n\t\t<ul class=\"nav\"><a href=\"devices.php?action=new&CabinetID=$cab->CabinetID&DeviceType=CDU\"><li>".__("Add CDU")."</li></a></ul>\n";
+		$body.="\n\t\t<ul class=\"nav\"><a href=\"devices.php?action=new&CabinetID=$cab->CabinetID&DeviceType=CDU\" style=\"color:white;\"><li>".__("Add CDU")."</li></a></ul>\n";
 	}
 
 	$body.="\t\t</div>\n\t</fieldset>\n";
@@ -375,7 +375,7 @@ $body.='<div id="infopanel">
 	}
 
 	if($person->CanWrite($cab->AssignedTo)){
-		$body.="\n\t\t<ul class=\"nav\"><a href=\"devices.php?action=new&CabinetID=$cab->CabinetID&DeviceType=Sensor\"><li>".__("Add Sensor")."</li></a></ul>\n";
+		$body.="\n\t\t<ul class=\"nav\"><a href=\"devices.php?action=new&CabinetID=$cab->CabinetID&DeviceType=Sensor\" style=\"color:white;\"><li>".__("Add Sensor")."</li></a></ul>\n";
 	}
 
 	$body.="\t\t</div>\n\t</fieldset>\n";
@@ -389,14 +389,14 @@ $body.='<div id="infopanel">
 	    $body.="\t\t<ul class=\"nav\">";
         if($person->CanWrite($cab->AssignedTo)){
             $body.="
-			<a href=\"#\" id=\"verifyaudit\"><li>".__("Certify Audit")."</li></a>
-			<a href=\"devices.php?action=new&CabinetID=$cab->CabinetID\"><li>".__("Add Device")."</li></a>
-			<a href=\"cabaudit.php?cabinetid=$cab->CabinetID\"><li>".__("Audit Report")."</li></a>
-			<a href=\"mapmaker.php?cabinetid=$cab->CabinetID\"><li>".__("Map Coordinates")."</li></a>
-			<a href=\"cabinets.php?cabinetid=$cab->CabinetID\"><li>".__("Edit Cabinet")."</li></a>\n";
+			<a href=\"#\" id=\"verifyaudit\" style=\"color:white;\"><li>".__("Certify Audit")."</li></a>
+			<a href=\"devices.php?action=new&CabinetID=$cab->CabinetID\" style=\"color:white;\"><li>".__("Add Device")."</li></a>
+			<a href=\"cabaudit.php?cabinetid=$cab->CabinetID\" style=\"color:white;\"><li>".__("Audit Report")."</li></a>
+			<a href=\"mapmaker.php?cabinetid=$cab->CabinetID\" style=\"color:white;\"><li>".__("Map Coordinates")."</li></a>
+			<a href=\"cabinets.php?cabinetid=$cab->CabinetID\" style=\"color:white;\"><li>".__("Edit Cabinet")."</li></a>\n";
         }
 		if($person->SiteAdmin){
-		    $body.="\t\t\t<a href=\"#\" id=\"verifydelete\"><li>".__("Delete Cabinet")."</li></a>";
+		    $body.="\t\t\t<a href=\"#\" id=\"verifydelete\" style=\"color:white;\"><li>".__("Delete Cabinet")."</li></a>";
 		}
 	    $body.="\n\t\t</ul>\n    </fieldset>";
 	}
@@ -650,7 +650,7 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 ?>
 <section id="options" style="margin-top:-80%; margin-left:-30%;">
 <p id="show-buttons" style="max-width:30%;">
-<button class="show-front" style="margin-bottom:3%;">Front</button><br/><button class="show-back" style="margin-bottom:3%;">Back</button><br/><button class="show-right" style="margin-bottom:3%;">Right Side</button><br/><button class="show-left">Left Side</button>
+<button class="show-front" style="margin-bottom:3%; color: white; background-color: #1d388c; border-radius: 5px;">Front</button><br/><button class="show-back" style="margin-bottom:3%; color: white; background-color: #1d388c; border-radius: 5px;">Back</button><br/><button class="show-right" style="margin-bottom:3%; color: white; background-color: #1d388c; border-radius: 5px;">Right Side</button><br/><button class="show-left" style="color: white; background-color: #1d388c; border-radius: 5px;">Left Side</button>
 </p>
 </section>
 </div> <!-- END div#centeriehack -->
