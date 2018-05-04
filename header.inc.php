@@ -39,40 +39,40 @@ transform: rotate(-90deg);
                     </button>
                     <a href="index.php"><img src="images/logo.png" style="margin-left: -9px;margin-right: 12px"></a>
                 </div>
-                <div class="collapse navbar-collapse" style="margin-bottom: -1">
+                <div class="collapse navbar-collapse" style="margin-bottom: -1; background-color: #1d388c;">
                     <ul class="nav navbar-nav">
-                        <li style="padding:13px;width: 200px">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center; font-size: 20px">Initialization <b class="caret"></b></a>
+                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center; font-size: 20px; color: white;">Initialization <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="background-color: #1d388c;">
 
 
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Infrastructure Management <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Infrastructure Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
                                     	<?php
                                     	if ( $person->SiteAdmin ) {
                                     		echo '
-                                    	<li><a href="container.php">Container</a></li>
-                                    	<li><a href="datacenter.php">Data Centers</a></li>
-                                    	<li><a href="zone.php">Zones</a></li>
-                                    	<li><a href="cabrow.php">Rows of Cabinet</a></li>';
+                                    	<li><a href="container.php" style="color:white;">Container</a></li>
+                                    	<li><a href="datacenter.php" style="color:white;">Data Centers</a></li>
+                                    	<li><a href="zone.php" style="color:white;">Zones</a></li>
+                                    	<li><a href="cabrow.php" style="color:white;">Rows of Cabinet</a></li>';
                                     	}
                                     	?>
                                     	
                                     	<?php
                                     	if ( $person->WriteAccess ) {
                                     		echo '
-                                    	<li><a href="cabinets.php">Cabinets</a></li>';
+                                    	<li><a href="cabinets.php" style="color:white;">Cabinets</a></li>';
                                     	}
                                     	?>  
 
                                     	<?php
                                     	if ( $person->SiteAdmin ) {
                                     		echo '
-                                    	<li><a href="image_management.php#drawings">Facilities Image Management</a></li>';
+                                    	<li><a href="image_management.php#drawings" style="color:white;">Facilities Image Management</a></li>';
                                     	}
                                     	?>                                          
                                         
@@ -80,21 +80,21 @@ transform: rotate(-90deg);
                                 </li>
 
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Template Management <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Template Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
                                     	<?php
                                     	if ( $person->WriteAccess ) {
                                     		echo '
-                                    	<li><a href="device_templates.php">Device Template</a></li>
-                                        <li><a href="image_management.php">Device Image Management</a></li>';
+                                    	<li><a href="device_templates.php" style="color:white;">Device Template</a></li>
+                                        <li><a href="image_management.php" style="color:white;">Device Image Management</a></li>';
                                     	}
 
                                     	if( $person->SiteAdmin ) {
                                     	echo '
-                                    	<li><a href="device_manufacturers.php">Manufacture</a></li>
-                                        <li><a href="repository_sync_ui.php">Repository Sync</a></li>';
+                                    	<li><a href="device_manufacturers.php" style="color:white;">Manufacture</a></li>
+                                        <li><a href="repository_sync_ui.php" style="color:white;">Repository Sync</a></li>';
                                     	}
                                     	?>
                                        
@@ -105,45 +105,45 @@ transform: rotate(-90deg);
                                 if ( $person->SiteAdmin ) {
                                 	echo '
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Power Management <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Power Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="power_panel.php">Power Panels</a></li>
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                        <li><a href="power_panel.php" style="color:white;">Power Panels</a></li>
                                     </ul>
                                 </li>
 
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Path Connections <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Path Connections <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="paths.php">View Path Connection</a></li>
-                                        <li><a href="pathmaker.php">Make Path Connection</a></li>
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                        <li><a href="paths.php" style="color:white;">View Path Connection</a></li>
+                                        <li><a href="pathmaker.php" style="color:white;">Make Path Connection</a></li>
                                     </ul>
                                 </li>';
                                 }
                                 ?>
                                 
 
-                                <li><a href="project_mgr.php">Project Catalog</a></li>
+                                <li><a href="project_mgr.php" style="color:white;">Project Catalog</a></li>
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px">Operation <b class="caret"></b></a>
+                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px; color: white;">Operation <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="background-color: #1d388c;">
                             	<?php
                                     if ($person->ContactAdmin ) {
                                     	echo '
                                     <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Issue Escalation <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"  style="color:white;">Issue Escalation <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="timeperiods.php">Time Period</a></li>
-                                        <li><a href="escalations.php">Escalation Rules</a></li>
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                        <li><a href="timeperiods.php" style="color:white;">Time Period</a></li>
+                                        <li><a href="escalations.php" style="color:white;">Escalation Rules</a></li>
                                     </ul>
                                 	</li>';
                                     }
@@ -153,13 +153,13 @@ transform: rotate(-90deg);
                                	if( $person->SiteAdmin ) {
                                		echo '
                                	<li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Material Management <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Material Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                    	<li><a href="supplybin.php">Manage Supply Bins</a></li>
-                                    	<li><a href="supplies.php">Manage Supplies</a></li>
-                                    	<li><a href="disposition.php">Manage Disposal Methods</a></li>
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    	<li><a href="supplybin.php" style="color:white;">Manage Supply Bins</a></li>
+                                    	<li><a href="supplies.php" style="color:white;">Manage Supplies</a></li>
+                                    	<li><a href="disposition.php" style="color:white;">Manage Disposal Methods</a></li>
                                     </ul>
                                 </li>';
                                	}
@@ -170,19 +170,19 @@ transform: rotate(-90deg);
                                 if ($person->BulkOperations) {
                                 echo '
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Import Management <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Import Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                    	<li><a href="bulk_container.php">Import Container/Data Center/Zone/Row</a></li>
-                                    	<li><a href="bulk_users.php">Import User Accounts</a></li>
-                                    	<li><a href="bulk_departments.php">Import Departments/Customers</a></li>
-                                    	<li><a href="bulk_templates.php">Import Device Templates</a></li>
-                                    	<li><a href="bulk_cabinet.php">Import Cabinets</a></li>
-                                    	<li><a href="bulk_importer.php">Import Devices</a></li>
-                                    	<li><a href="bulk_network.php">Import Network Connections</a></li>
-                                    	<li><a href="bulk_power.php">Import Power Connections</a></li>
-                                    	<li><a href="bulk_moves.php">Process Bulk Moves</a></li>
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    	<li><a href="bulk_container.php" style="color:white;">Import Container/Data Center/Zone/Row</a></li>
+                                    	<li><a href="bulk_users.php" style="color:white;">Import User Accounts</a></li>
+                                    	<li><a href="bulk_departments.php" style="color:white;">Import Departments/Customers</a></li>
+                                    	<li><a href="bulk_templates.php" style="color:white;">Import Device Templates</a></li>
+                                    	<li><a href="bulk_cabinet.php" style="color:white;">Import Cabinets</a></li>
+                                    	<li><a href="bulk_importer.php" style="color:white;">Import Devices</a></li>
+                                    	<li><a href="bulk_network.php" style="color:white;">Import Network Connections</a></li>
+                                    	<li><a href="bulk_power.php" style="color:white;">Import Power Connections</a></li>
+                                    	<li><a href="bulk_moves.php" style="color:white;">Process Bulk Moves</a></li>
                                     </ul>
                                 </li>';
                                 }
@@ -190,28 +190,28 @@ transform: rotate(-90deg);
                                 
                                 <?php
                                 if ( $config->ParameterArray["RackRequests"] == "enabled" && $person->RackRequest ) {
-									echo '<li><a href="rackrequest.php">Rack Request Form</a></li>';
+									echo '<li><a href="rackrequest.php" style="color:white;">Rack Request Form</a></li>';
 								}
 								?>
                                 
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px">Manage <b class="caret"></b></a>
+                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px; color: white;">Manage <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="margin-left: 20px">
+                            <ul class="dropdown-menu" style="margin-left: 20px; background-color: #1d388c;">
 
                             	<?php
                                     if ($person->ContactAdmin) {
                                     	echo '
                                     <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Administration <b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Administration <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="usermgr.php">User</a></li>
-                                        <li><a href="departments.php">Department</a></li>
+                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                        <li><a href="usermgr.php" style="color:white;">User</a></li>
+                                        <li><a href="departments.php" style="color:white;">Department</a></li>
                                     </ul>
                                 	</li>';
                                     }
@@ -219,7 +219,7 @@ transform: rotate(-90deg);
 
                                 <?php
                                 if ( $person->SiteAdmin ) {
-                                	echo '<li><a href="configuration.php">Configuration</a></li>';
+                                	echo '<li><a href="configuration.php" style="color:white;">Configuration</a></li>';
                                 }
                                 ?>
                                 
@@ -227,62 +227,62 @@ transform: rotate(-90deg);
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px">Reports <b class="caret"></b></a>
+                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;" >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px; color: white;">Reports <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="margin-left: 5px">
+                            <ul class="dropdown-menu" style="margin-left: 5px; background-color: #1d388c;">
 
                                 <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Asset Reports <b
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Asset Reports <b
                                         class="caret"></b></a>
 
-                                <ul class="dropdown-menu">
-                                    <li><a href="search_export.php">Search/Export by Data Center</a></li>
-                                    <li><a href="search_export_storage_room.php">Storage Room Search/Export by Data Center</a></li>
-                                    <li><a href="report_xml_CFD.php">Export Data Center for CFD (XML)</a></li>
-                                    <li><a href="report_contact.php">Asset Report by Owner</a></li>
-                                    <li><a href="report_asset.php">Data Center Asset Report</a></li>
-                                    <li><a href="report_asset_Excel.php">Data Center Asset Report [Excel]</a></li>
-                                    <li><a href="report_cost.php">Data Center Asset Costing Report</a></li>
-                                    <li><a href="report_projects.php">Project Asset Report</a></li>
-                                    <li><a href="report_aging.php">Asset Aging Report</a></li>
-                                    <li><a href="report_warranty.php">Warranty Expiration Report</a></li>
-                                    <li><a href="report_vm_by_department.php">Virtual Machines by Department</a></li>
-                                    <li><a href="report_network_map.php">Network Map</a></li>
-                                    <li><a href="report_vendor_model.php">Vendor/Model Report</a></li>
+                                <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <li><a href="search_export.php" style="color:white;">Search/Export by Data Center</a></li>
+                                    <li><a href="search_export_storage_room.php" style="color:white;">Storage Room Search/Export by Data Center</a></li>
+                                    <li><a href="report_xml_CFD.php" style="color:white;">Export Data Center for CFD (XML)</a></li>
+                                    <li><a href="report_contact.php" style="color:white;">Asset Report by Owner</a></li>
+                                    <li><a href="report_asset.php" style="color:white;">Data Center Asset Report</a></li>
+                                    <li><a href="report_asset_Excel.php" style="color:white;">Data Center Asset Report [Excel]</a></li>
+                                    <li><a href="report_cost.php" style="color:white;">Data Center Asset Costing Report</a></li>
+                                    <li><a href="report_projects.php" style="color:white;">Project Asset Report</a></li>
+                                    <li><a href="report_aging.php" style="color:white;">Asset Aging Report</a></li>
+                                    <li><a href="report_warranty.php" style="color:white;">Warranty Expiration Report</a></li>
+                                    <li><a href="report_vm_by_department.php" style="color:white;">Virtual Machines by Department</a></li>
+                                    <li><a href="report_network_map.php" style="color:white;">Network Map</a></li>
+                                    <li><a href="report_vendor_model.php" style="color:white;">Vendor/Model Report</a></li>
                                 </ul>
                                 </li>
 
                                 <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Operational Reports <b
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Operational Reports <b
                                         class="caret"></b></a>
 
-                                <ul class="dropdown-menu">
-                                    <li><a href="report_exception.php">Data Exceptions Report</a></li>
-                                    <li><a href="report_diverse_power_exceptions.php">Diverse Power Exceptions Report</a></li>
-                                    <li><a href="report_outage_simulator.php">Simulated Power Outage Report</a></li>
-                                    <li><a href="report_project_outage_simulator.php">Project Power Outage Report</a></li>
-                                    <li><a href="report_power_distribution.php">Power Distribution by Data Center</a></li>
-                                    <li><a href="report_power_utilization.php">Server Tier Classification Report</a></li>
-                                    <li><a href="report_panel_schedule.php">Power Panel Schedule Report</a></li>
-                                    <li><a href="report_cabinets.php">Cabinet List</a></li>
+                                <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <li><a href="report_exception.php" style="color:white;">Data Exceptions Report</a></li>
+                                    <li><a href="report_diverse_power_exceptions.php" style="color:white;">Diverse Power Exceptions Report</a></li>
+                                    <li><a href="report_outage_simulator.php" style="color:white;">Simulated Power Outage Report</a></li>
+                                    <li><a href="report_project_outage_simulator.php" style="color:white;">Project Power Outage Report</a></li>
+                                    <li><a href="report_power_distribution.php" style="color:white;">Power Distribution by Data Center</a></li>
+                                    <li><a href="report_power_utilization.php" style="color:white;">Server Tier Classification Report</a></li>
+                                    <li><a href="report_panel_schedule.php" style="color:white;">Power Panel Schedule Report</a></li>
+                                    <li><a href="report_cabinets.php" style="color:white;">Cabinet List</a></li>
                                 </ul>
                                 </li>
 
                                 <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Auditing Reports <b
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Auditing Reports <b
                                         class="caret"></b></a>
 
-                                <ul class="dropdown-menu">
-                                    <li><a href="report_audit.php">Cabinet Audit Logs</a></li>
-                                    <li><a href="report_audit_frequency.php">Cabinet Audit Frequency</a></li>
-                                    <li><a href="report_surplus.php">Surplus/Salvage Audit Report</a></li>
-                                    <li><a href="report_supply_status.php">Supplies Status Report</a></li>
-                                    <li><a href="report_logging.php">Actions Log</a></li>
+                                <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <li><a href="report_audit.php" style="color:white;">Cabinet Audit Logs</a></li>
+                                    <li><a href="report_audit_frequency.php" style="color:white;">Cabinet Audit Frequency</a></li>
+                                    <li><a href="report_surplus.php" style="color:white;">Surplus/Salvage Audit Report</a></li>
+                                    <li><a href="report_supply_status.php" style="color:white;">Supplies Status Report</a></li>
+                                    <li><a href="report_logging.php" style="color:white;">Actions Log</a></li>
                                 </ul>
                                 </li>
 
-                                <li><a href="report_department.php">Contact Reports</a></li>
+                                <li><a href="report_department.php" style="color:white;">Contact Reports</a></li>
                                 
                             </ul>
                         </li>

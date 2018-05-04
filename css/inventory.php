@@ -1265,8 +1265,8 @@ div.cabinet {
 }
 .button, .button:after, button, button:after, input[type=submit], input[type=button], ul.nav li {
 	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
+	-webkit-border-radius:0px;
+	border-radius:0px;
 	border-width:1px;
 	border-style:solid;
 }
@@ -1293,7 +1293,7 @@ div.cabinet {
 	-o-transition: all .1s linear;
 	transition: all .1s linear;
 }
-.button.bg, .button.bg:hover, .button.bg:focus, ul.nav li {
+.button.bg, .button.bg:hover, .button.bg:focus, ul.nav {
 	background-image:url(gradient.png);
 	background-image: -moz-linear-gradient(top, rgba(255,255,255,.75), rgba(255,255,255,0));
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.75)), to(rgba(255,255,255,0)));
@@ -1366,8 +1366,8 @@ fieldset[name=pdu] > div > img { vertical-align: text-bottom; }
 .installer ul li, ul.nav li{
 	display: block;
 	padding: 1.5em;
-	background-color: lightGray;
-	border: 0px solid lightGray;
+	background-color: #1d388c;
+	border: 0px solid #1d388c;
 }
 .installer ul li{border: 1px dashed darkGray;}
 .installer #sidebar a, .nav a {text-decoration: none;}
