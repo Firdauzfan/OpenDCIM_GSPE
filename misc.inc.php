@@ -1142,7 +1142,7 @@ if(!function_exists("BuildCabinet")){
 
 		//if ($face=='rear') {
 
-		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\" >
+		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
 		<tr><th colspan=2>$clickable$cab->Location$clickableend</th></tr>
 		<tr><td>Pos</td><td>Device</td></tr>\n";
 
@@ -1175,7 +1175,7 @@ if(!function_exists("BuildCabinet")){
 		// Wrap it in a nice div
 
 		//Jourdan 27-04-2018
-		$htmlcab='<div class="cabinet">'.$htmlcab.'</div>';
+		$htmlcab='<div class="cabinet" style="margin-right:150px">'.$htmlcab.'</div>';
 
 		// debug information
 		// print "Cabinet:  $cab->CabinetID   Top: $top   Bottom: $bottom<br>\n";
