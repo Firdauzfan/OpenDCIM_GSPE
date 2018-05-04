@@ -648,7 +648,7 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 <?php
 	echo $body;
 ?>
-<section id="options" style="margin-top:-30%; margin-left:-40%;">
+<section id="options" style="margin-top:-80%; margin-left:-30%;">
 <p id="show-buttons" style="max-width:30%;">
 <button class="show-front" style="margin-bottom:3%;">Front</button><br/><button class="show-back" style="margin-bottom:3%;">Back</button><br/><button class="show-right" style="margin-bottom:3%;">Right Side</button><br/><button class="show-left">Left Side</button>
 </p>
