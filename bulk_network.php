@@ -332,7 +332,7 @@
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main">
+<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <div class="center" style="margin-top:20px;"><div>
 
 <?php

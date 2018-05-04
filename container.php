@@ -220,7 +220,7 @@ print '		dialog.find("span + span").html("'.__("This container will be deleted a
 <?php
 	include( 'sidebar.inc.php' );
 
-echo '<div class="main">
+echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <h3>',$status,'</h3>
 <div class="center"><div>
 <form id="containerform" method="POST">

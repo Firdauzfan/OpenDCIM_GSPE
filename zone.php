@@ -107,7 +107,7 @@
 	include( "sidebar.inc.php" );
 
 echo '
-<div class="main">
+<div class="main" style="box-shadow: 10px 10px #1d388c;">
 	<div class="zonemaker">
 		<h3>',$status,'</h3>
 		<div class="center" style="min-height: 0px;"><div>

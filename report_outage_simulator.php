@@ -35,7 +35,7 @@ if (!isset($_REQUEST['action'])){
 	
 ?>
 </div>
-<div class="main">
+<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <h2>openDCIM</h2>
 <h3>Outage Impact Simulation</h3>
 <form method="post">

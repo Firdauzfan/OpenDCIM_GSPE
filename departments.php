@@ -164,7 +164,7 @@
 <div class="page">
 <?php
 	include( 'sidebar.inc.php' );
-	echo '<div class="main">
+	echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <div class="center" style="margin-top:20px"><div>
 <form method="POST">
 <div class="table centermargin">

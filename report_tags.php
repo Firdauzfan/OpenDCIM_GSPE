@@ -111,7 +111,7 @@ if(!$person->ReadAccess){
 	<div class="page">
 <?php
 	include('sidebar.inc.php');
-echo '		<div class="main">
+echo '		<div class="main" style="box-shadow: 10px 10px #1d388c;">
 			<label for="tagid">',__("Tag:"),'</label>
 			<select name="tagid" id="tagid">
 				<option value="">',__("Select Tag"),'</option>

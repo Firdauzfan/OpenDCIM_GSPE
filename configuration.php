@@ -1480,7 +1480,7 @@
 <?php
 	include( "sidebar.inc.php" );
 
-echo '<div class="main">
+echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <div class="center"><div>
 <h3></h3><h3 id="messages"></h3>
 <form enctype="multipart/form-data" method="POST">

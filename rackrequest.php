@@ -332,7 +332,7 @@ print "			$('#deviceform').validationEngine({'custom_error_messages' : {
 <?php
     include('sidebar.inc.php');
 
-echo '<div class="main">';
+echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">';
 
 if($error!=""){echo '<fieldset class="exception border error"><legend>Errors</legend>'.$error.'</fieldset>';}
 

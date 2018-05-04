@@ -139,7 +139,7 @@ print "		dialog.find('span + span').html('".__("This Row will be deleted and the
 <?php
 	include( "sidebar.inc.php" );
 
-echo '<div class="main">
+echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <h3>',$status,'</h3>
 <div class="center"><div>
 <form action="',$_SERVER["SCRIPT_NAME"].$formpatch,'" method="POST">

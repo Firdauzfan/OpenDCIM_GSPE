@@ -1666,7 +1666,7 @@ class mPDF
 	<link rel="stylesheet" type="text/css" href="' . _MPDF_URI . 'progbar.css" />
 		</head>
 	<body>
-	<div class="main">
+	<div class="main" style="box-shadow: 10px 10px #1d388c;">
 		<div class="heading">' . $this->progbar_heading . '</div>
 		<div class="demo">
 	   ';

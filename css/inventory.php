@@ -355,6 +355,7 @@ div.main {
 	border: 1px dotted #333;
 	margin-bottom: 0em;
 	height:auto;
+	box-shadow: 10px 10px #1d388c;
 }
 .main > div {
 	margin-bottom: 2em;

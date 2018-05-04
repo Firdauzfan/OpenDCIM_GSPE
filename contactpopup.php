@@ -42,7 +42,7 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="main">
+<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <div class="table border centermargin">
 	<div>
 		<div>Last Name</div>

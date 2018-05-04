@@ -227,7 +227,7 @@ $(function(){
 <div class="page">
 <?php
 	include( 'sidebar.inc.php' );
-echo '<div class="main">
+echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <div class="center"><div>
 <h2>',__("Device Disposition Report"),'</h2>
 <form method="post" id="auditform">

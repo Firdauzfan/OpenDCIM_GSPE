@@ -52,7 +52,7 @@
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main">
+<div class="main" style="box-shadow: 10px 10px #1d388c;">
 
 <?php
 // Only show the device pictures if they have global write access or site admin.
