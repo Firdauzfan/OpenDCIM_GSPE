@@ -1094,9 +1094,9 @@ if(!function_exists("BuildCabinet")){
 
 					$rowspan=abs($top)+abs($bottom);
 					$height=(((abs($top)+abs($bottom))*ceil(220*(1.75/19))))."px";
-					$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\" style=\"border-right: 2px solid black;\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px\" data-face=\"$face\"></div></td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td></tr>\n";
+					$htmlcab.="\t<tr id=\"pos$x\"><td style=\"background-color:#4a4a4a;\"><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px; background-color:#6d6c6c;\" data-face=\"$face\"></div></td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td style=\"background-color:#4a4a4a;border-right: 2px solid black;\"></tr>\n";
 				}else{
-					$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\" style=\"border-right: 2px solid black;\">$x</td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td></tr>\n";
+					$htmlcab.="\t<tr id=\"pos$x\"><td style=\"background-color:#4a4a4a;\"></td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td style=\"background-color:#4a4a4a;border-right: 2px solid black;\"></tr>\n";
 				}
 			}
 		}
@@ -1117,8 +1117,8 @@ if(!function_exists("BuildCabinet")){
 
 			
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=3 style=\"background-color:#4a4a4a; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
-		<tr><td style=\"border-right: 2px solid black;\">Pos</td><td style=\"text-align:center\">Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td></tr>\n";
+		<tr><th colspan=5 style=\"background-color:#4a4a4a; border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
+		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td>Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a;border-right: 2px solid black;\">1</td></tr>\n";
 
 		
 		// loop here for the height
@@ -1143,8 +1143,8 @@ if(!function_exists("BuildCabinet")){
 		//if ($face=='rear') {
 
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=3 style=\"background-color:#4a4a4a; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
-		<tr><td style=\"border-right: 2px solid black;\">Pos</td><td style=\"text-align:center\">Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td></tr>\n";
+		<tr><th colspan=5 style=\"background-color:#4a4a4a;border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
+		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td>Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a; border-right: 2px solid black;\">1</td></tr>\n";
 
 		// loop here for the height
 		// numbered high to low, top to bottom
