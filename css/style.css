@@ -306,7 +306,7 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
     #box .left,
     #box .right {
-      width: 426px;
+      width: 432px;
       height: 1257px;
     }
 
@@ -319,8 +319,8 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
     #box .top,
     #box .bottom {
-      width: 426px;
-      height: 276px;
+      width: 432px;
+      height: 290px;
       top: 50px;
       line-height: 96px;
     }
@@ -352,10 +352,10 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
               transform: rotateY(   90deg ) translateZ( 188px );
     }
     #box .front {
-      -webkit-transform: rotateY(  -90deg ) translateZ( 237px );
-         -moz-transform: rotateY(  -90deg ) translateZ( 237px );
-           -o-transform: rotateY(  -90deg ) translateZ( 237px );
-              transform: rotateY(  -90deg ) translateZ( 237px );
+      -webkit-transform: rotateY(  -90deg ) translateZ( 244px );
+         -moz-transform: rotateY(  -90deg ) translateZ( 244px );
+           -o-transform: rotateY(  -90deg ) translateZ( 244px );
+              transform: rotateY(  -90deg ) translateZ( 244px );
     }
     #box .top {
       -webkit-transform: rotateX(   90deg ) translateZ( 180px );
@@ -364,10 +364,10 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
               transform: rotateX(   90deg ) translateZ( 180px );
     }
     #box .bottom {
-      -webkit-transform: rotateX(  -90deg ) translateZ( 1070px );
-         -moz-transform: rotateX(  -90deg ) translateZ( 1070px );
-           -o-transform: rotateX(  -90deg ) translateZ( 1070px );
-              transform: rotateX(  -90deg ) translateZ( 1070px );
+      -webkit-transform: rotateX(  -90deg ) translateZ( 1060px );
+         -moz-transform: rotateX(  -90deg ) translateZ( 1060px );
+           -o-transform: rotateX(  -90deg ) translateZ( 1060px );
+              transform: rotateX(  -90deg ) translateZ( 1060px );
     }
 
 

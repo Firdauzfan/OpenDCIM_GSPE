@@ -1117,8 +1117,8 @@ if(!function_exists("BuildCabinet")){
 
 			
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=5 style=\"background-color:#4a4a4a; border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
-		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td>Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a;border-right: 2px solid black;\">1</td></tr>\n";
+		<tr><th colspan=5 style=\"background-color:#4a4a4a; border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend (Front)</th></tr>
+		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td align=\"center\">Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a;border-right: 2px solid black;\">1</td></tr>\n";
 
 		
 		// loop here for the height
@@ -1143,8 +1143,8 @@ if(!function_exists("BuildCabinet")){
 		//if ($face=='rear') {
 
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=5 style=\"background-color:#4a4a4a;border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend</th></tr>
-		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td>Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a; border-right: 2px solid black;\">1</td></tr>\n";
+		<tr><th colspan=5 style=\"background-color:#4a4a4a;border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend (Rear)</th></tr>
+		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td align=\"center\">Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a; border-right: 2px solid black;\">1</td></tr>\n";
 
 		// loop here for the height
 		// numbered high to low, top to bottom
@@ -1175,7 +1175,7 @@ if(!function_exists("BuildCabinet")){
 		// Wrap it in a nice div
 
 		//Jourdan 27-04-2018
-		$htmlcab='<div class="cabinet" style="margin-right:150px">'.$htmlcab.'</div>';
+		$htmlcab='<div class="cabinet" style="margin-right:175px">'.$htmlcab.'</div>';
 
 		// debug information
 		// print "Cabinet:  $cab->CabinetID   Top: $top   Bottom: $bottom<br>\n";
