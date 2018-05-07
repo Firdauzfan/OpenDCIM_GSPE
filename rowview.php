@@ -158,15 +158,15 @@ if($config->ParameterArray["ToolTips"]=='enabled'){
 ?>
 <div class="main rowview" style="margin-top:10px;">
 <div class="center" style="margin-top:20px;"><div>
-<div id="centeriehack">
+<div id="centeriehack" style="width:2000px">
 <?php
 	echo $body;
 ?>
 </div> <!-- END div#centeriehack -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 // 258 width of cabinet + 20 margin
 $('#centeriehack').width($('#centeriehack div.cabinet').length * 278);
-</script>
+</script> -->
 </div></div>
 <?php
 	if($dcID>0){
