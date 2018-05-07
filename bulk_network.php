@@ -78,7 +78,7 @@
 
     $fieldNum = 1;
 
-    foreach ( array( "SourceDeviceID"=>"The key value to indicate the existing device the connection originates from.", "SourcePort"=>"The name of the existing port for the origination of the connection.", "TargetDeviceID"=>"The key value to indicate the existing device the connection terminates at.", "TargetPort"=>"The name of the existing port for the termination of the connection.", "MediaType"=>"Optional, but if specified the name must match an existing Media Type in the openDCIM installation.", "ColorCode"=>"Optional, but if specified the name must match an existing Color name in the openDCIM installation.", "Notes"=>"Optional, free form text to add to the Notes field for the connection." ) as $fieldName=>$helpText ) {
+    foreach ( array( "SourceDeviceID"=>"The key value to indicate the existing device the connection originates from.", "SourcePort"=>"The name of the existing port for the origination of the connection.", "TargetDeviceID"=>"The key value to indicate the existing device the connection terminates at.", "TargetPort"=>"The name of the existing port for the termination of the connection.", "MediaType"=>"Optional, but if specified the name must match an existing Media Type in the GSPE DCIM installation.", "ColorCode"=>"Optional, but if specified the name must match an existing Color name in the GSPE DCIM installation.", "Notes"=>"Optional, free form text to add to the Notes field for the connection." ) as $fieldName=>$helpText ) {
       $content .= '<div>
                     <div><span title="' . __($helpText) . '">' . __($fieldName) . '</span>: </div><div><select name="' . $fieldName . '">';
       for ( $n = 0; $n < sizeof( $fieldList ); $n++ ) {

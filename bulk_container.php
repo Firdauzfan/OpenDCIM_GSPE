@@ -78,7 +78,7 @@
 
     $fieldNum = 1;
 
-    foreach ( array( "DataCenter"=>"The unique name of the data center to be added to the openDCIM database.  If it does not already exist, a basic record will be added.", "Container"=>"Optionally, the unique name of the Container that the Data Center is a member of.  If it does not exist, it will be created.",  "Zone"=>"The name of an Zone for this record.  If it does not exist, it will be created with no coordinates, but attached to the given Data Center.  The combination of Data Center + Zone must be unique.  Optional.", "Row"=>"The name of a row to add to the database.  The combination of Data Center + Zone + Row (or Data Center + Row) must be unique.  Optional." ) as $fieldName=>$helpText ) {
+    foreach ( array( "DataCenter"=>"The unique name of the data center to be added to the GSPE DCIM database.  If it does not already exist, a basic record will be added.", "Container"=>"Optionally, the unique name of the Container that the Data Center is a member of.  If it does not exist, it will be created.",  "Zone"=>"The name of an Zone for this record.  If it does not exist, it will be created with no coordinates, but attached to the given Data Center.  The combination of Data Center + Zone must be unique.  Optional.", "Row"=>"The name of a row to add to the database.  The combination of Data Center + Zone + Row (or Data Center + Row) must be unique.  Optional." ) as $fieldName=>$helpText ) {
       $content .= '<div>
                     <div><span title="' . __($helpText) . '">' . __($fieldName) . '</span>: </div><div><select name="' . $fieldName . '">';
       for ( $n = 0; $n < sizeof( $fieldList ); $n++ ) {
