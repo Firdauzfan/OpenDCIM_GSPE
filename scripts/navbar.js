@@ -20,3 +20,12 @@ $(document).ready(function () {
         return false;
     });
 });
+
+$(document).click(function(e) {
+    $('.nav li.open').not($(this).parents("li")).removeClass("open");
+});
+    
+$('.dropdown-menu').click(function(e){
+    e.stopPropagation();
+});
+
