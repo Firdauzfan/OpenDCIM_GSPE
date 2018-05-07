@@ -312,7 +312,7 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
     #box .back,
     #box .front {
-      width: 275px;
+      width: 276px;
       height: 1260px;
       left: 100px;
     }
@@ -327,9 +327,9 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
 
     #box .left  { background: hsla( 000, 100%, 50%, 0.7 ); }
-    #box .right   { background: hsla( 160, 100%, 50%, 0.7 ); }
-    #box .back  { background: hsla( 120, 100%, 50%, 0.7 ); }
-    #box .front   { background: hsla( 120, 100%, 50%, 0.7 ); }
+    #box .right   { background: hsla( 000, 100%, 50%, 0.7 ); }
+    #box .back  { background: hsla( 180, 100%, 50%, 0.7 ); }
+    #box .front   { background: hsla( 180, 100%, 50%, 0.7 ); }
     #box .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
     #box .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
 
