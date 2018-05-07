@@ -312,7 +312,7 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
     #box .back,
     #box .front {
-      width: 272px;
+      width: 275.2px;
       height: 1260px;
       left: 100px;
     }
@@ -334,16 +334,16 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
     #box .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
 
     #box .left  {
-      -webkit-transform: translateZ( 130px );
-         -moz-transform: translateZ( 130px );
-           -o-transform: translateZ( 130px );
-              transform: translateZ( 130px );
+      -webkit-transform: translateZ( 136px );
+         -moz-transform: translateZ( 136px );
+           -o-transform: translateZ( 136px );
+              transform: translateZ( 136px );
     }
     #box .right   {
-      -webkit-transform: rotateY( -180deg ) translateZ( 130px );
-         -moz-transform: rotateY( -180deg ) translateZ( 130px );
-           -o-transform: rotateY( -180deg ) translateZ( 130px );
-              transform: rotateY( -180deg ) translateZ( 130px );
+      -webkit-transform: rotateY( -180deg ) translateZ( 136px );
+         -moz-transform: rotateY( -180deg ) translateZ( 136px );
+           -o-transform: rotateY( -180deg ) translateZ( 136px );
+              transform: rotateY( -180deg ) translateZ( 136px );
     }
     #box .back {
       -webkit-transform: rotateY(   90deg ) translateZ( 190px );
