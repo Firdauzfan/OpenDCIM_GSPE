@@ -713,7 +713,7 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="page" style="position: fixed;">
 <?php
 	include( 'sidebar.inc.php' );
 

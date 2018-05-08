@@ -518,7 +518,7 @@ div.cabinet {
 /* stupid safari layout glitch */
 .cabinet table.cabinet { border-collapse: collapse; }
 .cabinet table.cabinet tr:nth-child(n+3) {height: 21px;}
-.cabinet #servercontainer, .cabinet #servercontainer-rear, .cabinet #servercontainer-side { background-image: url("../images/racku-background.png"); position: relative; padding: 0px; margin: 0px;}
+.cabinet #servercontainer, .cabinet #servercontainer-rear, .cabinet #servercontainer-side { position: relative; padding: 0px; margin: 0px;}
 .genericdevice {display: flex;justify-content: center; align-items: center; height: 100%; border: 2px black solid; background-color: inherit; overflow: hidden; white-space: nowrap;}
 
 .cabinet td + td {vertical-align: middle;width: 240px; }
@@ -910,7 +910,7 @@ div.cabinet {
 	position: absolute;
 }
 .picture img {
-	height: 100%;
+	height: 130%;
 	width: 100%;
 	position: absolute;
 }
