@@ -910,7 +910,7 @@ div.cabinet {
 	position: absolute;
 }
 .picture img {
-	height: 130%;
+	height: 100%;
 	width: 100%;
 	position: absolute;
 }

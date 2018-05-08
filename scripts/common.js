@@ -1541,12 +1541,13 @@ function initdrag(){
 				getElementIndex = function(node) {
 					var prop = document.body.previousElementSibling ? 'previousElementSibling' : 'previousSibling';
 					var i = 0;
+					console.log(node[prop]);
 					while (node = node[prop]) { ++i }
 					return i;
 				}
 
 				// This is the first u below the cabinet header
-				var topu=$(this).parents('div.cabinet > table tr[id^=pos]');
+				var topu=$(this).parents(' div.cabinet > section.container3d > div#box > figure table tr[id^=pos]');
 
 				// U above device + height of device in U + X rows for the header
 				var diff=Math.round(ui.position.top/21) + Math.ceil(this.offsetHeight/21) + getElementIndex(topu[0]);
@@ -1655,7 +1656,7 @@ function InsertDevice(obj){
 		}
 
 		//box model is being a bitch lock this shit down to 21px
-		var lineheight=29;
+		var lineheight=21;
 		var height=obj.Height*lineheight;
 
 		// calculate the top edge of the device relative to the top of the container

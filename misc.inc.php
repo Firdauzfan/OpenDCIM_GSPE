@@ -1094,9 +1094,9 @@ if(!function_exists("BuildCabinet")){
 
 					$rowspan=abs($top)+abs($bottom);
 					$height=(((abs($top)+abs($bottom))*ceil(220*(1.75/19))))."px";
-					$htmlcab.="\t<tr id=\"pos$x\"><td style=\"background-color:#4a4a4a;\"><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px; background-color:#6d6c6c;\" data-face=\"$face\"></div></td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td style=\"background-color:#4a4a4a;border-right: 2px solid black;\"></tr>\n";
+					$htmlcab.="\t<tr id=\"pos$x\" style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a;\"><td class=\"pos$error\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 923px; background-color: #6d6c6c\" data-face=\"$face\"></div></td><td class=\"pos$error\">$x</td></tr>\n";
 				}else{
-					$htmlcab.="\t<tr id=\"pos$x\"><td style=\"background-color:#4a4a4a;\"></td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td class=\"pos$error\" style=\"border-left: 2px solid black; border-right: 2px solid black;\">$x</td><td style=\"background-color:#4a4a4a;border-right: 2px solid black;\"></tr>\n";
+					$htmlcab.="\t<tr id=\"pos$x\" style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a;\"><td class=\"pos$error\">$x</td><td class=\"pos$error\">$x</td></tr>\n";
 				}
 			}
 		}
@@ -1109,16 +1109,13 @@ if(!function_exists("BuildCabinet")){
 		$htmlcab.='<section class="container3d"><div id="box" class="show-front">';
 		$htmlcab.='<figure class="front" style="font-size:12px; line-height:21px;text-align:left; color: black";>';
 
-		// if ($face=="") {
+		// $htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
+		// <tr style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a; background-color: #4a4a4a;\"><th colspan=2>$clickable$cab->Location$clickableend (Front)</th></tr>
+		// <tr style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a;\"><td>Pos</td><td align=\"center\">Device</td></tr>\n";
 
-		// if ($face=="rear") {
-		// $htmlcab.="<style>.cabinet #servercontainer-rear{visibility:hidden;}</style>";
-		// }
-
-			
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=5 style=\"background-color:#4a4a4a; border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend (Front)</th></tr>
-		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td align=\"center\">Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a;border-right: 2px solid black;\">1</td></tr>\n";
+		<tr style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a; background-color: #4a4a4a;\"><th colspan=3>$clickable$cab->Location$clickableend</th></tr>
+		<tr style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a;\"><td>Pos</td><td>Device</td><td>Pos</td></tr>\n";
 
 		
 		// loop here for the height
@@ -1133,7 +1130,6 @@ if(!function_exists("BuildCabinet")){
 			}
 		}
 
-	// }
 		$htmlcab.="</table>\n";
 
 		$htmlcab.='</figure>';
@@ -1143,8 +1139,8 @@ if(!function_exists("BuildCabinet")){
 		//if ($face=='rear') {
 
 		$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-		<tr><th colspan=5 style=\"background-color:#4a4a4a;border-left: 0px solid black; border-right: 2px solid black;\">$clickable$cab->Location$clickableend (Rear)</th></tr>
-		<tr><td style=\"background-color:#4a4a4a; color:#4a4a4a;\">1</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td align=\"center\">Device</td><td style=\"border-left: 2px solid black; border-right: 2px solid black;\">Pos</td><td style=\"background-color:#4a4a4a; color:#4a4a4a; border-right: 2px solid black;\">1</td></tr>\n";
+		<tr style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a; background-color: #4a4a4a;\"><th colspan=3>$clickable$cab->Location$clickableend</th></tr>
+		<tr style=\"border-left:15px solid #4a4a4a; border-right:15px solid #4a4a4a;\"><td>Pos</td><td>Device</td><td>Pos</td></tr>\n";
 
 		// loop here for the height
 		// numbered high to low, top to bottom
@@ -1165,12 +1161,6 @@ if(!function_exists("BuildCabinet")){
 
 		$htmlcab.='<figure class="right" style="background-image:url(../images/Rack_Side.png);background-size: cover;"></figure><figure class="left" style="background-image:url(../images/Rack_Side.png);background-size: cover;"></figure><figure class="top" style="background-image:url(../images/top_rack.png);background-size: cover;"></figure><figure class="bottom" style="background-image:url(../images/Bot_rack.png);background-size: cover;"></figure>';
 		$htmlcab.='</div></section>';
-		// $htmlcab.='<section id="options" style="margin-top:-30%; margin-left:-40%;">';
-		// $htmlcab.='<p id="show-buttons" style="max-width:30%;">';
-		// $htmlcab.='<button class="show-front" style="margin-bottom:3%;">Front</button><br/><button class="show-back" style="margin-bottom:3%;">Back</button><br/><button class="show-right" style="margin-bottom:3%;">Right Side</button><br/><button class="show-left">Left Side</button>';
-		// $htmlcab.='</p>';
-		// $htmlcab.='</section>';
-		
 
 		// Wrap it in a nice div
 
@@ -1182,166 +1172,6 @@ if(!function_exists("BuildCabinet")){
 
 		return $htmlcab;
 	}
-
-
-	// function BuildCabinetRear($cabid,$face="rear"){
-	// 	$cab=new Cabinet($cabid);
-	// 	$cab->GetCabinet();
-	// 	$order=($cab->U1Position=="Top")?false:true;
-	// 	$dev=new Device();
-	// 	$dev->Cabinet=$cab->CabinetID;
-	// 	$dev->ParentDevice=0;
-	// 	$bounds=array(
-	// 		'max'=>array('position'=>0,'height'=>0),
-	// 		'min'=>array('position'=>0,'height'=>0),
-	// 	);
-
-	// 	// Read in all the devices and make sure they fit the cabinet.  If not expand it
-	// 	foreach($dev->Search() as $device){
-	// 		if($device->Position==0){
-	// 			continue;
-	// 		}
-	// 		$pos=($order)?$device->Position:$device->Position-$device->Height;
-
-	// 		if($device->Position>$bounds['max']['position']){
-	// 			$bounds['max']['position']=$device->Position;
-	// 			$bounds['max']['height']=$device->Height;
-	// 		}
-	// 		if($pos<$bounds['min']['position']){
-	// 			$bounds['min']['position']=$pos;
-	// 			$bounds['min']['height']=1;
-	// 		}
-	// 	}
-	// 	if($order){
-	// 		$top=max($cab->CabinetHeight,$bounds['max']['position']+$bounds['max']['height']-1);
-	// 		$bottom=min(0,$bounds['min']['position']);
-	// 	}else{
-	// 		// Reverse order
-	// 		$top=min(1,$bounds['min']['position']-$bounds['min']['height']);
-	// 		$bottom=max($cab->CabinetHeight,$bounds['max']['position']);
-	// 	}
-
-	// 	// Build cabinet HTML
-	// 	switch ($face) {
-	// 		case "rear":
-	// 			$cab->Location="$cab->Location (".__("Rear").")";
-	// 			break;
-	// 		case "side":
-	// 			$cab->Location="$cab->Location (".__("Side").")";
-	// 			break;
-	// 		default:
-	// 			// Leave the location alone
-	// 	}
-
-	// 	// helper function to print the rows of the cabinet table
-	// 	if(!function_exists("printrow")){
-	// 		function printrow($i,$top,$bottom,$order,$face,&$htmlcab,$cabobject){
-	// 			$error=($i>$cabobject->CabinetHeight || ($i<=0 && $order)  || ($i<0 && !$order))?' error':'';
-	// 			if($order){
-	// 				$x=($i<=0)?$i-1:$i;
-	// 			}else{
-	// 				$x=($i>=0)?$i+1:$i;
-	// 			}
-	// 			if($i==$top){
-	// 				if($face=="rear"){
-	// 					$rs="-rear";
-	// 				}elseif($face=="side"){
-	// 					$rs="-side";
-	// 				}else{
-	// 					$rs="";
-	// 				}
-
-	// 				$rowspan=abs($top)+abs($bottom);
-	// 				$height=(((abs($top)+abs($bottom))*ceil(220*(1.75/19))))."px";
-	// 				$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td><td rowspan=$rowspan><div id=\"servercontainer$rs\" class=\"freespace\" style=\"width: 220px; height: 1200px\" data-face=\"$face\"></div></td></tr>\n";
-	// 			}else{
-	// 				$htmlcab.="\t<tr id=\"pos$x\"><td class=\"pos$error\">$x</td></tr>\n";
-	// 			}
-	// 		}
-	// 	}
-
-	// 	// If they have rights to the device then make the picture clickable
-	// 	$clickable=($cab->Rights!="None")?"\t\t<a href=\"cabnavigator.php?cabinetid=$cab->CabinetID\">\n\t":"";
-	// 	$clickableend=($cab->Rights!="None")?"\n\t\t</a>\n":"";
-
-		
-	// 	$htmlcab.='<section class="container3d"><div id="box" class="show-front">';
-	// 	$htmlcab.='<figure class="front" style="font-size:12px; line-height:21px;text-align:left; color: black">';
-
-	// 	// if ($face=="") {
-
-	// 	// if ($face=="rear") {
-	// 	// $htmlcab.="<style>.cabinet #servercontainer-rear{visibility:hidden;}</style>";
-	// 	// }
-
-			
-	// 	$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\">
-	// 	<tr><th colspan=2>$clickable$cab->Location$clickableend</th></tr>
-	// 	<tr><td>Pos</td><td>Device</td></tr>\n";
-
-		
-	// 	// loop here for the height
-	// 	// numbered high to low, top to bottom
-	// 	if($order){
-	// 		for($i=$top;$i>$bottom;$i--){
-	// 			printrow($i,$top,$bottom,$order,$face,$htmlcab,$cab);
-	// 		}
-	// 	}else{ // numbered low to high, top to bottom
-	// 		for($i=$top;$bottom>$i;$i++){
-	// 			printrow($i,$top,$bottom,$order,$face,$htmlcab,$cab);
-	// 		}
-	// 	}
-
-	// // }
-	// 	$htmlcab.="</table>\n";
-
-	// 	$htmlcab.='</figure>';
-
-	// 	$htmlcab.='<figure class="back" style="font-size:12px; line-height:21px;text-align:left; color: black">';
-
-	// 	if ($face=='rear') {
-
-	// 	$htmlcab.="<table class=\"cabinet\" id=\"cabinet$cab->CabinetID\" >
-	// 	<tr><th colspan=2>$clickable$cab->Location$clickableend</th></tr>
-	// 	<tr><td>Pos</td><td>Device</td></tr>\n";
-
-	// 	// loop here for the height
-	// 	// numbered high to low, top to bottom
-	// 	if($order){
-	// 		for($i=$top;$i>$bottom;$i--){
-	// 			printrow($i,$top,$bottom,$order,$face,$htmlcab,$cab);
-	// 		}
-	// 	}else{ // numbered low to high, top to bottom
-	// 		for($i=$top;$bottom>$i;$i++){
-	// 			printrow($i,$top,$bottom,$order,$face,$htmlcab,$cab);
-	// 		}
-	// 	}
-	// 	}
-		
-	// 	$htmlcab.="</table>\n";
-
-	// 	$htmlcab.='</figure>';
-
-	// 	$htmlcab.='<figure class="right" style="background-image:url(../images/Rack_Side.png);background-size: cover;"></figure><figure class="left" style="background-image:url(../images/Rack_Side.png);background-size: cover;"></figure><figure class="top" style="background-image:url(../images/top_rack.png);background-size: cover;"></figure><figure class="bottom" style="background-image:url(../images/Bot_rack.png);background-size: cover;"></figure>';
-	// 	$htmlcab.='</div></section>';
-	// 	// $htmlcab.='<section id="options" style="margin-top:-30%; margin-left:-40%;">';
-	// 	// $htmlcab.='<p id="show-buttons" style="max-width:30%;">';
-	// 	// $htmlcab.='<button class="show-front" style="margin-bottom:3%;">Front</button><br/><button class="show-back" style="margin-bottom:3%;">Back</button><br/><button class="show-right" style="margin-bottom:3%;">Right Side</button><br/><button class="show-left">Left Side</button>';
-	// 	// $htmlcab.='</p>';
-	// 	// $htmlcab.='</section>';
-		
-
-	// 	// Wrap it in a nice div
-
-	// 	//Jourdan 27-04-2018
-	// 	$htmlcab='<div class="cabinet">'.$htmlcab.'</div>';
-
-	// 	// debug information
-	// 	// print "Cabinet:  $cab->CabinetID   Top: $top   Bottom: $bottom<br>\n";
-
-	// 	return $htmlcab;
-	// }
-
 }
 
 function getNameFromNumber($num){
