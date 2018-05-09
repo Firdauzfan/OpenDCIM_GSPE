@@ -36,7 +36,7 @@ if (!isset($_REQUEST['action'])){
 ?>
 </div>
 <div class="main" style="box-shadow: 10px 10px #1d388c;">
-<h2>openDCIM</h2>
+<h2>GSPE DCIM</h2>
 <h3>Outage Impact Simulation</h3>
 <form method="post">
 <table align="center" border=0>
@@ -97,8 +97,8 @@ if (!isset($_REQUEST['action'])){
 
 	$xl = new PHPExcel();
 	
-	$xl->getProperties()->setCreator("openDCIM");
-	$xl->getProperties()->setLastModifiedBy("openDCIM");
+	$xl->getProperties()->setCreator("GSPEDCIM");
+	$xl->getProperties()->setLastModifiedBy("GSPEDCIM");
 	$xl->getProperties()->setTitle("Data Center Inventory");
 	$xl->getProperties()->setSubject("Power Outage Simulation");
 	$xl->getProperties()->setDescription("Simulation of power outage event based upon user specified criteria.");
@@ -407,8 +407,10 @@ if (!isset($_REQUEST['action'])){
 	}
 	$currSheet->calculateColumnWidths();
 
+	ob_end_clean();
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-	header( sprintf( "Content-Disposition: attachment;filename=\"opendcim-%s.xlsx\"", date( "YmdHis" ) ) );
+	header( sprintf( "Content-Disposition: attachment;filename=\"gspedcim-%s.xlsx\"", date( "YmdHis" ) ) );
+	ob_end_clean();
 	
 	$writer = new PHPExcel_Writer_Excel2007($xl);
 	$writer->save('php://output');

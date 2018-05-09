@@ -3,7 +3,7 @@
   session_start();
 
   //	Uncomment these if you need/want to set a title in the header
-	$header="openDCIM LDAP Setup";
+	$header="GSPE DCIM LDAP Setup";
   $content = "";
 
   if ( isset($_REQUEST['ldapserver'])) {

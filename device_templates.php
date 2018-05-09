@@ -526,7 +526,7 @@
 						}
 					}else if(e.currentTarget.value=='custom'){
 						var dialog=$('<div />', {id: 'modal', title: 'Custom port pattern'}).html('<div id="modaltext"></div><br><div id="modalstatus"></div>');
-						dialog.find('#modalstatus').prepend('<p>Custom pattern: <input></input></p><p><a href="http://opendcim.org/wiki/index.php?title=NetworkConnections#Custom_Port_Name_Generator_Example_Patterns" target=_blank>Pattern Examples</a></p>');
+						dialog.find('#modalstatus').prepend('<p>Custom pattern: <input></input></p><p><a href="http://gspe.co.id" target=_blank>Pattern Examples</a></p>');
 						dialog.dialog({
 							resizable: false,
 							modal: true,

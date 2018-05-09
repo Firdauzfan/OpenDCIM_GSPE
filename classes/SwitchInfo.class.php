@@ -1,26 +1,11 @@
 <?php
 /*
-	openDCIM
+	GSPE DCIM
 
-	This is the main class library for the openDCIM application, which
+	This is the main class library for the GSPE DCIM application, which
 	is a PHP/Web based data center infrastructure management system.
 
-	This application was originally written by Scott A. Milliken while
-	employed at Vanderbilt University in Nashville, TN, as the
-	Data Center Manager, and released under the GNU GPL.
-
-	Copyright (C) 2011 Scott A. Milliken
-
-	This program is free software:  you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published
-	by the Free Software Foundation, version 3.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	For further details on the license, see http://www.gnu.org/licenses
+	This application was originally written by PT Graha Sumber Prima Elektronik
 */
 
 class SwitchInfo {
@@ -102,7 +87,7 @@ class SwitchInfo {
 			if(count($portlist)==0){
 				$err_msg=__("I don't know what type of device this is but it did not return any ports whatsoever.  Do not try to report this as an error.");
 			}else{
-				$err_msg=__("First port detection failed, please report to openDCIM developers");
+				$err_msg=__("First port detection failed, please report to GSPE DCIM developers");
 			}
 			$x=$portlist;
 			$x=array("err"=>$err_msg)+$x;

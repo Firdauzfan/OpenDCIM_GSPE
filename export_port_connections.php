@@ -43,9 +43,9 @@
 
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 	if ( $_REQUEST["deviceid"] == "wo" ) {
-		header( sprintf( "Content-Disposition: attachment;filename=\"openDCIM-workorder-%s-connections.xlsx\"", date( "YmdHis" ) ) );	
+		header( sprintf( "Content-Disposition: attachment;filename=\"gspeCIM-workorder-%s-connections.xlsx\"", date( "YmdHis" ) ) );	
 	} else {
-		header( "Content-Disposition: attachment;filename=\"openDCIM-dev" . $devList[0]->DeviceID . "-connections.xlsx\"" );
+		header( "Content-Disposition: attachment;filename=\"gspeDCIM-dev" . $devList[0]->DeviceID . "-connections.xlsx\"" );
 	}
 
 	$writer->save("php://output");

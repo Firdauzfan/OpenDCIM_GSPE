@@ -37,7 +37,7 @@ if (!isset($_REQUEST['action'])){
 ?>
 </div>
 <div class="main" style="box-shadow: 10px 10px #1d388c;">
-<h2>openDCIM</h2>
+<h2>GSPE DCIM</h2>
 <h3>Outage Impact Simulation</h3>
 <form method="post">
 <table align="center" border=0>
@@ -144,8 +144,8 @@ if (!isset($_REQUEST['action'])){
 		return $style;
 	}
 
-	$sheet->getProperties()->setCreator("openDCIM");
-	$sheet->getProperties()->setLastModifiedBy("openDCIM");
+	$sheet->getProperties()->setCreator("GSPEDCIM");
+	$sheet->getProperties()->setLastModifiedBy("GSPEDCIM");
 	$sheet->getProperties()->setTitle(__("Simulated Outage Report"));
 	$sheet->getProperties()->setSubject(__("Simulated Power Outage by Project"));
 
@@ -615,9 +615,10 @@ if (!isset($_REQUEST['action'])){
 	$img->setCoordinates('D1');
 
 	$writer = new PHPExcel_Writer_Excel2007($sheet);
-
+	ob_end_clean();
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-	header( "Content-Disposition: attachment;filename=\"openDCIM-power-outage-simulation.xlsx\"" );
+	header( "Content-Disposition: attachment;filename=\"GSPEDCIM-power-outage-simulation.xlsx\"" );
+	ob_end_clean();
 	$writer->save("php://output");
 
 }

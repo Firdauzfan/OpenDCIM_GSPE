@@ -10,8 +10,8 @@
 		
 		$sheet = new PHPExcel();
 		
-		$sheet->getProperties()->setCreator("openDCIM");
-		$sheet->getProperties()->setLastModifiedBy("openDCIM");
+		$sheet->getProperties()->setCreator("GSPEDCIM");
+		$sheet->getProperties()->setLastModifiedBy("GSPEDCIM");
 		$sheet->getProperties()->setTitle(__("Device Port Connections"));
 		$sheet->getProperties()->setSubject(__("Device Port Detail"));
 		

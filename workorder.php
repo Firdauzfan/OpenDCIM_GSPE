@@ -56,7 +56,7 @@
 		$mailer = Swift_Mailer::newInstance($transport);
 		$message = Swift_Message::NewInstance();
 
-		$message->setSubject( __("openDCIM-workorder-".date( "YmdHis" )."-connections") );
+		$message->setSubject( __("gspeDCIM-workorder-".date( "YmdHis" )."-connections") );
 
 		// Set from address
 		try{		
@@ -81,9 +81,9 @@
 		
 		$attachment = Swift_Attachment::fromPath($tmpName,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 		if ( $_REQUEST["deviceid"] == "wo" ) {
-			$attachment->setFilename("openDCIM-workorder-".date( "YmdHis" )."-connections.xlsx");
+			$attachment->setFilename("gspeDCIM-workorder-".date( "YmdHis" )."-connections.xlsx");
 		} else {
-			$attachment->setFilename("openDCIM-dev" . $dev->DeviceID . "-connections.xlsx");
+			$attachment->setFilename("gspeDCIM-dev" . $dev->DeviceID . "-connections.xlsx");
 		}
 		
 		$message->attach($attachment);

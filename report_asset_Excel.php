@@ -208,7 +208,7 @@ $DProps = array(
             __("This file is confidential and shall not be used without permission of "
                 . "the owner."),
             "",
-            __("Generate by openDCIM")
+            __("Generate by GSPEDCIM")
         )
     ),
 	'DC Stats' => array(
@@ -531,7 +531,7 @@ function addColumnIndices(&$DProps)
  * @param string $thisDate
  *  the date on which the workbook is generated
  * @param string $ownerName
- *  the configuration of openDCIM
+ *  the configuration of GSPEDCIM
  * @param array $DProps
  *  the workbook configuration
  */
@@ -1794,16 +1794,18 @@ writeExcelReport($DProps, $objPHPExcel, $thisDate);
 
 $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 if (PHP_SAPI != 'cli') {
+    ob_end_clean();
     header('Content-type: application/application/vnd.openxmlformats-officedocument.'
         . 'spreadsheetml.sheet');
     header("Content-Disposition: attachment; filename=DC_Statistics_" . $thisDate
      . ".xlsx");
     header('Cache-Control: max-age=0');
+    ob_end_clean();
 
     // write file to the browser
     $objWriter->save('php://output');
 } else {
-    $fname = $ReportOutputFolder."openDCIM-Asset_Report-".date("Y-m-d").".xlsx";
+    $fname = $ReportOutputFolder."GSPEDCIM-Asset_Report-".date("Y-m-d").".xlsx";
     $objWriter->save( $fname );
 }
 

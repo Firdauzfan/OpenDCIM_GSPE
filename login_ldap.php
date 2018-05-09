@@ -40,7 +40,7 @@
         $content = "<h3>Login failed.  Incorrect username, password, or rights.</h3>";
         error_log( __("Unable to bind to specified LDAP server with specified username/password.  Username:") . $ldapUser );
       } else {
-        // User was able to authenticate, but might not have authorization to access openDCIM.  Here we check for those rights.
+        // User was able to authenticate, but might not have authorization to access GSPE DCIM.  Here we check for those rights.
         /* If this install doesn't have the new parameter, use the old default */
         if ( !isset($config->ParameterArray['LDAPBaseSearch'])) {
           $config->ParameterArray['LDAPBaseSearch'] = "(&(objectClass=posixGroup)(memberUid=%userid%))";
@@ -51,7 +51,7 @@
         $ldapResults = ldap_get_entries( $ldapConn, $ldapSearch );
 
         // Because we have audit logs to maintain, we need to make a local copy of the User's record
-        // to keep in the openDCIM database just in case the user gets removed from LDAP.  This also
+        // to keep in the GSPE DCIM database just in case the user gets removed from LDAP.  This also
         // makes it easier to check access rights by replicating the user's rights from LDAP into the
         // local db for the session.  Revoke all rights every login and pull a fresh set from LDAP.
         $person->UserID = $ldapUser;
@@ -66,7 +66,7 @@
           // So, here we are with a ton of if/then statements.
 
           if ( $config->ParameterArray['LDAPSiteAccess'] == "" || $ldapResults[$i]['dn'] == $config->ParameterArray['LDAPSiteAccess'] ) {
-            // No specific group membership required to access openDCIM or they have a match to the group required
+            // No specific group membership required to access GSPE DCIM or they have a match to the group required
             $_SESSION['userid'] = $ldapUser;
             $_SESSION['LoginTime'] = time();
             session_commit();

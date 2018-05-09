@@ -31,7 +31,7 @@
 		foreach($dir as $i => $d){
 			// get list of directories in locale that aren't . or ..
 			if(is_dir($path.DIRECTORY_SEPARATOR.$d) && $d!=".." && $d!="."){
-				// check the list of valid directories above to see if there is an openDCIM translation file present
+				// check the list of valid directories above to see if there is an GSPE DCIM translation file present
 				if(file_exists($path.DIRECTORY_SEPARATOR.$d.DIRECTORY_SEPARATOR."LC_MESSAGES".DIRECTORY_SEPARATOR."openDCIM.mo")){
 					// build array of valid language choices
 					$lang[$d]=$d;
@@ -50,7 +50,7 @@
 			}
 		}else{
 			$tests['gettext']['state']="fail";
-			$tests['gettext']['message']='Gettext is detected but we cannot verify that you have the appropriate locales loaded and available. <a href="http://wiki.opendcim.org/wiki/index.php/Translation">http://wiki.opendcim.org/wiki/index.php/Translation</a>';
+			$tests['gettext']['message']='Gettext is detected but we cannot verify that you have the appropriate locales loaded and available. <a href="http://gspe.co.id">http://gspe/co.id</a>';
 		}
 	}else{
 		$tests['gettext']['state']="fail";
@@ -106,7 +106,7 @@
 					$tests['strictdb']['message']='';
 				}else{
 					$tests['strictdb']['state']="fail";
-					$tests['strictdb']['message']='openDCIM does not support STRICT_TRANS_TABLES. The following SQL statement might clear the error for this session.  More information can be found <a href="https://github.com/samilliken/openDCIM/issues/457">here</a>.<br><br><i>SET GLOBAL sql_mode = "";</i>';
+					$tests['strictdb']['message']='GSPEDCIM does not support STRICT_TRANS_TABLES. The following SQL statement might clear the error for this session.  More information can be found <a href="gspe.co.id">here</a>.<br><br><i>SET GLOBAL sql_mode = "";</i>';
 					$errors++;
 				}
 				if(isset($pdo_options)){
@@ -130,7 +130,7 @@
 		}
 	}else{
 		$tests['pdo']['state']="fail";
-		$tests['pdo']['message']='openDCIM requires the <a href="http://php.net/manual/pdo.installation.php">PDO extention</a> and you do not appear to have it loaded';
+		$tests['pdo']['message']='GSPEDCIM requires the <a href="http://php.net/manual/pdo.installation.php">PDO extention</a> and you do not appear to have it loaded';
 		$tests['pdodrivers']['state']="fail";
 		$tests['pdodrivers']['message']='No PDO drivers have been detected';
 		$errors++;

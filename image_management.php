@@ -2,7 +2,7 @@
 	require_once('db.inc.php');
 	require_once('facilities.inc.php');
 
-	$subheader=__("OpenDCIM Image File Management");
+	$subheader=__("GSPE DCIM Image File Management");
 
 	$timestamp=time();
 	$salt=md5('unique_salt' . $timestamp);

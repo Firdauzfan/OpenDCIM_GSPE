@@ -12,11 +12,11 @@
 
 	$workBook = new PHPExcel();
 	
-	$workBook->getProperties()->setCreator("openDCIM");
-	$workBook->getProperties()->setLastModifiedBy("openDCIM");
+	$workBook->getProperties()->setCreator("GSPEDCIM");
+	$workBook->getProperties()->setLastModifiedBy("GSPEDCIM");
 	$workBook->getProperties()->setTitle("Data Center Inventory Export");
 	$workBook->getProperties()->setSubject("Data Center Inventory Export");
-	$workBook->getProperties()->setDescription("Export of the openDCIM database based upon user filtered criteria.");
+	$workBook->getProperties()->setDescription("Export of the GSPEDCIM database based upon user filtered criteria.");
 	
 	// Start off with the TPS Cover Page
 
@@ -97,7 +97,7 @@
 	// Now finalize it and send to the client
 
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-	header( sprintf( "Content-Disposition: attachment;filename=\"opendcim-%s.xlsx\"", date( "YmdHis" ) ) );
+	header( sprintf( "Content-Disposition: attachment;filename=\"gspedcim-%s.xlsx\"", date( "YmdHis" ) ) );
 	
 	$writer = new PHPExcel_Writer_Excel2007($workBook);
 	$writer->save('php://output');

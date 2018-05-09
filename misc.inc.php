@@ -344,7 +344,7 @@ function GetValidTranslations() {
 	foreach($dir as $i => $d){
 		// get list of directories in locale that aren't . or ..
 		if(is_dir($path.DIRECTORY_SEPARATOR.$d) && $d!=".." && $d!="."){
-			// check the list of valid directories above to see if there is an openDCIM translation file present
+			// check the list of valid directories above to see if there is an GSPE DCIM translation file present
 			if(file_exists($path.DIRECTORY_SEPARATOR.$d.DIRECTORY_SEPARATOR."LC_MESSAGES".DIRECTORY_SEPARATOR."openDCIM.mo")){
 				// build array of valid language choices
 				$lang[$d]=$d;
@@ -892,7 +892,7 @@ if(!People::Current()){
 		header("Location: ".redirect('login_ldap.php'));
 		exit;
 	} elseif(AUTHENTICATION=="Apache"){
-		print "<h1>You must have some form of Authentication enabled to use openDCIM.</h1>";
+		print "<h1>You must have some form of Authentication enabled to use GSPE DCIM.</h1>";
 		exit;
 	}
 }

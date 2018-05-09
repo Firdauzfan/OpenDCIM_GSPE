@@ -88,7 +88,8 @@ echo '			</select>
 	
 	header('Content-type: text/xml');
 	header('Cache-Control: no-store, no-cache');
-	header('Content-Disposition: attachment; filename="opendcim.xml"');
+	header('Content-Disposition: attachment; filename="gspedcim.xml"');
+	ob_clean();
 	
 	print "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<datacenter>\n
 	<ID>$datacenter->DataCenterID</ID>
