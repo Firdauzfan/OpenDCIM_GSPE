@@ -1165,7 +1165,7 @@ if(!function_exists("BuildCabinet")){
 		// Wrap it in a nice div
 
 		//Jourdan 27-04-2018
-		$htmlcab='<div class="cabinet" style="margin-right:175px">'.$htmlcab.'</div>';
+		$htmlcab='<div class="cabinet" style="margin-right:185px">'.$htmlcab.'</div>';
 
 		// debug information
 		// print "Cabinet:  $cab->CabinetID   Top: $top   Bottom: $bottom<br>\n";
