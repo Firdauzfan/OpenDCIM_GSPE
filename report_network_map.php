@@ -466,10 +466,12 @@ overlap = scale;
             }
             exec($dotCommand." -T".$ft." -o".$graphfile." ".$dotfile, $graph, $retval);
             if($retval == 0) {
+                ob_end_clean();
                 header($header);
                 unlink($dotfile);
                 print file_get_contents($graphfile);
                 unlink($graphfile);
+                ob_end_clean();
                 exit;
             } elseif ($ft == 'svg') {
                 $body = "<span class=\"errmsg\">ERROR: There was a problem processing the graph. Probably a bug, please submit a report containing the contents of ".$dotfile." to the GSPE DCIM bug tracker</span>";
