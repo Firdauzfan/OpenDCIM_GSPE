@@ -14,7 +14,7 @@
 
     if (!isset($_REQUEST['action'])){
 ?>
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+    <!DOCTYPE html>
     <html>
     <head>
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -28,6 +28,7 @@
     </head>
     <body>
     <?php include( 'header.inc.php' ); ?>
+    <div class="page" style="position: fixed;">
 <?php
     include( 'sidebar.inc.php' );
 
@@ -35,15 +36,12 @@
     $manList = $m->GetManufacturerList();
         
  ?>
-    </div>
+ 
     <div class="main" style="box-shadow: 10px 10px #1d388c;">
     <h2>GSPE DCIM</h2>
     <h3>Vendor Model Report</h3>
     <form method="post">
     <div class="table">
-    <div>
-        <div></div>
-
 <?php
     print "<div>" . __("Please select the values to limit the report scope as indicated below.") . "</div></div>";
 
@@ -285,3 +283,7 @@
     	$writer->save('php://output');
     }
 ?>
+
+   </div>
+</body>
+</html>

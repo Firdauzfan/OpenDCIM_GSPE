@@ -11,7 +11,7 @@
 	
 if (!isset($_REQUEST['action'])){
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -25,6 +25,7 @@ if (!isset($_REQUEST['action'])){
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
+<div class="page" style="position: fixed;">
 <?php
 	include( 'sidebar.inc.php' );
 	
@@ -35,7 +36,6 @@ if (!isset($_REQUEST['action'])){
 	$cab = new Cabinet();
 	
 ?>
-</div>
 <div class="main" style="box-shadow: 10px 10px #1d388c;">
 <h2>GSPE DCIM</h2>
 <h3>Outage Impact Simulation</h3>
@@ -623,3 +623,7 @@ if (!isset($_REQUEST['action'])){
 
 }
 ?>
+
+</div>
+</body>
+</html>
