@@ -11,10 +11,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;title&gt;openDCIM&lt;/title&gt;</find>
-      <find>&lt;title&gt;openDCIM</find>
-      <find>entries in openDCIM</find>
-      <find>&lt;?php echo __(&quot;openDCIM</find>
+      <find>&lt;title&gt;GSPEDCIM&lt;/title&gt;</find>
+      <find>&lt;title&gt;GSPEDCIM</find>
+      <find>entries in GSPEDCIM</find>
+      <find>&lt;?php echo __(&quot;GSPEDCIM</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;title&gt;GSPE DCIM&lt;/title&gt;</replace>
@@ -23,7 +23,7 @@
       <replace>&lt;?php echo __(&quot;GSPE DCIM</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>C:\xampp\htdocs\openDCIM-18.01</dir>
+      <dir>C:\xampp\htdocs\GSPEDCIM-18.01</dir>
     </dirStrings>
   </component>
   <component name="GradleLocalSettings">

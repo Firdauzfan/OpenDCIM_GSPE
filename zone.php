@@ -102,7 +102,7 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page" id="mapadjust" style="position: fixed;">
+<div class="page" id="mapadjust">
 <?php
 	include( "sidebar.inc.php" );
 

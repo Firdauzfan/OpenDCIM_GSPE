@@ -1,8 +1,8 @@
-openDCIM is an Open Source Software alternative for Data Center Infrastructure Management.
+GSPEDCIM is an Open Source Software alternative for Data Center Infrastructure Management.
 
 This is a list of changes made from version to version.  This is not intended to be a
 comprehensive bug tracking list.  Issues (bugs, enhancements, etc) are tracked on
-GitHub, at http://github.com/samilliken/openDCIM/issues, where you can also download
+GitHub, at http://github.com/samilliken/GSPEDCIM/issues, where you can also download
 the latest development version.  However, it is not advised to pull from GitHub unless you
 are simply testing, as some functionality can break between releases.
 
@@ -41,10 +41,10 @@ Changes in 4.4
 * Fixed the Repo Sync screen to acknowledge when you send a template to the repository
 * Fixed an error that caused the Port Notes field to clear out when a color code wasn't chosen
 * Added ability to search on Custom Attributes/Values, in both the UI and the API
-* Allow for the creation of a Default Rights template, applied to any new user that authenticates past Apache, but doesn't exist in openDCIM database
+* Allow for the creation of a Default Rights template, applied to any new user that authenticates past Apache, but doesn't exist in GSPEDCIM database
 * Fixed the Center of Gravity calculation.  It was a huge fan of Stranger Things, and calculated everything in the Upside Down.
 * The port naming pattern maker from the devices.php screen has been copied over to the Template Maker screen.
-* New option in Configuration to draw rectangles around the defined cabinet coordinates, as well as apply the label to the map.  Handy for users who simply want to upload a blank floor plan and draw with openDCIM.
+* New option in Configuration to draw rectangles around the defined cabinet coordinates, as well as apply the label to the map.  Handy for users who simply want to upload a blank floor plan and draw with GSPEDCIM.
 * New option in the right click context menu - can align all cabinets in the selected row with a given edge of the current cabinet.  Strictly for OCD folks.
 * Expanded some of the fields to larger containers.
 * Fixed the Available RU calculation in the data center stats.  It was counting items in the Storage Room.

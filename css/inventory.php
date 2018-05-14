@@ -291,7 +291,7 @@ canvas#background { position: absolute; }
 }
 
 /* Mapmaker */
-.mapmaker > div{width: 77%;display: inline-block;vertical-align: middle;}
+.mapmaker > div{width: 80%;display: inline-block;vertical-align: middle;}
 .mapmaker > div + div {width: 19%;}
 .mapmaker .table .table {margin-left: auto;}
 .mapmaker + .center div{position: relative;width: 100%;}
