@@ -586,7 +586,7 @@ class Cabinet {
 		$cabstats=new stdClass();
 		//Weight
 		$sql="SELECT SUM(NominalWatts) AS watts, SUM(Weight) AS weight FROM 
-			fac_Device WHERE Cabinet=$cab->CabinetID;";
+			fac_Device WHERE Cabinet=$cab->CabinetID AND DeviceType != 'CDU';";
 
 		foreach($dbh->query($sql) as $row){
 			$cabstats->Weight=(!is_null($row['weight']))?$row['weight']:0;

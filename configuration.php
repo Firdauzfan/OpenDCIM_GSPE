@@ -1978,7 +1978,7 @@ echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 			<br>
 			<div class="table">
 				<div>
-					<div><label for="CDUToolTips">',__("CDU ToolTips"),'</label></div>
+					<div><label for="CDUToolTips">',__("PDU ToolTips"),'</label></div>
 					<div><select id="CDUToolTips" name="CDUToolTips" defaultvalue="',$config->defaults["CDUToolTips"],'" data="',$config->ParameterArray["CDUToolTips"],'">
 							<option value="disabled">',__("Disabled"),'</option>
 							<option value="enabled">',__("Enabled"),'</option>

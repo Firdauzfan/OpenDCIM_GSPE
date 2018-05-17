@@ -361,7 +361,7 @@ $body.='<div id="infopanel">
 	}
 
 	if($person->CanWrite($cab->AssignedTo)){
-		$body.="\n\t\t<ul class=\"nav\"><a href=\"devices.php?action=new&CabinetID=$cab->CabinetID&DeviceType=CDU\" style=\"color:white;\"><li>".__("Add CDU")."</li></a></ul>\n";
+		$body.="\n\t\t<ul class=\"nav\"><a href=\"devices.php?action=new&CabinetID=$cab->CabinetID&DeviceType=CDU\" style=\"color:white;\"><li>".__("Add PDU")."</li></a></ul>\n";
 	}
 
 	$body.="\t\t</div>\n\t</fieldset>\n";
