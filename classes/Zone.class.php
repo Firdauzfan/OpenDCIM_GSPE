@@ -16,6 +16,8 @@ class Zone {
 	var $MapX2;
 	var $MapY2;
 	var $MapZoom;  // % of Zoom (100=>no zoom)
+	var $TotAC;
+	var $ACBtu;
 	function MakeSafe(){
 		$this->ZoneID=intval($this->ZoneID);
 		$this->DataCenterID=intval($this->DataCenterID);
@@ -26,6 +28,8 @@ class Zone {
 		$this->MapX2=abs($this->MapX2);
 		$this->MapY2=abs($this->MapY2);
 		$this->MapZoom=abs($this->MapZoom);
+		$this->TotAC=abs($this->TotAC);
+		$this->ACBtu=abs($this->ACBtu);
 	}
 
 	function MakeDisplay(){
@@ -42,6 +46,8 @@ class Zone {
 		$zone->MapX2=$row["MapX2"];
 		$zone->MapY2=$row["MapY2"];
 		$zone->MapZoom=$row["MapZoom"];
+		$zone->TotAC=$row["TotAC"];
+		$zone->ACBtu=$row["ACBtu"];
 		$zone->MakeDisplay();
 
 		return $zone;
@@ -68,7 +74,9 @@ class Zone {
 			MapY1=$this->MapY1,
 			MapX2=$this->MapX2,
 			MapY2=$this->MapY2,
-			MapZoom=$this->MapZoom
+			MapZoom=$this->MapZoom,
+			TotAC=$this->TotAC,
+			ACBtu=$this->ACBtu
 			;";
 		if(!$dbh->exec($sql)){
 			$info=$dbh->errorInfo();
@@ -105,7 +113,9 @@ class Zone {
 			MapY1=$this->MapY1,
 			MapX2=$this->MapX2,
 			MapY2=$this->MapY2, 
-			MapZoom=$this->MapZoom 
+			MapZoom=$this->MapZoom,
+			TotAC=$this->TotAC,
+			ACBtu=$this->ACBtu
 			WHERE ZoneID=$this->ZoneID;";
 		if(!$this->query($sql)){
 			return false;
@@ -274,6 +284,9 @@ class Zone {
 
 		$sql = "select count(*) from fac_Cabinet where ZoneID=" . intval($this->ZoneID);
 		$zoneStats["TotalCabinets"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT SUM(TotAC*ACBtu) as TotCap FROM `fac_Zone`WHERE ZoneID=$this->ZoneID;";
+		$zoneStats["TotCap"]=($test=$this->query($sql)->fetchColumn())?$test:0;
 		
 		return $zoneStats;
 	}

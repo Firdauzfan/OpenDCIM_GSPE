@@ -37,6 +37,8 @@
 			$zone->MapX2=$_POST["x2"];
 			$zone->MapY2=$_POST["y2"];
 			$zone->MapZoom=$_POST["mapzoom"];
+			$zone->TotAC=$_POST["totac"];
+			$zone->ACBtu=$_POST["acbtu"];
 			
 			if($_POST["action"]=="Create"){
 				$zone->CreateZone();
@@ -147,6 +149,14 @@ foreach($DCList as $DCRow){
 echo '
 							</select>
 						</div>
+					</div>
+					<div>
+						<div><label for="totac">Total AC</label></div>
+						<div><input type="text" name="totac" id="totac" value="',$zone->TotAC,'"></div>
+					</div>
+					<div>
+						<div><label for="acbtu">Cooling Capacity</label></div>
+						<div><input type="text" name="acbtu" id="acbtu" value="',$zone->ACBtu,'"></div>
 					</div>
 					<div>
 						<div><label for="x1">X1</label></div>

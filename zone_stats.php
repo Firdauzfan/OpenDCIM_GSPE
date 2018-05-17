@@ -230,8 +230,16 @@ echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 		<div>',sprintf("%7d %s", $zoneStats["MeasuredWatts"], __("Watts")),'</div>
   </div>
   <div>
+        <div>',__("Total Cooling Capacity"),'</div>
+        <div>',sprintf("%8d ".__("BTUH"),$zoneStats["TotCap"] ),'</div>
+  </div>
+  <div>
         <div>',__("BTU Computation from Computed Watts"),'</div>
         <div>',sprintf("%8d ".__("BTU"),$zoneStats["ComputedWatts"]*3.412 ),'</div>
+  </div>
+  <div>
+        <div>',__("Cooling Usage Percentage %"),'</div>
+        <div>',sprintf("%8d %s",($zoneStats["ComputedWatts"]*3.412/$zoneStats["TotCap"])*100,__("%") ),'</div>
   </div>
   <div>
         <div>',__("Zone Size (approximate)"),'</div>

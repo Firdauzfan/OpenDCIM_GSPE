@@ -232,8 +232,16 @@ echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 		<div>',sprintf("%7d kW",$dc->MaxkW ),'</div>
   </div>
   <div>
+        <div>',__("Total Cooling Capacity"),'</div>
+        <div>',sprintf("%8d ".__("BTUH"),$dcStats["TotCap"] ),'</div>
+  </div>
+  <div>
         <div>',__("BTU Computation from Computed Watts"),'</div>
         <div>',sprintf("%8d ".__("BTU"),$dcStats["ComputedWatts"]*3.412 ),'</div>
+  </div>
+    <div>
+        <div>',__("Cooling Usage Percentage"),'</div>
+        <div>',sprintf("%8d %s",($dcStats["ComputedWatts"]*3.412/$dcStats["TotCap"])*100,__("%") ),'</div>
   </div>
   <div>
         <div>',__("Data Center Size"),'</div>
