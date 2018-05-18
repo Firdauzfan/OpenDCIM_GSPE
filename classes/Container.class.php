@@ -14,6 +14,8 @@ class Container {
 	var $DrawingFileName;
 	var $MapX;
 	var $MapY;
+	var $TotAC;
+	var $ACBtu;
 
 	function MakeSafe(){
 		$this->ContainerID=intval($this->ContainerID);
@@ -22,6 +24,8 @@ class Container {
 		$this->DrawingFileName=sanitize($this->DrawingFileName);
 		$this->MapX=abs($this->MapX);
 		$this->MapY=abs($this->MapY);
+		$this->TotAC=abs($this->TotAC);
+		$this->ACBtu=abs($this->ACBtu);
 	}
 	
 	function MakeDisplay(){
@@ -37,6 +41,8 @@ class Container {
 		$container->DrawingFileName=$row["DrawingFileName"];
 		$container->MapX=$row["MapX"];
 		$container->MapY=$row["MapY"];
+		$container->TotAC=$row["TotAC"];
+		$container->ACBtu=$row["ACBtu"];
 		$container->MakeDisplay();
 
 		return $container;
@@ -421,6 +427,7 @@ class Container {
 		$cStats["ComputedWatts"] = 0;
 		$cStats["MeasuredWatts"] = 0;
 		$cStats["TotalCabinets"] = 0;
+		$cStats["TotCap"] = 0;
 		
 		$dcList=$this->GetChildDCList();
 		if(count($dcList) >0){
@@ -436,6 +443,7 @@ class Container {
 				$cStats["ComputedWatts"]+=$dcStats["ComputedWatts"];
 				$cStats["MeasuredWatts"]+=$dcStats["MeasuredWatts"];
 				$cStats["TotalCabinets"]+=$dcStats["TotalCabinets"];
+				$cStats["TotCap"]+=$dcStats["TotCap"];
 				$cStats["MaxkW"]+=$datacenter->MaxkW;
 			} 
 		}
@@ -454,6 +462,7 @@ class Container {
 				$cStats["ComputedWatts"]+=$childStats["ComputedWatts"];
 				$cStats["MeasuredWatts"]+=$childStats["MeasuredWatts"];
 				$cStats["TotalCabinets"]+=$childStats["TotalCabinets"];
+				$cStats["TotCap"]+=$childStats["TotCap"];
 				$cStats["MaxkW"]+=$childStats["MaxkW"];
 			}
 		}

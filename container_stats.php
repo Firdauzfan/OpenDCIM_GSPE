@@ -91,9 +91,17 @@ echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 		<div>',__("Design Maximum (kW)"),'</div>
 		<div>',sprintf("%s kW",number_format($cStats["MaxkW"],0, ",", ".") ),'</div>
   </div>
+    <div>
+        <div>',__("Total Cooling Capacity"),'</div>
+        <div>',sprintf("%s ".__("BTUH"),number_format($cStats["TotCap"],0, ",", ".") ),'</div>
+  </div>
   <div>
         <div>',__("BTU Computation from Watts"),'</div>
         <div>',sprintf("%s ".__("BTU"),number_format($cStats["ComputedWatts"]*3.412,0, ",", ".") ),'</div>
+  </div>
+    <div>
+        <div>',__("Cooling Usage Percentage %"),'</div>
+        <div>',sprintf("%s %s",number_format(($cStats["ComputedWatts"]*3.412/$cStats["TotCap"])*100,0, ",", ".") ,__("%")),'</div>
   </div>
   <div>
         <div>',__("Data Center Size"),'</div>
