@@ -138,7 +138,8 @@ class AC {
 		if ( ! $deferTreeRebuild ) {
 			updateNavTreeHTML();
 		}
-				
+		
+		header('Location: '.redirect("ac.php"));
 		(class_exists('LogActions'))?LogActions::LogThis($this):'';
 		return $this->ACID;
 	}
@@ -440,7 +441,7 @@ class AC {
 		// ProjectMembership::removeMember( $this->CabinetID, 'Cabinet' );
 		
 		$sql="DELETE FROM fac_AC WHERE ACID=$this->ACID;";
-		
+
 
 		if(!$dbh->exec($sql)){
 			$info=$dbh->errorInfo();

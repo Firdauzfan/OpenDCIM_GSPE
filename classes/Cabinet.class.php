@@ -159,7 +159,8 @@ class Cabinet {
 		if ( ! $deferTreeRebuild ) {
 			updateNavTreeHTML();
 		}
-				
+		
+		header('Location: '.redirect("cabinets.php"));
 		(class_exists('LogActions'))?LogActions::LogThis($this):'';
 		return $this->CabinetID;
 	}
