@@ -415,7 +415,7 @@ class AC {
 		return $selectList;
 	}
 
-	function DeleteCabinet(){
+	function DeleteAC(){
 		global $dbh;
 		
 		// /* Need to delete all devices and CDUs first */
@@ -444,7 +444,7 @@ class AC {
 		if(!$dbh->exec($sql)){
 			$info=$dbh->errorInfo();
 
-			error_log("PDO Error::ACCabinet: {$info[2]} SQL=$sql");
+			error_log("PDO Error::DeleteAC: {$info[2]} SQL=$sql");
 			return false;
 		}
 	
