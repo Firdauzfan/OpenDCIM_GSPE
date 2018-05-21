@@ -65,7 +65,8 @@ transform: rotate(-90deg);
                                     	<?php
                                     	if ( $person->WriteAccess ) {
                                     		echo '
-                                    	<li><a href="cabinets.php" style="color:white;">Cabinets</a></li>';
+                                    	<li><a href="cabinets.php" style="color:white;">Cabinets</a></li>
+                                        <li><a href="ac.php" style="color:white;">PAC Data Center</a></li>';
                                     	}
                                     	?>  
 

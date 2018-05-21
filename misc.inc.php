@@ -793,6 +793,10 @@ if(!function_exists("updateNavTreeHTML")){
 						$href="rowview.php?row=";
 						$id="cr$ObjectID";
 					}
+					elseif($class=="AC"){
+						$href="ac.php?ac=";
+						$id="ac$ObjectID";
+					}
 
 					$menuCode .= str_repeat("\t",$tl).'<li class="liClosed" id="'.$id.'"><a class="'.$class.'" href="'.$href.$ObjectID."\">$name</a>$cabclose\n";
 					if($i==0){

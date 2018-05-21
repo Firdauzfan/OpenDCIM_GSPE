@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AC' => $baseDir . '/classes/AC.class.php',
     'BinAudits' => $baseDir . '/classes/BinAudits.class.php',
     'BinContents' => $baseDir . '/classes/BinContents.class.php',
     'CDUTemplate' => $baseDir . '/classes/CDUTemplate.class.php',
