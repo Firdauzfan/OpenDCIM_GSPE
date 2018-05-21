@@ -310,7 +310,7 @@ $('button[value=AuditReport]').click(function(){
 	window.location.assign('cabaudit.php?cabinetid='+$('select[name=cabinetid]').val());
 });
 $('button[value=MapCoordinates]').click(function(){
-	window.location.assign('mapmaker.php?cabinetid='+$('select[name=cabinetid]').val());
+	window.location.assign('mapmaker.php?acid='+$('select[name=acid]').val());
 });
 $('button[value=Delete]').click(function(){
 	var defaultbutton={

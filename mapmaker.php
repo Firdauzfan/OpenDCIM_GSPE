@@ -4,13 +4,14 @@
 
 	$subheader=__("Map Selector");
 
-	if ( !$person->SiteAdmin && !isset( $_REQUEST['cabinetid']) && !isset($_REQUEST['panelid'])) {
+	if ( !$person->SiteAdmin && !isset( $_REQUEST['cabinetid']) && !isset($_REQUEST['panelid']) && !isset($_REQUEST['acid'])) {
 		header("Location: ".reirect());
 		exit;
 	}
 
 	$dc=new DataCenter();
 	$cab=new Cabinet();
+	$ac=new AC();
 
 	if ( isset( $_REQUEST['cabinetid'] )) {
 		$cab=new Cabinet();
@@ -26,7 +27,7 @@
 		$name = $cab->Location;
 
 		$dc->DataCenterID=$cab->DataCenterID;
-	} else {
+	} else if ( isset( $_REQUEST['panelid'] )){
 		$pan = new PowerPanel();
 		$pan->PanelID = $_REQUEST['panelid'];
 		$pan->getPanel();
@@ -39,6 +40,20 @@
 		$name = $pan->PanelLabel;
 
 		$dc->DataCenterID = $pan->MapDataCenterID;
+	} else{
+		$ac=new AC();
+
+		$ac->ACID=$_REQUEST["acid"];
+		$ac->GetAC();
+
+		$MapX1 = $ac->MapX1;
+		$MapX2 = $ac->MapX2;
+		$MapY1 = $ac->MapY1;
+		$MapY2 = $ac->MapY2;
+
+		$name = $ac->Location;
+
+		$dc->DataCenterID=$ac->DataCenterID;
 	}
 
 	$dc->GetDataCenter();
@@ -53,7 +68,7 @@
 			$cab->UpdateCabinet();
 
 			$url=redirect("cabnavigator.php?cabinetid=$cab->CabinetID");
-		} else {
+		} else if( isset( $_REQUEST['panelid'] )){
 			$pan->MapX1=intval($_REQUEST["x1"]);
 			$pan->MapX2=intval($_REQUEST["x2"]);
 			$pan->MapY1=intval($_REQUEST["y1"]);
@@ -62,6 +77,14 @@
 
 			$url=redirect("power_panel.php?PanelID=$pan->PanelID");
 
+		} else{
+			$ac->MapX1=intval($_REQUEST["x1"]);
+			$ac->MapX2=intval($_REQUEST["x2"]);
+			$ac->MapY1=intval($_REQUEST["y1"]);
+			$ac->MapY2=intval($_REQUEST["y2"]);
+			$ac->UpdateAC();
+
+			$url=redirect("ac.php?acid=$ac->ACID");
 		}
 		header("Location: $url");
 	}
@@ -136,8 +159,10 @@
 <?php
 	if ( isset($_REQUEST['cabinetid']) )  {
 		print '<input type="hidden" name="cabinetid" value="'.$cab->CabinetID.'">';
-	} else {
+	} else if ( isset($_REQUEST['panelid']) ){
 		print '<input type="hidden" name="panelid" value="'.$pan->PanelID.'">';
+	} else{
+		print '<input type="hidden" name="acid" value="'.$ac->ACID.'">';
 	}
 ?>
         <div> 
@@ -184,14 +209,21 @@
 	  <button type="reset" onclick="document.location.href='cabnavigator.php?cabinetid=<?php echo $cab->CabinetID; ?>'; return false;">Cancel</button>
 	</div>
 <?php
-	} else {
+	} else if ( isset( $_REQUEST['panelid'])){
 ?>
 	<div class="caption">
 	  <input type="submit" name="action" value="Submit">
 	  <button type="reset" onclick="document.location.href='power_panel.php?PanelID=<?php echo $pan->PanelID; ?>'; return false;">Cancel</button>
 	</div>
 <?php
-	}
+	} else{
+?>
+	<div class="caption">
+	  <input type="submit" name="action" value="Submit">
+	  <button type="reset" onclick="document.location.href='ac.php?acid=<?php echo $ac->ACID; ?>'; return false;">Cancel</button>
+	</div>
+<?php
+}
 ?>
     </div> <!-- END div.table --> 
 	</form>
