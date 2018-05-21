@@ -23,7 +23,7 @@
 	if(isset($_POST["delete"]) && $_POST["delete"]=="yes" && $person->SiteAdmin ) {
 		$ac->DeleteAC();
 		$status['code']=200;
-		$status['msg']=redirect("dc_stats.php?dc=$cab->DataCenterID");
+		$status['msg']=redirect("ac.php");
 		header('Content-Type: application/json');
 		echo json_encode($status);
 		exit;
