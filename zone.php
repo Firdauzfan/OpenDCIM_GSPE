@@ -151,14 +151,6 @@ echo '
 						</div>
 					</div>
 					<div>
-						<div><label for="totac">Total AC</label></div>
-						<div><input type="text" name="totac" id="totac" value="',$zone->TotAC,'"></div>
-					</div>
-					<div>
-						<div><label for="acbtu">Cooling Capacity</label></div>
-						<div><input type="text" name="acbtu" id="acbtu" value="',$zone->ACBtu,'"></div>
-					</div>
-					<div>
 						<div><label for="x1">X1</label></div>
 						<div><input type="text" name="x1" id="x1" value="',$zone->MapX1,'"></div>
 						</div>

@@ -575,7 +575,7 @@ class DataCenter {
 		$sql = "select count(*) from fac_Cabinet where DataCenterID=" . intval($this->DataCenterID);
 		$dcStats["TotalCabinets"] = ($test=$this->query($sql)->fetchColumn())?$test:0;
 
-		$sql = "SELECT SUM(TotAC*ACBtu) as TotCap FROM `fac_Zone`WHERE DataCenterID=$this->DataCenterID;";
+		$sql = "SELECT SUM(ColCap) FROM `fac_AC`WHERE DataCenterID=$this->DataCenterID;";
 		$dcStats["TotCap"]=($test=$this->query($sql)->fetchColumn())?$test:0;
 		
 		return $dcStats;

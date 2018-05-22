@@ -74,9 +74,7 @@ class Zone {
 			MapY1=$this->MapY1,
 			MapX2=$this->MapX2,
 			MapY2=$this->MapY2,
-			MapZoom=$this->MapZoom,
-			TotAC=$this->TotAC,
-			ACBtu=$this->ACBtu
+			MapZoom=$this->MapZoom
 			;";
 		if(!$dbh->exec($sql)){
 			$info=$dbh->errorInfo();
@@ -113,9 +111,7 @@ class Zone {
 			MapY1=$this->MapY1,
 			MapX2=$this->MapX2,
 			MapY2=$this->MapY2, 
-			MapZoom=$this->MapZoom,
-			TotAC=$this->TotAC,
-			ACBtu=$this->ACBtu
+			MapZoom=$this->MapZoom
 			WHERE ZoneID=$this->ZoneID;";
 		if(!$this->query($sql)){
 			return false;
@@ -294,7 +290,7 @@ class Zone {
 		$sql = "select count(*) from fac_Cabinet where ZoneID=" . intval($this->ZoneID);
 		$zoneStats["TotalCabinets"]=($test=$this->query($sql)->fetchColumn())?$test:0;
 
-		$sql = "SELECT SUM(TotAC*ACBtu) as TotCap FROM `fac_Zone`WHERE ZoneID=$this->ZoneID;";
+		$sql = "SELECT SUM(ColCap) as TotAC FROM `fac_AC` WHERE ZoneID=$this->ZoneID;";
 		$zoneStats["TotCap"]=($test=$this->query($sql)->fetchColumn())?$test:0;
 		
 		return $zoneStats;

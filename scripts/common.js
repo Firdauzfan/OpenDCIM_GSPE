@@ -1024,7 +1024,7 @@ function startmap(){
 			var row=false;
 			obj.ZoneID=0;
 		} else if ( ac ) {
-			var label=obj.ACLabel;
+			var label=obj.Location;
 			var name='ac'+obj.ACID;
 			var href='ac.php?acid='+obj.ACID;
 			var row=false;
