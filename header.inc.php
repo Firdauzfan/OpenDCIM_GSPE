@@ -267,6 +267,7 @@ transform: rotate(-90deg);
                                     <li><a href="report_power_utilization.php" style="color:white;">Server Tier Classification Report</a></li>
                                     <li><a href="report_panel_schedule.php" style="color:white;">Power Panel Schedule Report</a></li>
                                     <li><a href="report_cabinets.php" style="color:white;">Cabinet List</a></li>
+                                    <li><a href="report_pac.php" style="color:white;">PAC List</a></li>
                                 </ul>
                                 </li>
 
