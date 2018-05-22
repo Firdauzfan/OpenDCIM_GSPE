@@ -426,6 +426,7 @@ class DataCenter {
 				$titletemp=0;
 				$titlerp=0;
 				// read all cabinets and calculate the color to display on the cabinet
+
 				foreach($cabList as $cabRow){
 					if ($cabRow->MapX1==$cabRow->MapX2 || $cabRow->MapY1==$cabRow->MapY2){
 						continue;

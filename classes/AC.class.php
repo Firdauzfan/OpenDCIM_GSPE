@@ -213,6 +213,22 @@ class AC {
 		return $acList;
 	}
 
+	static function getACsForMap( $DataCenterID ) {
+		global $dbh;
+
+		$acList = array();
+
+		$st = $dbh->prepare( "select * from fac_AC where DataCenterID=:DataCenterID" );
+		$st->setFetchMode( PDO::FETCH_CLASS, "AC" );
+
+		$st->execute( array( ":DataCenterID"=>$DataCenterID ));
+		while ( $row = $st->fetch() ) {
+			$acList[$row->ACID] = $row;
+		}
+
+		return $acList;
+	}
+
 	function ListACsByDC($limit=false,$limitzone=false){
 		global $dbh;
 		global $config;

@@ -208,7 +208,7 @@ echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
 <div>
    <div>',__("PAC"),'</div>
    <div><select name="acid" id="acid">
-   <option value=0>',__("New AC"),'</option>';
+   <option value=0>',__("New PAC"),'</option>';
 
 	foreach($acList as $cabRow){
 		$selected=($cabRow->ACID==$ac->ACID)?' selected':'';

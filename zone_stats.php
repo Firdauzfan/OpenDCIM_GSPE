@@ -5,6 +5,7 @@
 	$subheader=__("Zone Statistics");
 
 	$cab=new Cabinet();
+	$ac=new AC();
 	$zone=new Zone();
 	$dc=new DataCenter();
 	$dev=new Device();
@@ -55,10 +56,14 @@
 		$payload=array();
 		if(isset($_POST['getobjects'])){
 			$cab->DataCenterID=$_POST['dc'];
+			$ac->DataCenterID=$_POST['dc'];
+
 			$cab->GetCabinet();
+			$ac->GetAC();
+
 			$zone=new Zone();
 			$zone->DataCenterID=$cab->DataCenterID;
-			$payload=array('cab'=>$cab->ListCabinetsByDC(true,true),'panel'=>PowerPanel::getPanelsForMap($_POST['dc']),'zone'=>$zone->GetZonesByDC(true));
+			$payload=array('cab'=>$cab->ListCabinetsByDC(true,true),'panel'=>PowerPanel::getPanelsForMap($_POST['dc']),'ac'=>AC::getACsForMap($_POST['dc']),'zone'=>$zone->GetZonesByDC(true));
 		}else{
 			$dc->DataCenterID=$_POST['dc'];
 			$dc->GetDataCenterByID();

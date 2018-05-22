@@ -172,10 +172,19 @@ class Zone {
 		}
 		// While not currently supported this will allow us to nest cabinets into zones directly without a cabinet row
 		$cab=new Cabinet();
+		$ac=new AC();
 		$cab->ZoneID=$this->ZoneID;
+		$ac->ZoneID=$this->ZoneID;
+
 		foreach($cab->GetCabinetsByZone() as $cab){
 			if($cab->CabRowID==0){
 				$children[]=$cab;
+			}
+		}
+
+		foreach($ac->GetACsByZone() as $ac){
+			if($ac->CabRowID==0){
+				$children[]=$ac;
 			}
 		}
 
