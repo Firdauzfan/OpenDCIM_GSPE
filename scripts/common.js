@@ -828,9 +828,9 @@ function startmap(){
 
 	// arrays used for tracking states
 	var stat;
-	var areas={'cabs':[],'panels':[],'zones':[]};
-	var defaultstate={'cabs':[],'panels':[],'zones':[]};
-	var currentstate={'cabs':[],'panels':[],'zones':[]};
+	var areas={'cabs':[],'panels':[],'acs':[],'zones':[]};
+	var defaultstate={'cabs':[],'panels':[],'acs':[],'zones':[]};
+	var currentstate={'cabs':[],'panels':[],'acs':[],'zones':[]};
 
 	context.globalCompositeOperation='destination-over';
 	context.save();
@@ -850,8 +850,8 @@ function startmap(){
 		async: false,
 		data: {dc: $('map[name=datacenter]').data('dc'), getobjects: ''}, 
 		success: function(data){
-			var temp={'cabs':[],'panels':[],'zones':[] }; // array of areas we're using
-			var temphilight={'cabs':[],'panels':[],'zones':[] }; // array of areas and their outline state
+			var temp={'cabs':[],'panels':[],'acs':[],'zones':[] }; // array of areas we're using
+			var temphilight={'cabs':[],'panels':[],'acs':[],'zones':[] }; // array of areas and their outline state
 
 			var map=$('.canvas > map');
 			for(var i in data.cab){
@@ -867,6 +867,12 @@ function startmap(){
 				map.append(buildarea(thispanel));
 				temp.panels.push({'PanelID':thispanel.PanelID, 'MapX1':thispanel.MapX1,'MapX2':thispanel.MapX2,'MapY1':thispanel.MapY1,'MapY2':thispanel.MapY2});
 				temphilight.panels[thispanel.PanelID]=false;
+			};
+			for(var i in data.ac){
+				var thisac=data.ac[i];
+				map.append(buildarea(thisac));
+				temp.acs.push({'ACID':thisac.ACID, 'MapX1':thisac.MapX1,'MapX2':thisac.MapX2,'MapY1':thisac.MapY1,'MapY2':thisac.MapY2});
+				temphilight.acs[thisac.ACID]=false;
 			};
 			for(var i in data.zone){
 				var thiszone=data.zone[i];
@@ -902,6 +908,8 @@ function startmap(){
 						Hilight($('.canvas > map > area[name=panel'+x+']'));
 					}else if(i=='cabs'){
 						Hilight($('.canvas > map > area[name=cab'+x+']'));
+					} else if(i=='acs'){
+						Hilight($('.canvas > map > area[name=ac'+x+']'));
 					} else {
 						Hilight($('.canvas > map > area[name=zone'+x+']'));
 					}
@@ -930,9 +938,12 @@ function startmap(){
 					} else if ( i=='cabs' ) {
 						var id='CabinetID';
 						tempstate.cabs[obj.CabinetID]=true;
-					} else {
+					} else if ( i=='panels' ){
 						var id='PanelID';
 						tempstate.panels[obj.PanelID]=true;
+					} else {
+						var id='ACID';
+						tempstate.acs[obj.ACID]=true;
 					}
 				}
 			});
@@ -998,7 +1009,8 @@ function startmap(){
 	// Build the area objects
 	function buildarea(obj){
 		var panel=typeof(obj.PanelID)!=='undefined';
-		var zone=typeof(obj.Location)=='undefined' && (!panel);
+		var ac=typeof(obj.ACID)!=='undefined';
+		var zone=typeof(obj.Location)=='undefined' && (!panel) && (!ac);
 
 		if ( zone ) {
 			var label=obj.Description;
@@ -1011,7 +1023,13 @@ function startmap(){
 			var href='power_panel.php?PanelID='+obj.PanelID;
 			var row=false;
 			obj.ZoneID=0;
-		} else {
+		} else if ( ac ) {
+			var label=obj.ACLabel;
+			var name='ac'+obj.ACID;
+			var href='ac.php?acid='+obj.ACID;
+			var row=false;
+			obj.ZoneID=0;
+		}else {
 			var label=obj.Location;
 			var name='cab'+obj.CabinetID;
 			var href='cabnavigator.php?cabinetid='+obj.CabinetID;
