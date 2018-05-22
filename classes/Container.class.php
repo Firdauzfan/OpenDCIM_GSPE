@@ -14,8 +14,6 @@ class Container {
 	var $DrawingFileName;
 	var $MapX;
 	var $MapY;
-	var $TotAC;
-	var $ACBtu;
 
 	function MakeSafe(){
 		$this->ContainerID=intval($this->ContainerID);
@@ -24,8 +22,6 @@ class Container {
 		$this->DrawingFileName=sanitize($this->DrawingFileName);
 		$this->MapX=abs($this->MapX);
 		$this->MapY=abs($this->MapY);
-		$this->TotAC=abs($this->TotAC);
-		$this->ACBtu=abs($this->ACBtu);
 	}
 	
 	function MakeDisplay(){
@@ -41,8 +37,6 @@ class Container {
 		$container->DrawingFileName=$row["DrawingFileName"];
 		$container->MapX=$row["MapX"];
 		$container->MapY=$row["MapY"];
-		$container->TotAC=$row["TotAC"];
-		$container->ACBtu=$row["ACBtu"];
 		$container->MakeDisplay();
 
 		return $container;

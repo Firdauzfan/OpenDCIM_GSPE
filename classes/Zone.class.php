@@ -16,8 +16,7 @@ class Zone {
 	var $MapX2;
 	var $MapY2;
 	var $MapZoom;  // % of Zoom (100=>no zoom)
-	var $TotAC;
-	var $ACBtu;
+
 	function MakeSafe(){
 		$this->ZoneID=intval($this->ZoneID);
 		$this->DataCenterID=intval($this->DataCenterID);
@@ -28,8 +27,6 @@ class Zone {
 		$this->MapX2=abs($this->MapX2);
 		$this->MapY2=abs($this->MapY2);
 		$this->MapZoom=abs($this->MapZoom);
-		$this->TotAC=abs($this->TotAC);
-		$this->ACBtu=abs($this->ACBtu);
 	}
 
 	function MakeDisplay(){
@@ -46,8 +43,6 @@ class Zone {
 		$zone->MapX2=$row["MapX2"];
 		$zone->MapY2=$row["MapY2"];
 		$zone->MapZoom=$row["MapZoom"];
-		$zone->TotAC=$row["TotAC"];
-		$zone->ACBtu=$row["ACBtu"];
 		$zone->MakeDisplay();
 
 		return $zone;

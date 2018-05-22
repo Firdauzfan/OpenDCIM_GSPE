@@ -37,8 +37,6 @@
 			$zone->MapX2=$_POST["x2"];
 			$zone->MapY2=$_POST["y2"];
 			$zone->MapZoom=$_POST["mapzoom"];
-			$zone->TotAC=$_POST["totac"];
-			$zone->ACBtu=$_POST["acbtu"];
 			
 			if($_POST["action"]=="Create"){
 				$zone->CreateZone();
