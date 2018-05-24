@@ -31,7 +31,7 @@
 <?php
 	include( "sidebar.inc.php" );
 
-echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
+echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 <div class="center" style="margin-top:20px"><div id="reports">
 <div>
 <fieldset>

@@ -585,7 +585,7 @@ if(isset($_GET['pathonly'])){
 <?php
 	include( 'sidebar.inc.php' );
 
-echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
+echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 <h3>',$status,'</h3>
 <div class="center"><div><div>
 <table id="crit_busc">

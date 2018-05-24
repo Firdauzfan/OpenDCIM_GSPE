@@ -355,7 +355,7 @@ div.main {
 	border: 1px dotted #333;
 	margin-bottom: 0em;
 	height:auto;
-	box-shadow: 10px 10px #1d388c;
+	box-shadow: 10px 10px #333333;
 }
 .main > div {
 	margin-bottom: 2em;
@@ -1367,8 +1367,8 @@ fieldset[name=pdu] > div > img { vertical-align: text-bottom; }
 .installer ul li, ul.nav li{
 	display: block;
 	padding: 1.5em;
-	background-color: #1d388c;
-	border: 0px solid #1d388c;
+	background-color: #333333;
+	border: 0px solid #333333;
 }
 .installer ul li{border: 1px dashed darkGray;}
 .installer #sidebar a, .nav a {text-decoration: none;}

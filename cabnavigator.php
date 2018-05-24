@@ -650,7 +650,7 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 ?>
 <section id="options" style="margin-top:-70%; margin-left:-30%; max-width: 30%; ">
 <p id="show-buttons" style="max-width:10%; 	">
-<button class="show-front" style="margin-bottom:10%; color: white; background-color: #1d388c; border-radius: 5px;">Front</button><br/><button class="show-back" style="margin-bottom:10%; color: white; background-color: #1d388c; border-radius: 5px;">Back</button><br/><button class="show-right" style="margin-bottom:10%; color: white; background-color: #1d388c; border-radius: 5px;">Right</button><br/><button class="show-left" style="color: white; background-color: #1d388c; border-radius: 5px;">Left</button>
+<button class="show-front" style="margin-bottom:10%; color: white; background-color: #333333; border-radius: 5px;">Front</button><br/><button class="show-back" style="margin-bottom:10%; color: white; background-color: #333333; border-radius: 5px;">Back</button><br/><button class="show-right" style="margin-bottom:10%; color: white; background-color: #333333; border-radius: 5px;">Right</button><br/><button class="show-left" style="color: white; background-color: #333333; border-radius: 5px;">Left</button>
 </p>
 </section>
 </div> <!-- END div#centeriehack -->

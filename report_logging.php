@@ -210,7 +210,7 @@ if(isset($_POST['refresh'])){
 	<div class="page" style="margin-top: 10px">
 <?php
 	include('sidebar.inc.php');
-echo '		<div class="main" style="box-shadow: 10px 10px #1d388c;">
+echo '		<div class="main" style="box-shadow: 10px 10px #333333;">
 			<div class="table">
 				<div>
 					<div>UserID</div>

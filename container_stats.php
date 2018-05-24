@@ -47,7 +47,7 @@ if ( $config->ParameterArray["mUnits"] == "english" ) {
     $density = __("Watts per Square Meter" );
 }
 
-echo '<div class="main" style="box-shadow: 10px 10px #1d388c;">
+echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 <div class="center" style="margin-top:20px;"><div>
 <div class="centermargin" id="dcstats">
 <div class="table border">

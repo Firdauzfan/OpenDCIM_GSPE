@@ -37,21 +37,21 @@ transform: rotate(-90deg);
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="index.php"><img src="images/logo.png" style="margin-left: -9px;margin-right: 12px"></a>
+                    <a href="index.php"><img src="images/logovio.png" style="margin-left: -16px;margin-right: 12px"></a>
                 </div>
-                <div class="collapse navbar-collapse" style="margin-bottom: -1; background-color: #1d388c;">
+                <div class="collapse navbar-collapse" style="margin-bottom: -1; background-color: #333333;">
                     <ul class="nav navbar-nav">
                         <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center; font-size: 20px; color: white;">Initialization <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="background-color: #1d388c;">
+                            <ul class="dropdown-menu" style="background-color: #333333;">
 
 
                                 <li>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Infrastructure Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                     	<?php
                                     	if ( $person->SiteAdmin ) {
                                     		echo '
@@ -84,7 +84,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Template Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                     	<?php
                                     	if ( $person->WriteAccess ) {
                                     		echo '
@@ -109,7 +109,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Power Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                         <li><a href="power_panel.php" style="color:white;">Power Panels</a></li>
                                     </ul>
                                 </li>
@@ -118,7 +118,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Path Connections <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                         <li><a href="paths.php" style="color:white;">View Path Connection</a></li>
                                         <li><a href="pathmaker.php" style="color:white;">Make Path Connection</a></li>
                                     </ul>
@@ -134,7 +134,7 @@ transform: rotate(-90deg);
                         <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px; color: white;">Operation <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="background-color: #1d388c;">
+                            <ul class="dropdown-menu" style="background-color: #333333;">
                             	<?php
                                     if ($person->ContactAdmin ) {
                                     	echo '
@@ -142,7 +142,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"  style="color:white;">Issue Escalation <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                         <li><a href="timeperiods.php" style="color:white;">Time Period</a></li>
                                         <li><a href="escalations.php" style="color:white;">Escalation Rules</a></li>
                                     </ul>
@@ -157,7 +157,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Material Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                     	<li><a href="supplybin.php" style="color:white;">Manage Supply Bins</a></li>
                                     	<li><a href="supplies.php" style="color:white;">Manage Supplies</a></li>
                                     	<li><a href="disposition.php" style="color:white;">Manage Disposal Methods</a></li>
@@ -174,7 +174,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Import Management <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                     	<li><a href="bulk_container.php" style="color:white;">Import Container/Data Center/Zone/Row</a></li>
                                     	<li><a href="bulk_users.php" style="color:white;">Import User Accounts</a></li>
                                     	<li><a href="bulk_departments.php" style="color:white;">Import Departments/Customers</a></li>
@@ -201,7 +201,7 @@ transform: rotate(-90deg);
                         <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px; color: white;">Manage <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="margin-left: 20px; background-color: #1d388c;">
+                            <ul class="dropdown-menu" style="margin-left: 20px; background-color: #333333;">
 
                             	<?php
                                     if ($person->ContactAdmin) {
@@ -210,7 +210,7 @@ transform: rotate(-90deg);
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Administration <b
                                             class="caret"></b></a>
 
-                                    <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                    <ul class="dropdown-menu" style="background-color: #333333;">
                                         <li><a href="usermgr.php" style="color:white;">User</a></li>
                                         <li><a href="departments.php" style="color:white;">Department</a></li>
                                     </ul>
@@ -231,13 +231,13 @@ transform: rotate(-90deg);
                         <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;" >
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 20px; color: white;">Reports <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="margin-left: 5px; background-color: #1d388c;">
+                            <ul class="dropdown-menu" style="margin-left: 5px; background-color: #333333;">
 
                                 <li>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Asset Reports <b
                                         class="caret"></b></a>
 
-                                <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                <ul class="dropdown-menu" style="background-color: #333333;">
                                     <li><a href="search_export.php" style="color:white;">Search/Export by Data Center</a></li>
                                     <li><a href="search_export_storage_room.php" style="color:white;">Storage Room Search/Export by Data Center</a></li>
                                     <li><a href="report_xml_CFD.php" style="color:white;">Export Data Center for CFD (XML)</a></li>
@@ -258,7 +258,7 @@ transform: rotate(-90deg);
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Operational Reports <b
                                         class="caret"></b></a>
 
-                                <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                <ul class="dropdown-menu" style="background-color: #333333;">
                                     <li><a href="report_exception.php" style="color:white;">Data Exceptions Report</a></li>
                                     <li><a href="report_diverse_power_exceptions.php" style="color:white;">Diverse Power Exceptions Report</a></li>
                                     <li><a href="report_outage_simulator.php" style="color:white;">Simulated Power Outage Report</a></li>
@@ -275,7 +275,7 @@ transform: rotate(-90deg);
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"> Auditing Reports <b
                                         class="caret"></b></a>
 
-                                <ul class="dropdown-menu" style="background-color: #1d388c;">
+                                <ul class="dropdown-menu" style="background-color: #333333;">
                                     <li><a href="report_audit.php" style="color:white;">Cabinet Audit Logs</a></li>
                                     <li><a href="report_audit_frequency.php" style="color:white;">Cabinet Audit Frequency</a></li>
                                     <li><a href="report_surplus.php" style="color:white;">Surplus/Salvage Audit Report</a></li>

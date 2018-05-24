@@ -858,7 +858,7 @@ div.table > div > div {vertical-align: top;}
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main" style="box-shadow: 10px 10px #1d388c;">
+<div class="main" style="box-shadow: 10px 10px #333333;">
 <div class="center"><div>
 <p>The tables below show devices that are currently sharing resources and will need to be resolved before the new database update can be applied.</p>
 <p>The Key in each table is made up of the DeviceID and the ID of resource that is currently being shared incorrectly.</p>
