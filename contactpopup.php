@@ -37,7 +37,7 @@
   <link rel="stylesheet"  href="css/ie.css" type="text/css" />
   <![endif]-->
   <style type="text/css">
-	div.main { padding: 5px 0; border: 0px; width: 100%; }
+	div.main { padding: 30px 0; border: 0px; width: 100%; }
   </style>
 </head>
 <body>

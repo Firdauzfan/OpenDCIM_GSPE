@@ -1742,7 +1742,15 @@ echo '			</select>
 		</div>
 		<div>
 		   <div><label for="WarrantyExpire">'.__("Warranty Expiration").'</label></div>
-		   <div><input type="text" class="validate[custom[date]] datepicker" name="WarrantyExpire" id="WarrantyExpire" value="'.date('Y-m-d',strtotime($dev->WarrantyExpire)).'"></div>
+		   <div><input type="text" class="validate[custom[date]] datepicker" name="WarrantyExpire" id="WarrantyExpire" value="'.(($dev->WarrantyExpire>'0000-00-00 00:00:00')?date('Y-m-d',strtotime($dev->WarrantyExpire)):"").'"></div>
+		</div>
+		<div>
+		   <div><label for="DeviceLifecycle">'.__("Device Lifecycle").'</label></div>
+		   <div><input type="text" name="DeviceLifecycle" id="DeviceLifecycle" value="'.$dev->DeviceLifecycle.'"></div>
+		</div>
+		<div>
+		   <div><label for="PeriodicMaintenance">'.__("Periodic Maintenance").'</label></div>
+		   <div><input type="text" name="PeriodicMaintenance" id="PeriodicMaintenance" value="'.$dev->PeriodicMaintenance.'"></div>
 		</div>
 		<div>
 		   <div>'.__("Last Audit Completed").'</div>

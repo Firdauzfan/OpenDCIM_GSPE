@@ -64,6 +64,8 @@ class Device {
 	var $AuditStamp;
 	var $CustomValues;
 	var $Weight;
+	var $DeviceLifecyle;
+	var $PeriodicMaintenance;
 
 	public function __construct($deviceid=false){
 		if($deviceid){
@@ -134,6 +136,8 @@ class Device {
 		$this->HalfDepth=intval($this->HalfDepth);
 		$this->BackSide=intval($this->BackSide);
 		$this->Weight=intval($this->Weight);
+		$this->DeviceLifecyle=sanitize($this->DeviceLifecyle);
+		$this->PeriodicMaintenance=sanitize($this->PeriodicMaintenance);
 	}
 	
 	function MakeDisplay() {
@@ -147,6 +151,8 @@ class Device {
 		$this->WarrantyCo=stripslashes($this->WarrantyCo);
 		$this->WarrantyExpire=stripslashes($this->WarrantyExpire);
 		$this->Notes=stripslashes($this->Notes);
+		$this->DeviceLifecyle=stripslashes($this->DeviceLifecyle);
+		$this->PeriodicMaintenance=stripslashes($this->PeriodicMaintenance);
 	}
 
 	static function RowToObject($dbRow,$filterrights=true,$extendmodel=true){
@@ -204,6 +210,9 @@ class Device {
 		$dev->BackSide=$dbRow["BackSide"];
 		$dev->AuditStamp=$dbRow["AuditStamp"];
 		$dev->Weight=$dbRow["Weight"];
+		$dev->DeviceLifecycle=$dbRow["DeviceLifecycle"];
+		$dev->PeriodicMaintenance=$dbRow["PeriodicMaintenance"];
+
 		$dev->GetCustomValues();
 		
 		$dev->MakeDisplay();
@@ -381,7 +390,7 @@ class Device {
 			WarrantyCo=\"$this->WarrantyCo\", Notes=\"$this->Notes\", 
 			WarrantyExpire=\"".date("Y-m-d", strtotime($this->WarrantyExpire))."\", 
 			Status=\"$this->Status\", HalfDepth=$this->HalfDepth, 
-			BackSide=$this->BackSide, SerialNo=\"$this->SerialNo\";";
+			BackSide=$this->BackSide, SerialNo=\"$this->SerialNo\",DeviceLifecycle=\"$this->DeviceLifecycle\",PeriodicMaintenance=\"$this->PeriodicMaintenance\";";
 
 		if(!$dbh->exec($sql)){
 			$info = $dbh->errorInfo();
@@ -751,7 +760,7 @@ class Device {
 			WarrantyCo=\"$this->WarrantyCo\", Notes=\"$this->Notes\", 
 			WarrantyExpire=\"".date("Y-m-d", strtotime($this->WarrantyExpire))."\", 
 			Status=\"$this->Status\", HalfDepth=$this->HalfDepth, 
-			BackSide=$this->BackSide WHERE DeviceID=$this->DeviceID;";
+			BackSide=$this->BackSide,DeviceLifecycle=\"$this->DeviceLifecycle\",PeriodicMaintenance=\"$this->PeriodicMaintenance\" WHERE DeviceID=$this->DeviceID;";
 
 		// If the device won't update for some reason there is no cause to touch 
 		// anything else about it so just return false
