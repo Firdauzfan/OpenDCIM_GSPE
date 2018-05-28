@@ -27,6 +27,26 @@ CREATE TABLE fac_Cabinet (
   PRIMARY KEY (CabinetID)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS fac_AC;
+CREATE TABLE fac_AC (
+  ACID int(11) NOT NULL AUTO_INCREMENT,
+  DataCenterID int(11) NOT NULL,
+  Location varchar(20) NOT NULL,
+  LocationSortable varchar(20) NOT NULL,
+  AssignedTo int(11) NOT NULL,
+  ZoneID int(11) NOT NULL,
+  CabRowID int(11) NOT NULL,
+  Model varchar(80) NOT NULL,
+  ColCap float(11) NOT NULL,
+  InstallationDate date NOT NULL,
+  MapX1 int(11) NOT NULL,
+  MapX2 int(11) NOT NULL,
+  MapY1 int(11) NOT NULL,
+  MapY2 int(11) NOT NULL,
+  Notes text NULL,
+  PRIMARY KEY (ACID)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 --
 -- Table structure for fac_CabRow
 --
@@ -302,6 +322,8 @@ CREATE TABLE fac_Device (
   BackSide tinyint(1) NOT NULL DEFAULT '0',
   AuditStamp DATETIME NOT NULL,
   Weight int(11) NOT NULL DEFAULT '0',
+  DeviceLifecycle VARCHAR(80) NOT NULL,
+  PeriodicMaintenance VARCHAR(80) NOT NULL,
   PRIMARY KEY (DeviceID),
   KEY SerialNo (SerialNo,`AssetTag`,`PrimaryIP`),
   KEY AssetTag (AssetTag),
@@ -744,6 +766,7 @@ INSERT INTO fac_CabinetToolTip VALUES(NULL, 'SNMPCommunity', 'SNMP Read Only Com
 INSERT INTO fac_CabinetToolTip VALUES(NULL, 'TemplateID', 'Device Class', 0);
 INSERT INTO fac_CabinetToolTip VALUES(NULL, 'WarrantyCo', 'Warranty Company', 0);
 INSERT INTO fac_CabinetToolTip VALUES(NULL, 'WarrantyExpire', 'Warranty Expiration', 0);
+INSERT INTO fac_CabinetToolTip VALUES(NULL, 'Weight', 'Weight', 1);
 
 --
 -- Add table for cdu tooltips
@@ -789,7 +812,7 @@ CREATE TABLE fac_Config (
 
 INSERT INTO fac_Config VALUES
   ('Version','4.5','','',''),
-	('OrgName','openDCIM Computer Facilities','Name','string','openDCIM Computer Facilities'),
+	('OrgName','PT VIO Intelligence Computer Facilities','Name','string','PT VIO Intelligence Computer Facilities'),
 	('ClassList','ITS, Internal, Customer','List','string','ITS, Internal, Customer'),
 	('SpaceRed','80','percentage','float','80'),
 	('SpaceYellow','60','percentage','float','60'),
