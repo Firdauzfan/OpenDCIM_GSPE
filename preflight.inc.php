@@ -31,7 +31,7 @@
 		foreach($dir as $i => $d){
 			// get list of directories in locale that aren't . or ..
 			if(is_dir($path.DIRECTORY_SEPARATOR.$d) && $d!=".." && $d!="."){
-				// check the list of valid directories above to see if there is an GSPE DCIM translation file present
+				// check the list of valid directories above to see if there is an VIO DCIM translation file present
 				if(file_exists($path.DIRECTORY_SEPARATOR.$d.DIRECTORY_SEPARATOR."LC_MESSAGES".DIRECTORY_SEPARATOR."openDCIM.mo")){
 					// build array of valid language choices
 					$lang[$d]=$d;
@@ -50,7 +50,7 @@
 			}
 		}else{
 			$tests['gettext']['state']="fail";
-			$tests['gettext']['message']='Gettext is detected but we cannot verify that you have the appropriate locales loaded and available. <a href="http://gspe.co.id">http://gspe/co.id</a>';
+			$tests['gettext']['message']='Gettext is detected but we cannot verify that you have the appropriate locales loaded and available. <a href="http://vioint.co.id">http://vioint/co.id</a>';
 		}
 	}else{
 		$tests['gettext']['state']="fail";
@@ -106,7 +106,7 @@
 					$tests['strictdb']['message']='';
 				}else{
 					$tests['strictdb']['state']="fail";
-					$tests['strictdb']['message']='GSPEDCIM does not support STRICT_TRANS_TABLES. The following SQL statement might clear the error for this session.  More information can be found <a href="gspe.co.id">here</a>.<br><br><i>SET GLOBAL sql_mode = "";</i>';
+					$tests['strictdb']['message']='VIODCIM does not support STRICT_TRANS_TABLES. The following SQL statement might clear the error for this session.  More information can be found <a href="vioint.co.id">here</a>.<br><br><i>SET GLOBAL sql_mode = "";</i>';
 					$errors++;
 				}
 				if(isset($pdo_options)){
@@ -130,7 +130,7 @@
 		}
 	}else{
 		$tests['pdo']['state']="fail";
-		$tests['pdo']['message']='GSPEDCIM requires the <a href="http://php.net/manual/pdo.installation.php">PDO extention</a> and you do not appear to have it loaded';
+		$tests['pdo']['message']='VIODCIM requires the <a href="http://php.net/manual/pdo.installation.php">PDO extention</a> and you do not appear to have it loaded';
 		$tests['pdodrivers']['state']="fail";
 		$tests['pdodrivers']['message']='No PDO drivers have been detected';
 		$errors++;
@@ -244,7 +244,7 @@
 		$errors++;
 	}
 	if ($errors >0 || !isset($_GET['preflight-ok'])) {
-        echo '<!doctype html><html><head><title>GSPE DCIM :: pre-flight environment sanity check</title><script type="text/javascript" src="scripts/jquery.min.js"></script><style type="text/css">table{width:80%;border-collapse:collapse;border:3px solid black;}th{text-align:left;text-transform:uppercase;border-right: 1px solid black;}th,td{padding:5px;}tr:nth-child(even){background-color:#d1e1f1;}td:last-child{text-align:center;text-transform:uppercase;border:2px solid;background-color:green;}.fail td:last-child{font-weight: bold;background-color: red;}.hide{display: none;}</style></head><body><h2>Pre-flight environment checks</h2><table>';
+        echo '<!doctype html><html><head><title>VIO DCIM :: pre-flight environment sanity check</title><script type="text/javascript" src="scripts/jquery.min.js"></script><style type="text/css">table{width:80%;border-collapse:collapse;border:3px solid black;}th{text-align:left;text-transform:uppercase;border-right: 1px solid black;}th,td{padding:5px;}tr:nth-child(even){background-color:#d1e1f1;}td:last-child{text-align:center;text-transform:uppercase;border:2px solid;background-color:green;}.fail td:last-child{font-weight: bold;background-color: red;}.hide{display: none;}</style></head><body><h2>Pre-flight environment checks</h2><table>';
 		foreach($tests as $test => $text){
 			$hide=($test=='api_test')?' class="hide"':'';
 			print "<tr id=\"$test\"$hide><th>$test</th><td>{$text['message']}</td><td>{$text['state']}</td></tr>";

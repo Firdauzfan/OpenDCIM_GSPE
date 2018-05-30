@@ -56,7 +56,7 @@
 		$mailer = Swift_Mailer::newInstance($transport);
 		$message = Swift_Message::NewInstance();
 
-		$message->setSubject( __("gspeDCIM-workorder-".date( "YmdHis" )."-connections") );
+		$message->setSubject( __("vioDCIM-workorder-".date( "YmdHis" )."-connections") );
 
 		// Set from address
 		try{		
@@ -81,9 +81,9 @@
 		
 		$attachment = Swift_Attachment::fromPath($tmpName,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 		if ( $_REQUEST["deviceid"] == "wo" ) {
-			$attachment->setFilename("gspeDCIM-workorder-".date( "YmdHis" )."-connections.xlsx");
+			$attachment->setFilename("vioDCIM-workorder-".date( "YmdHis" )."-connections.xlsx");
 		} else {
-			$attachment->setFilename("gspeDCIM-dev" . $dev->DeviceID . "-connections.xlsx");
+			$attachment->setFilename("vioDCIM-dev" . $dev->DeviceID . "-connections.xlsx");
 		}
 		
 		$message->attach($attachment);
@@ -104,7 +104,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM Data Center Inventory</title>
+  <title>VIO DCIM Data Center Inventory</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <!--[if lt IE 9]>

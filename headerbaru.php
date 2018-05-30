@@ -21,7 +21,7 @@ transform: rotate(-90deg);
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">GSPE</a>
+                    <a class="navbar-brand" href="index.php">VIO</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">

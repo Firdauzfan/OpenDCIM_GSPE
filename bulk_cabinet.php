@@ -281,7 +281,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM</title>
+  <title>VIO DCIM</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <!--[if lt IE 9]>

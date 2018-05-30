@@ -208,7 +208,7 @@ $DProps = array(
             __("This file is confidential and shall not be used without permission of "
                 . "the owner."),
             "",
-            __("Generate by GSPEDCIM")
+            __("Generate by VIO DCIM")
         )
     ),
 	'DC Stats' => array(
@@ -531,7 +531,7 @@ function addColumnIndices(&$DProps)
  * @param string $thisDate
  *  the date on which the workbook is generated
  * @param string $ownerName
- *  the configuration of GSPEDCIM
+ *  the configuration of VIODCIM
  * @param array $DProps
  *  the workbook configuration
  */
@@ -1805,7 +1805,7 @@ if (PHP_SAPI != 'cli') {
     // write file to the browser
     $objWriter->save('php://output');
 } else {
-    $fname = $ReportOutputFolder."GSPEDCIM-Asset_Report-".date("Y-m-d").".xlsx";
+    $fname = $ReportOutputFolder."VIODCIM-Asset_Report-".date("Y-m-d").".xlsx";
     $objWriter->save( $fname );
 }
 

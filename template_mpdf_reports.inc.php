@@ -65,7 +65,7 @@
 EOT;
     $html .= $reportHead;
     $html .= <<<EOT
-  <title>GSPE DCIM Inventory Reporting</title>
+  <title>VIO DCIM Inventory Reporting</title>
 </head>
 <body>
 

@@ -53,7 +53,7 @@
 
 	$projectList=Projects::getProjectList();
 
-	$title = __("GSPE DCIM Project Information" );
+	$title = __("VIO DCIM Project Information" );
 ?>
 <!doctype html>
 <html>

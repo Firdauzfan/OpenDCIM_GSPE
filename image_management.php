@@ -2,7 +2,7 @@
 	require_once('db.inc.php');
 	require_once('facilities.inc.php');
 
-	$subheader=__("GSPE DCIM Image File Management");
+	$subheader=__("VIO DCIM Image File Management");
 
 	$timestamp=time();
 	$salt=md5('unique_salt' . $timestamp);
@@ -33,7 +33,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title><?php echo __("GSPE DCIM Data Center Inventory");?></title>
+  <title><?php echo __("VIO DCIM Data Center Inventory");?></title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <link rel="stylesheet" href="css/uploadifive.css" type="text/css">

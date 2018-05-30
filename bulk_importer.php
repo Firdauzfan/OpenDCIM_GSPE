@@ -78,7 +78,7 @@
 
     $fieldNum = 1;
 
-    foreach ( array( "DataCenterID"=>"The exact name of the target data center for import.", "Cabinet"=>"The name (Location) of the target cabinet.", "Position"=>"The position in the cabinet for the device.  0 is valid for zero-U devices.  No collision checking is performed.", "Label"=>"The value to place in the Label field.", "Height"=>"The height of the device, 0 is a valid value.", "Manufacturer"=>"The name of the Manufacturer.  This is combined with the Model field to create the 'Device Class'.", "Model"=>"The model name, as specified in the existing Device Template, which will be combined with the Manufacturer to choose the 'Device Class'.", "Hostname"=>"An optional IP address or hostname for the device.", "SerialNo"=>"An optional value to place in the Serial Number field of the device.", "AssetTag"=>"An optional Asset or Property number to assign to the device.", "HalfDepth"=>"Optional, specify 1 or Y to indicate this device only occupies half the depth of the cabinet.", "BackSide"=>"Optional, specify 1 or Y to indicate that this device is mounted from the rear of the cabinet.", "Hypervisor"=>"Optional, specify 'ESX', 'ProxMox', or blank (for default behavior of 'None').", "InstallDate"=>"If blank, current date is used, otherwise this mandatory field can contain any ISO valid date format.", "Status"=>"Optional, default will be set to 'Reserved' if not specified.  Value must exist as a Device Status in the database.", "Owner"=>"Optional, and may be blank.  This is the name of the Department that owns the device.", "PrimaryContact"=>"Optional, and may be blank.  The exact name of the Primary Contact for this device in LastName, FirstName format.", "CustomTags"=>"A comma separated list of tags to apply to the device.  Tags do not have to already exist within GSPE DCIM." ) as $fieldName=>$helpText ) {
+    foreach ( array( "DataCenterID"=>"The exact name of the target data center for import.", "Cabinet"=>"The name (Location) of the target cabinet.", "Position"=>"The position in the cabinet for the device.  0 is valid for zero-U devices.  No collision checking is performed.", "Label"=>"The value to place in the Label field.", "Height"=>"The height of the device, 0 is a valid value.", "Manufacturer"=>"The name of the Manufacturer.  This is combined with the Model field to create the 'Device Class'.", "Model"=>"The model name, as specified in the existing Device Template, which will be combined with the Manufacturer to choose the 'Device Class'.", "Hostname"=>"An optional IP address or hostname for the device.", "SerialNo"=>"An optional value to place in the Serial Number field of the device.", "AssetTag"=>"An optional Asset or Property number to assign to the device.", "HalfDepth"=>"Optional, specify 1 or Y to indicate this device only occupies half the depth of the cabinet.", "BackSide"=>"Optional, specify 1 or Y to indicate that this device is mounted from the rear of the cabinet.", "Hypervisor"=>"Optional, specify 'ESX', 'ProxMox', or blank (for default behavior of 'None').", "InstallDate"=>"If blank, current date is used, otherwise this mandatory field can contain any ISO valid date format.", "Status"=>"Optional, default will be set to 'Reserved' if not specified.  Value must exist as a Device Status in the database.", "Owner"=>"Optional, and may be blank.  This is the name of the Department that owns the device.", "PrimaryContact"=>"Optional, and may be blank.  The exact name of the Primary Contact for this device in LastName, FirstName format.", "CustomTags"=>"A comma separated list of tags to apply to the device.  Tags do not have to already exist within VIO DCIM." ) as $fieldName=>$helpText ) {
       $content .= '<div>
                     <div><span title="' . __($helpText) . '">' . __($fieldName) . '</span>: </div><div><select name="' . $fieldName . '">';
       for ( $n = 0; $n < sizeof( $fieldList ); $n++ ) {
@@ -188,7 +188,7 @@
         // This could probably be economized in some fashion, but I can just crank this out faster one at a time and worry about efficiency later
         //
 
-        $tmpCon = "<h3>" . __("The following values in the import file require entries in GSPE DCIM before you may proceed.") . "</h3>";
+        $tmpCon = "<h3>" . __("The following values in the import file require entries in VIO DCIM before you may proceed.") . "</h3>";
         $tmpCon .= "<ul>";
 
         $st = $dbh->prepare( "select DataCenterID from fac_DataCenter where ucase(Name)=ucase(:Name)" );
@@ -498,7 +498,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM</title>
+  <title>VIO DCIM</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <!--[if lt IE 9]>

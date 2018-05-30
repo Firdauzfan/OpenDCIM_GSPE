@@ -147,7 +147,7 @@ if(!isset($_REQUEST['action'])){
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM Inventory Reporting</title>
+  <title>VIO DCIM Inventory Reporting</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css">

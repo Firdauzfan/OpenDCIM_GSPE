@@ -97,7 +97,7 @@ if ( isset( $_FILES['inputfile'] )) {
     $fieldNum++;
   }
 
-  $content .= "<div><div><span title=\"" . __("The type of key field that is being used to match devices in GSPE DCIM.  Only one type may be specified per file.") . "\">" . __("KeyField") . "</span></div><div><select name='KeyField'>";
+  $content .= "<div><div><span title=\"" . __("The type of key field that is being used to match devices in VIO DCIM.  Only one type may be specified per file.") . "\">" . __("KeyField") . "</span></div><div><select name='KeyField'>";
   foreach( array( "Label", "Hostname", "AssetTag", "SerialNo" ) as $option ) {
     $content .= "<option val=\"$option\">$option</option>";
   }
@@ -292,7 +292,7 @@ if ( isset( $_FILES['inputfile'] )) {
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>GSPE DCIM</title>
+  <title>VIO DCIM</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <!--[if lt IE 9]>

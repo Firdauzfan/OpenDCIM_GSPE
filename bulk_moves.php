@@ -78,7 +78,7 @@
 
     $fieldNum = 1;
 
-    foreach ( array( "DeviceID"=>"The key field (must uniquely identify) the device to be moved.", "DataCenterID"=>"The name of the Data Center as it exists in GSPE DCIM to move the device to.  If left blank, this will become a DELETE operation.", "Cabinet"=>"The location name of the cabinet, which must exist in GSPE DCIM.  For rows that are delete operations, this can be left blank.", "Position"=>"The position within the specified cabinet to move the device to.  For rows that are delete operations, this can be left blank.  There is no collision checking performed.", "ProcessDate"=>"The date for the operation, which will fill the Installation Date field of the Device record.  If left blank on a row that is a move operation, the current date will be used." ) as $fieldName=>$helpText ) {
+    foreach ( array( "DeviceID"=>"The key field (must uniquely identify) the device to be moved.", "DataCenterID"=>"The name of the Data Center as it exists in VIO DCIM to move the device to.  If left blank, this will become a DELETE operation.", "Cabinet"=>"The location name of the cabinet, which must exist in VIO DCIM.  For rows that are delete operations, this can be left blank.", "Position"=>"The position within the specified cabinet to move the device to.  For rows that are delete operations, this can be left blank.  There is no collision checking performed.", "ProcessDate"=>"The date for the operation, which will fill the Installation Date field of the Device record.  If left blank on a row that is a move operation, the current date will be used." ) as $fieldName=>$helpText ) {
       $content .= '<div>
                     <div><span title="' . __($helpText) . '">' . __($fieldName) . '</span>: </div><div><select name="' . $fieldName . '">';
       for ( $n = 0; $n < sizeof( $fieldList ); $n++ ) {
@@ -97,7 +97,7 @@
       $fieldNum++;
     }
 
-    $content .= "<div><div><span title=\"" . __("The type of key field that is being used to match devices in GSPE DCIM.  Only one type may be specified per file.") . "\">" . __("KeyField") . "</span></div><div><select name='KeyField'>";
+    $content .= "<div><div><span title=\"" . __("The type of key field that is being used to match devices in VIO DCIM.  Only one type may be specified per file.") . "\">" . __("KeyField") . "</span></div><div><select name='KeyField'>";
     foreach( array( "Label", "Hostname", "AssetTag", "SerialNo" ) as $option ) {
       $content .= "<option val=\"$option\">$option</option>";
     }
@@ -149,7 +149,7 @@
 
     $sheet = $objXL->getSheet(0);
     $highestRow = $sheet->getHighestRow();
-    $tmpCon = "<h3>" . __("The following values in the bulk move/delete file require entries in GSPE DCIM before you may proceed.") . "</h3>";
+    $tmpCon = "<h3>" . __("The following values in the bulk move/delete file require entries in VIO DCIM before you may proceed.") . "</h3>";
     $tmpCon .= "<ul>";
 
     $values = array();
@@ -414,7 +414,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM</title>
+  <title>VIO DCIM</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <!--[if lt IE 9]>

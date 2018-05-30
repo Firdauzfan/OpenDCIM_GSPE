@@ -180,7 +180,7 @@
             }
         }
         # start building the graphfile.
-        $graphstr .= "graph GSPEDCIM {
+        $graphstr .= "graph VIODCIM {
 
 label = \"".$graphname."\";
 rankdir = LR;
@@ -474,7 +474,7 @@ overlap = scale;
                 ob_end_clean();
                 exit;
             } elseif ($ft == 'svg') {
-                $body = "<span class=\"errmsg\">ERROR: There was a problem processing the graph. Probably a bug, please submit a report containing the contents of ".$dotfile." to the GSPE DCIM bug tracker</span>";
+                $body = "<span class=\"errmsg\">ERROR: There was a problem processing the graph. Probably a bug, please submit a report containing the contents of ".$dotfile." to the VIO DCIM bug tracker</span>";
             } else {
                 $body = "<span class=\"errmsg\">ERROR: There was a problem processing the graph. Try choosing 'svg' as the output type.</span>";
             }

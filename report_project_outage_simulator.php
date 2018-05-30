@@ -16,7 +16,7 @@ if (!isset($_REQUEST['action'])){
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>GSPE DCIM Inventory Reporting</title>
+  <title>VIO DCIM Inventory Reporting</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <script type="text/javascript" src="scripts/jquery.min.js"></script>
@@ -37,7 +37,7 @@ if (!isset($_REQUEST['action'])){
 	
 ?>
 <div class="main" style="box-shadow: 10px 10px #333333;">
-<h2>GSPE DCIM</h2>
+<h2>VIO DCIM</h2>
 <h3>Outage Impact Simulation</h3>
 <form method="post">
 <table align="center" border=0>
@@ -144,8 +144,8 @@ if (!isset($_REQUEST['action'])){
 		return $style;
 	}
 
-	$sheet->getProperties()->setCreator("GSPEDCIM");
-	$sheet->getProperties()->setLastModifiedBy("GSPEDCIM");
+	$sheet->getProperties()->setCreator("VIODCIM");
+	$sheet->getProperties()->setLastModifiedBy("VIODCIM");
 	$sheet->getProperties()->setTitle(__("Simulated Outage Report"));
 	$sheet->getProperties()->setSubject(__("Simulated Power Outage by Project"));
 
@@ -617,7 +617,7 @@ if (!isset($_REQUEST['action'])){
 	$writer = new PHPExcel_Writer_Excel2007($sheet);
 	ob_end_clean();
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-	header( "Content-Disposition: attachment;filename=\"GSPEDCIM-power-outage-simulation.xlsx\"" );
+	header( "Content-Disposition: attachment;filename=\"VIODCIM-power-outage-simulation.xlsx\"" );
 	ob_end_clean();
 	$writer->save("php://output");
 

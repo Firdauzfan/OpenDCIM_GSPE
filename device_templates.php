@@ -330,7 +330,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM Device Class Templates</title>
+  <title>VIO DCIM Device Class Templates</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <link rel="stylesheet" href="css/imgareaselect-default.css" type="text/css">
@@ -526,7 +526,7 @@
 						}
 					}else if(e.currentTarget.value=='custom'){
 						var dialog=$('<div />', {id: 'modal', title: 'Custom port pattern'}).html('<div id="modaltext"></div><br><div id="modalstatus"></div>');
-						dialog.find('#modalstatus').prepend('<p>Custom pattern: <input></input></p><p><a href="http://gspe.co.id" target=_blank>Pattern Examples</a></p>');
+						dialog.find('#modalstatus').prepend('<p>Custom pattern: <input></input></p><p><a href="http://vioint.co.id" target=_blank>Pattern Examples</a></p>');
 						dialog.dialog({
 							resizable: false,
 							modal: true,

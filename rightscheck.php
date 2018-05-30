@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>GSPE DCIM rights check</title>
+<title>VIO DCIM rights check</title>
 <style type="text/css">
 .wanted { background-color: forestgreen; }
 .warning { background-color: orange; }

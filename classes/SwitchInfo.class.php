@@ -1,11 +1,11 @@
 <?php
 /*
-	GSPE DCIM
+	VIO Intelligence DCIM
 
-	This is the main class library for the GSPE DCIM application, which
+	This is the main class library for the VIO Intelligence DCIM application, which
 	is a PHP/Web based data center infrastructure management system.
 
-	This application was originally written by PT Graha Sumber Prima Elektronik
+	This application was originally written by PT VIO Intelligence
 */
 
 class SwitchInfo {
@@ -87,7 +87,7 @@ class SwitchInfo {
 			if(count($portlist)==0){
 				$err_msg=__("I don't know what type of device this is but it did not return any ports whatsoever.  Do not try to report this as an error.");
 			}else{
-				$err_msg=__("First port detection failed, please report to GSPE DCIM developers");
+				$err_msg=__("First port detection failed, please report to VIO Intelligence DCIM developers");
 			}
 			$x=$portlist;
 			$x=array("err"=>$err_msg)+$x;

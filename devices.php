@@ -864,7 +864,7 @@
 		$dev->Status="Reserved";
 	}
 	
-	$title=($dev->Label!='')?"$dev->Label :: $dev->DeviceID":__("GSPE DCIM Device Maintenance");
+	$title=($dev->Label!='')?"$dev->Label :: $dev->DeviceID":__("VIO DCIM Device Maintenance");
 
 	function buildVMtable($DeviceID){
 		$Hyper=new VM();

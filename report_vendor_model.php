@@ -19,7 +19,7 @@
     <head>
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>GSPE DCIM Vendor/Model Reporting</title>
+      <title>VIO DCIM Vendor/Model Reporting</title>
       <link rel="stylesheet" href="css/inventory.php" type="text/css">
       <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
       <script type="text/javascript" src="scripts/jquery.min.js"></script>
@@ -38,7 +38,7 @@
  ?>
  
     <div class="main" style="box-shadow: 10px 10px #333333;">
-    <h2>GSPE DCIM</h2>
+    <h2>VIO DCIM</h2>
     <h3>Vendor Model Report</h3>
     <form method="post">
     <div class="table">
@@ -96,11 +96,11 @@
 
         $workBook = new PHPExcel();
 
-    	$workBook->getProperties()->setCreator("GSPEDCIM");
-    	$workBook->getProperties()->setLastModifiedBy("GSPEDCIM");
+    	$workBook->getProperties()->setCreator("VIODCIM");
+    	$workBook->getProperties()->setLastModifiedBy("VIODCIM");
     	$workBook->getProperties()->setTitle("Data Center Inventory Export");
     	$workBook->getProperties()->setSubject("Vendor Model Export");
-    	$workBook->getProperties()->setDescription("Export of the GSPEDCIM database based upon user filtered criteria.");
+    	$workBook->getProperties()->setDescription("Export of the VIODCIM database based upon user filtered criteria.");
     	
     	// Start off with the TPS Cover Page
 
@@ -153,7 +153,7 @@
             ->getFont()
             ->setBold(true);
 
-        $remarks = array( __("This is the Vendor(Manufacturer)/Model report from GSPEDCIM."),
+        $remarks = array( __("This is the Vendor(Manufacturer)/Model report from VIODCIM."),
         		__("Each manufacturer is listed in a separate worksheet, with devices listed lexicographically by Label."),
         		__("The criteria given for this report is:"),
                 __("Manufacturer:") . $mfgName,
@@ -276,7 +276,7 @@
         $workBook->setActiveSheetIndex(0);
         ob_end_clean();
     	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    	header( sprintf( "Content-Disposition: attachment;filename=\"gspedcim-%s.xlsx\"", date( "YmdHis" ) ) );
+    	header( sprintf( "Content-Disposition: attachment;filename=\"VIOdcim-%s.xlsx\"", date( "YmdHis" ) ) );
         ob_end_clean();
     	
     	$writer = new PHPExcel_Writer_Excel2007($workBook);

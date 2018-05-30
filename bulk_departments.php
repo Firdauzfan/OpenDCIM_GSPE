@@ -78,7 +78,7 @@
 
     $fieldNum = 1;
 
-    foreach ( array( "DepartmentName"=>"The name of the department (or customer) that you want to identify as owners of devices and cabinets.", "ExecutiveSponsor"=>"The name of the person, typically within the Department/Customer organization, that is the top level contact.", "AccountManager"=>"The name of the person, typically within the hosting data center organization, that is the main liaison with the Department/Customer.", "DepartmentColor"=>"A valid hex-code color that will be applied to devices owned by this Department.   If left blank, no special coloring will be applied.", "Classification"=>"A valid classification name, as defined in the Configuration screen of this GSPE DCIM installation." ) as $fieldName=>$helpText ) {
+    foreach ( array( "DepartmentName"=>"The name of the department (or customer) that you want to identify as owners of devices and cabinets.", "ExecutiveSponsor"=>"The name of the person, typically within the Department/Customer organization, that is the top level contact.", "AccountManager"=>"The name of the person, typically within the hosting data center organization, that is the main liaison with the Department/Customer.", "DepartmentColor"=>"A valid hex-code color that will be applied to devices owned by this Department.   If left blank, no special coloring will be applied.", "Classification"=>"A valid classification name, as defined in the Configuration screen of this VIO DCIM installation." ) as $fieldName=>$helpText ) {
       $content .= '<div>
                     <div><span title="' . __($helpText) . '">' . __($fieldName) . '</span>: </div><div><select name="' . $fieldName . '">';
       for ( $n = 0; $n < sizeof( $fieldList ); $n++ ) {
@@ -222,7 +222,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <title>GSPE DCIM</title>
+  <title>VIO DCIM</title>
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <!--[if lt IE 9]>
