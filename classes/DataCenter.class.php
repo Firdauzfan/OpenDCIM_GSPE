@@ -577,6 +577,33 @@ class DataCenter {
 
 		$sql = "SELECT SUM(ColCap) FROM `fac_AC`WHERE DataCenterID=$this->DataCenterID;";
 		$dcStats["TotCap"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT TotAmp FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["TotAmp"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT InputVolt FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["InputVolt"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT Switchboard FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["Switchboard"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT PowerPath FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["PowerPath"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT GenRedund FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["GenRedund"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT UPSCapacity FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["UPSCapacity"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT UPSRedundancy FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["UPSRedundancy"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT UPSRuntime FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["UPSRuntime"]=($test=$this->query($sql)->fetchColumn())?$test:0;
+
+		$sql = "SELECT UPSOutput FROM `fac_PowAtt`WHERE DataCenterID=$this->DataCenterID;";
+		$dcStats["UPSOutput"]=($test=$this->query($sql)->fetchColumn())?$test:0;
 		
 		return $dcStats;
 	}

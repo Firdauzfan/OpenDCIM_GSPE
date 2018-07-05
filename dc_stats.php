@@ -211,6 +211,60 @@ echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 	<div>',(($dcStats["TotalU"])?sprintf("%3.1f%%",$dcStats["Available"]/$dcStats["TotalU"]*100):"0"),'</div>
   </div>
 </div> <!-- END div.table -->
+
+<div class="table border">
+  <div>
+	<div>',__("Name"),'</div>
+	<div>',__("Value"),'</div>
+	<div>',__("Unit"),'</div>
+  </div>
+ <div>
+	<div>',__("Total Amps (main bus)"),'</div>
+	<div>',sprintf("%3d",$dcStats["TotAmp"]),'</div>
+	<div>',__("A"),'</div>
+  </div>
+  <div>
+	<div>',__("Input Voltage (main bus"),'</div>
+	<div>',sprintf("%3d",$dcStats["InputVolt"]),'</div>
+	<div>',__("V"),'</div>
+  </div>
+   <div>
+	<div>',__("Switchboard kAIC"),'</div>
+	<div>',sprintf("%3d",$dcStats["Switchboard"]),'</div>
+	<div>',__("kA"),'</div>
+  </div>
+   <div>
+	<div>',__("Power Path"),'</div>
+	<div>',sprintf($dcStats["PowerPath"]),'</div>
+	
+  </div>
+   <div>
+	<div>',__("Generator Redundancy"),'</div>
+	<div>',sprintf($dcStats["GenRedund"]),'</div>
+	
+  </div>
+   <div>
+	<div>',__("IT Space UPS Capacity"),'</div>
+	<div>',sprintf($dcStats["UPSCapacity"]),'</div>
+	<div>',__("kW"),'</div>
+  </div>
+   <div>
+	<div>',__("IT Space UPS Redundancy"),'</div>
+	<div>',sprintf($dcStats["UPSRedundancy"]),'</div>
+
+  </div>
+  <div>
+	<div>',__("IT Space UPS Runtime @ rated load"),'</div>
+	<div>',sprintf($dcStats["UPSRuntime"]),'</div>
+	<div>',__("minutes"),'</div>
+  </div>
+  <div>
+	<div>',__("IT Space UPS Output Voltage"),'</div>
+	<div>',sprintf($dcStats["UPSOutput"]),'</div>
+	<div>',__("V"),'</div>
+  </div>
+</div> <!-- END div.table -->
+
 <div class="table border">
   <div>
     <div>',__("Delivery Address"),'</div>
@@ -221,6 +275,7 @@ echo '<div class="main" style="box-shadow: 10px 10px #333333;">
     <div>',$dc->Administrator,'</div>
   </div>
 </div>
+
 <div class="table border">
   <div>
         <div>',__("Computed Wattage"),'</div>

@@ -37,6 +37,7 @@ return array(
     'ESX' => $baseDir . '/classes/ESX.class.php',
     'EscalationTimes' => $baseDir . '/classes/EscalationTimes.class.php',
     'Escalations' => $baseDir . '/classes/Escalations.class.php',
+    'FacPowAtt' => $baseDir . '/classes/FacPowAtt.class.php',
     'FPDF_TPL' => $vendorDir . '/setasign/fpdi/fpdf_tpl.php',
     'FPDI' => $vendorDir . '/setasign/fpdi/fpdi.php',
     'FilterASCII85' => $vendorDir . '/setasign/fpdi/filters/FilterASCII85.php',

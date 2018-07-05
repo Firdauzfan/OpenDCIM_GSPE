@@ -2,7 +2,7 @@
 	require_once( 'db.inc.php' );
 	require_once( 'facilities.inc.php' );
 
-	$ac=new AC();
+	$powattid=new FacPowAtt();
 	$dept=new Department();
 
 	$status="";
@@ -12,18 +12,18 @@
 
 	$write=($person->WriteAccess)?true:false;
 
-	if(isset($_REQUEST['acid'])){
-		$ac->ACID=(isset($_POST['acid'])?$_POST['acid']:$_GET['acid']);
-		$ac->GetAC();
-		$write=($person->canWrite($ac->AssignedTo))?true:$write;
+	if(isset($_REQUEST['facpowid'])){
+		$powattid->PowAttID=(isset($_POST['facpowid'])?$_POST['facpowid']:$_GET['facpowid']);
+		$powattid->GetFacPowAtt();
+		// $write=($person->canWrite($powattid->AssignedTo))?true:$write;
 	}
 
 	// If you're deleting the cabinet, no need to pull in the rest of the information, so get it out of the way
 	// Only a site administrator can create or delete a cabinet
 	if(isset($_POST["delete"]) && $_POST["delete"]=="yes" && $person->SiteAdmin ) {
-		$ac->DeleteAC();
+		$powattid->DeleteFacPowAtt();
 		$status['code']=200;
-		$status['msg']=redirect("ac.php");
+		$status['msg']=redirect("facpowatt.php");
 		header('Content-Type: application/json');
 		echo json_encode($status);
 		exit;
@@ -38,59 +38,51 @@
 	}
 
 	if(isset($_POST['action'])){
-		$ac->DataCenterID=$_POST['datacenterid'];
-		$ac->Location=trim($_POST['location']);
-		$ac->AssignedTo=$_POST['assignedto'];
-		$ac->ZoneID=$_POST['zoneid'];
-		$ac->CabRowID=$_POST['cabrowid'];
-		$ac->Model=$_POST['model'];;
-		$ac->ColCap=$_POST['colcap'];
-		$ac->InstallationDate=$_POST['installationdate'];
-		$ac->Notes=trim($_POST['notes']);
-		$ac->Notes=($cab->Notes=="<br>")?"":$cab->Notes;
-
-		// if ( $cab->U1Position == "Default" ) {
-		// 	$dc = new DataCenter();
-		// 	$dc->DataCenterID = $cab->DataCenterID;
-		// 	$dc->GetDataCenter();
-		// 	if ( $dc->U1Position == "Top" ) {
-		// 		$cab->U1Position = "Top";
-		// 	} elseif ( $dc->U1Position == "Default" ) {
-		// 		$cab->U1Position = $config->ParameterArray["U1Position"];
-		// 	} else {
-		// 		$cab->U1Position = "Bottom";
-		// 	}
-		// }
+		$powattid->DataCenterID=$_POST['datacenterid'];
+		$powattid->Location=trim($_POST['location']);
+		$powattid->AssignedTo=$_POST['assignedto'];
+		$powattid->TotAmp=$_POST['totamp'];
+		$powattid->InputVolt=$_POST['inputvolt'];
+		$powattid->Switchboard=$_POST['switchboard'];;
+		$powattid->PowerPath=$_POST['powerpath'];
+		$powattid->GenRedund=$_POST['generatorredundancy'];
+		$powattid->UPSCapacity=$_POST['upscapacity'];
+		$powattid->UPSRedundancy=$_POST['upsredundancy'];
+		$powattid->UPSRuntime=$_POST['upsruntime'];
+		$powattid->UPSOutput=$_POST['upsoutput'];
 		
-		if($ac->Location!=""){
-			if(($ac->ACID >0)&&($_POST['action']=='Update')){
+		if($powattid->Location!=""){
+			if(($powattid->PowAttID >0)&&($_POST['action']=='Update')){
 				$status=__("Updated");
-				$ac->UpdateAC();
+				$powattid->UpdateFacPowAtt();
 			}elseif($_POST['action']=='Create'){
-				$ac->CreateAC();
+				$powattid->CreateFacPowAtt();
 			}
 
 		}
-	}elseif($ac->ACID >0){
-		$ac->GetAC();
+	}elseif($powattid->PowAttID >0){
+		$powattid->GetFacPowAtt();
 	}else{
-		$ac->ACID=null;
+		$powattid->PowAttID=null;
 		//Set DataCenterID to first DC in dcList for getting zoneList
 		$dc=new DataCenter();
 		$dcList=$dc->GetDCList();
 		$keys=array_keys($dcList);
-		$ac->DataCenterID=(isset($_GET['dcid']))?intval($_GET['dcid']):$keys[0];
-		$ac->Location=null;
-		$ac->ZoneID=(isset($_GET['zoneid']))?intval($_GET['zoneid']):null;
-		$ac->CabRowID=(isset($_GET['cabrowid']))?intval($_GET['cabrowid']):null;
-		$ac->Model=null;
-		$ac->ColCap=null;
-		$ac->InstallationDate=date('Y-m-d');
+		$powattid->DataCenterID=(isset($_GET['dcid']))?intval($_GET['dcid']):$keys[0];
+		$powattid->Location=null;
+		$powattid->TotAmp=null;
+		$powattid->InputVolt=null;
+		$powattid->Switchboard=null;
+		$powattid->PowerPath=null;
+		$powattid->GenRedund=null;
+		$powattid->UPSCapacity=null;
+		$powattid->UPSRedundancy=null;
+		$powattid->UPSRuntime=null;
+		$powattid->UPSOutput=null;
 	}
 
 	$deptList=$dept->GetDepartmentList();
-	$acList=$ac->ListACs();
-	// $sensorList = SensorTemplate::getTemplates();
+	$powattidList=$powattid->ListFacPowAtts();
 
 ?>
 <!doctype html>
@@ -115,10 +107,10 @@
   <script type="text/javascript" src="scripts/jquery.textext.js"></script>
   <script type="text/javascript" src="scripts/common.js?v<?php echo filemtime('scripts/common.js');?>"></script>
 
-  <script type="text/javascript">
+ <script type="text/javascript">
 	$(document).ready(function() {
-		$('select[name=acid]').change(function(e){
-			location.href='ac.php?acid='+this.value;
+		$('select[name=facpowid]').change(function(e){
+			location.href='facpowatt.php?facpowid='+this.value;
 		});
 
 		$('#datacenterid').change(function(){
@@ -200,19 +192,19 @@
 
 echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 <h2>',$config->ParameterArray["OrgName"],'</h2>
-<h3>',__("Data Center PAC Inventory"),'</h3>
+<h3>',__("Data Center Facility Power Attributes"),'</h3>
 <h3>',$status,'</h3>
 <div class="center"><div>
 <form id="rackform" method="POST">
 <div class="table">
 <div>
-   <div>',__("PAC"),'</div>
-   <div><select name="acid" id="acid">
-   <option value=0>',__("New PAC"),'</option>';
+   <div>',__("Power Attribute"),'</div>
+   <div><select name="facpowid" id="facpowid">
+   <option value=0>',__("New Power Attribute"),'</option>';
 
-	foreach($acList as $cabRow){
-		$selected=($cabRow->ACID==$ac->ACID)?' selected':'';
-		print "<option value=\"$cabRow->ACID\"$selected>$cabRow->Location</option>\n";
+	foreach($powattidList as $cabRow){
+		$selected=($cabRow->PowAttID==$powattid->PowAttID)?' selected':'';
+		print "<option value=\"$cabRow->PowAttID\"$selected>$cabRow->Location</option>\n";
 	}
 
 echo '   </select></div>
@@ -224,7 +216,7 @@ echo '   </select></div>
 ';
 
 	foreach(DataCenter::GetDCList() as $dc){
-		$selected=($dc->DataCenterID==$ac->DataCenterID)?' selected':'';
+		$selected=($dc->DataCenterID==$powattid->DataCenterID)?' selected':'';
 		print "\t\t\t<option value=\"$dc->DataCenterID\"$selected>$dc->Name</option>\n";
 	}
 
@@ -233,7 +225,7 @@ echo '		</select>
 </div>
 <div>
    <div>',__("Location"),'</div>
-   <div><input type="text" class="validate[required,minSize[1],maxSize[20]]" name="location" size=10 maxlength=20 value="',$ac->Location,'"></div>
+   <div><input type="text" class="validate[required,minSize[1],maxSize[20]]" name="location" size=10 maxlength=20 value="',$powattid->Location,'"></div>
 </div>
 <div>
   <div>',__("Assigned To"),':</div>
@@ -241,7 +233,7 @@ echo '		</select>
     <option value=0>',__("General Use"),'</option>';
 
 	foreach($deptList as $deptRow){
-		if($deptRow->DeptID==$ac->AssignedTo){$selected=' selected';}else{$selected="";}
+		if($deptRow->DeptID==$powattid->AssignedTo){$selected=' selected';}else{$selected="";}
 		print "<option value=\"$deptRow->DeptID\"$selected>$deptRow->Name</option>\n";
 	}
 
@@ -249,38 +241,46 @@ echo '  </select>
   </div>
 </div>
 <div>
-   <div>',__("Zone"),'</div>
-   <div>',$ac->GetZoneSelectList(),'</div>
+   <div>',__("Total Amps"),'</div>
+   <div><input type="text" name="totamp" size=30 maxlength=80 value="',$powattid->TotAmp,'"></div>
 </div>
 <div>
-   <div>',__("Cabinet Row"),'</div>
-   <div>',$ac->GetCabRowSelectList(),'</div>
+   <div>',__("Input Voltage"),'</div>
+   <div><input type="text" name="inputvolt" size=30 maxlength=80 value="',$powattid->InputVolt,'"></div>
 </div>
 <div>
-   <div>',__("Model"),'</div>
-   <div><input type="text" name="model" size=30 maxlength=80 value="',$ac->Model,'"></div>
+   <div>',__("Switchboard kAIC"),'</div>
+   <div><input type="text" name="switchboard" size=30 maxlength=80 value="',$powattid->Switchboard,'"></div>
 </div>
 <div>
-   <div>',__("Cooling Capacity"),'</div>
-   <div><input type="text" name="colcap" size=30 maxlength=11 value="',$ac->ColCap,'"></div>
+   <div>',__("Power Path"),'</div>
+   <div><input type="text" name="powerpath" size=30 maxlength=80 value="',$powattid->PowerPath,'"></div>
 </div>
 <div>
-   <div>',__("Date of Installation"),'</div>
-   <div><input type="text" name="installationdate" size=15 value="',date('Y-m-d', strtotime($ac->InstallationDate)),'"></div>
+   <div>',__("Generator Redundancy"),'</div>
+   <div><input type="text" name="generatorredundancy" size=30 maxlength=80 value="',$powattid->GenRedund,'"></div>
 </div>
-</div> <!-- END div.table -->
-<div class="table">
-	<div>
-	  <div><label for="notes">',__("Notes"),'</label></div>
-	  <div><textarea name="notes" id="notes" cols="40" rows="8">',$ac->Notes,'</textarea></div>
-	</div>
-<div class="caption">';
+<div>
+   <div>',__("UPS Capacity"),'</div>
+   <div><input type="text" name="upscapacity" size=30 maxlength=80 value="',$powattid->UPSCapacity,'"></div>
+</div>
+<div>
+   <div>',__("UPS Redundancy"),'</div>
+   <div><input type="text" name="upsredundancy" size=30 maxlength=80 value="',$powattid->UPSRedundancy,'"></div>
+</div>
+<div>
+   <div>',__("UPS Runtime"),'</div>
+   <div><input type="text" name="upsruntime" size=30 maxlength=80 value="',$powattid->UPSRuntime,'"></div>
+</div>
+<div>
+   <div>',__("UPS Output Voltage"),'</div>
+   <div><input type="text" name="upsoutput" size=30 maxlength=80 value="',$powattid->UPSOutput,'"></div>
+</div>
+</div> <!-- END div.table -->';
 
-	if($ac->ACID >0){
+	if($powattid->PowAttID >0){
 		echo '   <button type="submit" name="action" value="Update">',__("Update"),'</button>
-	<button type="button" name="action" value="Delete">',__("Delete"),'</button>
-	<button type="button" value="AuditReport">',__("Audit Report"),'</button>
-	<button type="button" value="MapCoordinates">',__("Map Coordinates"),'</button>';
+	<button type="button" name="action" value="Delete">',__("Delete"),'</button>';
 	}else{
 		echo '   <button type="submit" name="action" value="Create">',__("Create"),'</button>';
 	}
@@ -289,8 +289,8 @@ echo '  </select>
 </div> <!-- END div.table -->
 </form>
 </div></div>
-<?php if($ac->ACID >0){
-		echo '<a href="ac.php">[ ',__("Return to Navigator"),' ]</a>'; 
+<?php if($powattid->PowAttID >0){
+		echo '<a href="facpowatt.php">[ ',__("Return to Navigator"),' ]</a>'; 
 	}else{ 
 		echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>';
 	}
@@ -298,24 +298,19 @@ echo '  </select>
 echo '
 <!-- hiding modal dialogs here so they can be translated easily -->
 <div class="hide">
-	<div title="',__("PAC delete confirmation"),'" id="deletemodal">
-		<div id="modaltext"><span style="float:left; margin:0 7px 20px 0;" class="ui-icon ui-icon-alert"></span>',__("Are you sure that you want to delete this PAC ?<br><br><b>THERE IS NO UNDO</b>"),'
+	<div title="',__("Facility Power Attributes delete confirmation"),'" id="deletemodal">
+		<div id="modaltext"><span style="float:left; margin:0 7px 20px 0;" class="ui-icon ui-icon-alert"></span>',__("Are you sure that you want to delete this Facility Power Attributes ?<br><br><b>THERE IS NO UNDO</b>"),'
 		</div>
 	</div>
 </div>'; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+
 <script type="text/javascript">
-$('button[value=AuditReport]').click(function(){
-	window.location.assign('cabaudit.php?cabinetid='+$('select[name=cabinetid]').val());
-});
-$('button[value=MapCoordinates]').click(function(){
-	window.location.assign('mapmaker.php?acid='+$('select[name=acid]').val());
-});
 $('button[value=Delete]').click(function(){
 	var defaultbutton={
 		"<?php echo __("Yes"); ?>": function(){
-			$.post('', {acid: $('select[name=acid]').val(),delete: 'yes' }, function(data){
+			$.post('', {facpowid: $('select[name=facpowid]').val(),delete: 'yes' }, function(data){
 				if(data.code==200){
 					window.location.assign(data.msg);
 				}else{
