@@ -127,10 +127,12 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
-	echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+	// include( 'sidebar.inc.php' );
+	echo '<div class="main">
 <div class="center" style="margin-top:20px;"><div>
 <form method="POST">
 <div class="table centermargin">
@@ -182,7 +184,7 @@
 <iframe name="projectadmin" id="projectadmin" width="700px" frameborder=0 scrolling="no"></iframe>
 <br>
 </div></div>
-<?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>
+<?php echo '
 <!-- hiding modal dialogs here so they can be translated easily -->
 <div class="hide">
 	<div title="',__("Project delete confirmation"),'" id="deletemodal">
@@ -192,6 +194,8 @@
 </div>'; ?>
 </div> <!-- END div.main -->
 </div> <!-- END div.page -->
+</div>
+</div>
 </body>
 <script type="text/javascript">
 $('iframe').load(function() {

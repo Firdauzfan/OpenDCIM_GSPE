@@ -612,9 +612,11 @@ overlap = scale;
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-        <div class="page">
+    <div class="backgroundpage">
+    <div class="page1 ">
+    <div class="makecenter">
 <?php
-        include('sidebar.inc.php');
+        // include('sidebar.inc.php');
 echo '          <div class="main" style="margin-top:10px">
                         <label for="containmenttype">',__("Filter type:"),'</label>
                         <select name="containmenttype" id="containmenttype">
@@ -636,6 +638,8 @@ echo '                  <span class="errmsg">ERROR: You must have the dot comman
 }
 ?>
                 </div><!-- END div.main -->
+        </div><!-- END div.page -->
+        </div><!-- END div.main -->
         </div><!-- END div.page -->
 </body>
 </html>

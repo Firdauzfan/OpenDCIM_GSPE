@@ -102,12 +102,14 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page" id="mapadjust">
+<div class="backgroundpage">
+<div class="page1" id="mapadjust">
+<div class="makecenter">
 <?php
-	include( "sidebar.inc.php" );
+	// include( "sidebar.inc.php" );
 
 echo '
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main2">
 	<div class="zonemaker">
 		<h3>',$status,'</h3>
 		<div class="center" style="min-height: 0px;"><div>
@@ -203,8 +205,8 @@ if(strlen($dc_zone->DrawingFileName) >0){
 }
 
 echo '
-<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>
-</div><!-- END div.main -->'; 
+
+</div><!-- END div.main --> </div> </div>'; 
 
  ?>
 

@@ -73,7 +73,7 @@
 <?php
 	include( 'sidebar.inc.php' );
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main" style="box-shadow: 10px 10px #212F39;">
 <h3>',$status,'</h3>
 <div class="center"><div>
 <form method="POST">
@@ -217,7 +217,7 @@ echo '   </select></div>
 </div><!-- END div.table -->
 </form>
 </div></div>
-<?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>'; ?>
+<?php echo ''; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
 </body>

@@ -66,7 +66,7 @@
 <?php
 	include( "sidebar.inc.php" );
 ?>
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main" style="box-shadow: 10px 10px #212F39;">
 <div class="center"><div>
 <form method="POST">
 <div class="table">
@@ -109,7 +109,7 @@
 </div><!-- END div.table -->
 </form>
 </div></div>
-<a href="index.php">[ Return to Main Menu ]</a>
+<a href="index.php">[ Home ]</a>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
 </body>

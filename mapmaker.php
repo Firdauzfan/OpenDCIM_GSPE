@@ -143,11 +143,13 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page" id="mapadjust">
+<div class="backgroundpage">
+<div class="page1" id="mapadjust">
+<div class="makecenter">
 <?php
-	include( "sidebar.inc.php" );
+	// include( "sidebar.inc.php" );
 ?>
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main">
 <div class="mapmaker">
 <div>
 </div>
@@ -258,6 +260,8 @@
     <p style="font-size: 110%; font-weight: bold; padding-left: 0.1em;"><?php echo __("Selection Preview"); ?></p> 
   
   </div> 
+</div> 
+ </div> 
 </div> 
 <script type="text/javascript">
 	$(document).ready(function() {

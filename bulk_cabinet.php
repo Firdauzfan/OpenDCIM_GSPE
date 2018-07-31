@@ -293,11 +293,13 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page index">
+<div class="backgroundpage">
+<div class="page1 index">
+<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 ?>
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main">
 <div class="center" style="margin-top:20px;"><div>
 
 <?php
@@ -309,6 +311,8 @@
 
 
 </div></div>
+</div><!-- END div.main -->
+</div><!-- END div.page -->
 </div><!-- END div.main -->
 </div><!-- END div.page -->
 </body>

@@ -1677,9 +1677,12 @@ print "		var dialog=$('<div>').prop('title',\"".__("Verify Delete Device")."\").
 </head>
 <body onhashchange="getHash()">
 <?php include( 'header.inc.php' ); ?>
-<div class="page device">
+<div class="backgroundpage">
+<div class="page1 device">
+<div class="makecenter">
+
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 
 echo '<div class="main" style="margin-top:10px">
 <button id="layout" onClick="swaplayout()">'.__("Portrait").'</button>';
@@ -1828,6 +1831,7 @@ echo '		   </div>
 			<div><textarea type="text" name="tags" id="tags" rows="1"></textarea></div>
 		</div>
 	</div> <!-- END div.table -->
+
 </fieldset>
 <fieldset id="customattrs">
 <legend>',__("Custom Attributes"),'</legend>';
@@ -2522,6 +2526,8 @@ $connectioncontrols.=($dev->DeviceID>0 && !empty($portList))?'
 
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+	</div>
+	</div>
 <script type="text/javascript">
 	var portrights=$.parseJSON('<?php echo json_encode($jsondata); ?>');
 	portrights['admin']=<?php echo ($person->SiteAdmin)?'true':'false'; ?>;

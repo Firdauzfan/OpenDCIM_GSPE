@@ -56,8 +56,10 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
-<?php include( 'sidebar.inc.php' ); ?>
+    <div class="backgroundpage">
+    <div class="page1 ">
+    <div class="makecenter">
+<?php //include( 'sidebar.inc.php' ); ?>
 <div class="main" style="margin-top:10px">
 <div class="center"><div>
 <form method="post" id="panelform">
@@ -115,6 +117,8 @@
 </div>
 </form>
 </div></div>
+</div>
+</div>
 </div>
 </div>
 </body>

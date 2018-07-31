@@ -229,11 +229,14 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page panelmgr">
-<?php
-	include( "sidebar.inc.php" );
+<div class="backgroundpage">
+<div class="page1 panelmgr">
+<div class="makecenter">
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+<?php
+	// include( "sidebar.inc.php" );
+
+echo '<div class="main">
 <div class="center" style="margin-top:20px;"><div>
 <form method="POST">
 <div class="table">
@@ -356,9 +359,9 @@ echo '		</select>
 	// Also show the power gauge
 	if($panel->PanelID >0){
 		echo '
-<div class="pwr_gauge"><canvas id="power-measured" width="150" height="150"></canvas></div>
-<div class="pwr_gauge"><canvas id="power-inherited" width="150" height="150"></canvas></div>
-<div class="pwr_gauge"><canvas id="power-estimate" width="150" height="150"></canvas></div>
+<div class="pwr_gauge" style="margin-top:10%;"><canvas id="power-measured" width="150" height="150"></canvas></div>
+<div class="pwr_gauge" style="margin-top:10%;"><canvas id="power-inherited" width="150" height="150"></canvas></div>
+<div class="pwr_gauge" style="margin-top:10%;"><canvas id="power-estimate" width="150" height="150"></canvas></div>
 
 ';
 	
@@ -424,7 +427,7 @@ echo '		</select>
 ?>
 </div></div>
 
-<?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>
+<?php echo '
 <!-- hiding modal dialogs here so they can be translated easily -->
 <div class="hide">
 	<div title="',__("Power panel delete confirmation"),'" id="deletemodal">
@@ -434,6 +437,8 @@ echo '		</select>
 </div>'; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+</div>
+</div>
 <script type="text/javascript">
 $('button[value=Delete]').click(function(){
 	var defaultbutton={

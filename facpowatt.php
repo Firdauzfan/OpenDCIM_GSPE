@@ -186,11 +186,13 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main">
 <h2>',$config->ParameterArray["OrgName"],'</h2>
 <h3>',__("Data Center Facility Power Attributes"),'</h3>
 <h3>',$status,'</h3>
@@ -288,11 +290,11 @@ echo '  </select>
 </div>		
 </div> <!-- END div.table -->
 </form>
-</div></div>
+
 <?php if($powattid->PowAttID >0){
 		echo '<a href="facpowatt.php">[ ',__("Return to Navigator"),' ]</a>'; 
 	}else{ 
-		echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>';
+		echo '';
 	}
 
 echo '
@@ -305,7 +307,9 @@ echo '
 </div>'; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
-
+</div>
+</div>
+</div></div>
 <script type="text/javascript">
 $('button[value=Delete]').click(function(){
 	var defaultbutton={

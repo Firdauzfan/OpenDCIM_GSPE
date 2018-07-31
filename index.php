@@ -45,7 +45,7 @@
 	// Build table to display pending rack requests for inclusion later
 	$rackrequest='';
 	if($config->ParameterArray["RackRequests"]=="enabled" && $person->RackAdmin){
-		$rackrequest="<h3>".__("Pending Rack Requests")."</h3>\n<div class=\"table whiteborder rackrequest\">\n<div>\n  <div>".__("Submit Time")."</div>\n  <div>".__("Requestor")."</div>\n  <div>".__("System Name")."</div>\n  <div>".__("Department")."</div>\n  <div>".__("Due By")."</div>\n</div>\n";
+		$rackrequest="<h3>".__("Pending Rack Requests")."</h3>\n<div class=\"table whiteborder rackrequest\">\n<div>\n  <div>".__("Submit Time")."</div>\n  <div>".__("Requestor")."</div>\n  <div>".__("System Name")."</div>\n  <div>".__("Department")."</div>\n  <div>".__("Due By")."</div>\n</div><br>\n";
 
 		$rack=new RackRequest();
 		$tmpContact=new People();
@@ -93,14 +93,16 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page index">
+<div class="backgroundpage">
+<div class="page1 index">
+<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 echo '
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main">
 <div class="center"><div>
 ',$rackrequest,'
-<h3>',__("Data Center Inventory"),' <a href="search_export.php">(',__("Export Inventory"),')</a></h3>
+<h3>',__("Data Center Inventory"),' <a href="search_export.php"></a></h3>
 <div class="table border centermargin">
 <div class="title">
 ',__("Hosted Systems"),'
@@ -148,12 +150,16 @@ echo '
 	<div>',$StatsCabinet,'</div>
 </div>
 </div> <!-- END div.table -->
-	<div>';
+	<div>
+<a style="color:#1675A1;font-size:20px" href="search_export.php">(',__("Export Inventory"),')</a>
+	';
 
 if( file_exists("sitecontact.html") ) {
 	include( "sitecontact.html" );
 }
 echo '	</div>
+</div>
+</div>
 </div>
 </div>
 </div>

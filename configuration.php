@@ -1476,11 +1476,14 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page config">
-<?php
-	include( "sidebar.inc.php" );
+<div class="backgroundpage">
+<div class="page1 config">
+<div class="makecenter">
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+<?php
+	// include( "sidebar.inc.php" );
+
+echo '<div class="main">
 <div class="center"><div>
 <h3></h3><h3 id="messages"></h3>
 <form enctype="multipart/form-data" method="POST">
@@ -2272,8 +2275,10 @@ echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 </div> <!-- END div.table -->
 </form>
 </div>
-   <?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a><span class="hide"><!-- hiding these two phrases here to make sure they get translated for use in the asset tracking status fields -->',__("Reserved"),'',__("Disposed"),'</span>'; ?>
+   <?php echo '<span class="hide"><!-- hiding these two phrases here to make sure they get translated for use in the asset tracking status fields -->',__("Reserved"),'',__("Disposed"),'</span>'; ?>
 </div>
+  </div>
+  </div>
   </div>
   </div>
 </body>

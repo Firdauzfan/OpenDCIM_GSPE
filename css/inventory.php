@@ -13,6 +13,7 @@ html {
 	background-image: url(../images/background-dc.jpg);
 	background-size: cover;
 }
+
 select {padding: .05em;}
 fieldset table, table {border: 1px solid grey;}
 textarea {white-space: pre;word-wrap: break-word;}
@@ -335,7 +336,9 @@ span.cdudisclaimer {color:red;font-weight:bold;}
 #img_FrontPictureFile, #img_RearPictureFile { max-width: 125px; max-height: 200px; padding-right: 5px;}
 
 /* Basic Page Layout */
-.page {position: relative;width: 100%;background-image: url(../images/background-dc.jpg); background-size: cover;}
+.backgroundpage{background-image: url(../images/background-dc.jpg);
+	background-size: cover;}
+.page1 {position: relative;width: 100%; background-color:rgba(0, 0, 0, 0.3); padding-bottom:15%; padding-top:2%}
 .clear {clear: both;}
 p, h2, h3, h1 {margin-top: 1em;margin-bottom: 1em;}
 h2 {font-size: 1.5em;text-align: center;}
@@ -348,14 +351,28 @@ a:visited {color: black;}
 
 div.main {
 	display: inline-block;
+	border-radius: 10px;
 	vertical-align: top;
-	min-height: 500px;
+	min-height: 40%;
+	min-width:40%;
 	padding: 5px;
 	background-color: <?php echo $config->ParameterArray['BodyColor']; ?>;
 	border: 1px dotted #333;
 	margin-bottom: 0em;
 	height:auto;
-	box-shadow: 10px 10px #333333;
+	
+}
+div.main2{
+	display: inline-block;
+	border-radius: 10px;
+	vertical-align: top;
+	min-height: 500px;
+	min-width:40%;
+	padding: 5px;
+	background-color: <?php echo $config->ParameterArray['BodyColor']; ?>;
+	border: 1px dotted #333;
+	margin-bottom: 0em;
+	height:auto;
 }
 .main > div {
 	margin-bottom: 2em;
@@ -1367,8 +1384,8 @@ fieldset[name=pdu] > div > img { vertical-align: text-bottom; }
 .installer ul li, ul.nav li{
 	display: block;
 	padding: 1.5em;
-	background-color: #333333;
-	border: 0px solid #333333;
+	background-color: #212F39;
+	border: 0px solid #212F39;
 }
 .installer ul li{border: 1px dashed darkGray;}
 .installer #sidebar a, .nav a {text-decoration: none;}

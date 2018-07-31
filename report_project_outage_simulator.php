@@ -25,9 +25,11 @@ if (!isset($_REQUEST['action'])){
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page" style="position: fixed;">
+	<div class="backgroundpage">
+	<div class="page1 ">
+	<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	//include( 'sidebar.inc.php' );
 	
 	$datacenter = new DataCenter();
 	$dcList = $datacenter->GetDCList();
@@ -36,7 +38,7 @@ if (!isset($_REQUEST['action'])){
 	$cab = new Cabinet();
 	
 ?>
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main">
 <h2>VIO DCIM</h2>
 <h3>Outage Impact Simulation</h3>
 <form method="post">
@@ -623,7 +625,8 @@ if (!isset($_REQUEST['action'])){
 
 }
 ?>
-
+</div>
+</div>
 </div>
 </body>
 </html>

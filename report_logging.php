@@ -207,10 +207,12 @@ if(isset($_POST['refresh'])){
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-	<div class="page" style="margin-top: 10px">
+	<div class="backgroundpage">
+	<div class="page1 ">
+	<div class="makecenter">
 <?php
-	include('sidebar.inc.php');
-echo '		<div class="main" style="box-shadow: 10px 10px #333333;">
+	// include('sidebar.inc.php');
+echo '		<div class="main" style="box-shadow: 10px 10px #212F39;">
 			<div class="table">
 				<div>
 					<div>UserID</div>
@@ -242,5 +244,7 @@ echo '		<div class="main" style="box-shadow: 10px 10px #333333;">
 			</div>
 		</div><!-- END div.main -->
 	</div><!-- END div.page -->
+	</div>
+	</div>
 </body>
 </html>';

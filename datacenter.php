@@ -97,6 +97,8 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>VIO DCIM Data Center Inventory</title>
   
   <link rel="stylesheet" href="css/inventory.php" type="text/css">
@@ -224,14 +226,26 @@
 		document.getElementById("datacenterform").submit();
 	}
   </script>
+
+  <style type="text/css">
+   .container2{height:300px}
+    #status{position:fixed;left:0px;top:0px;width:100%;height:140px;overflow:hidden}
+    #status div{background-color:rgba(13, 13, 13, 0.5);width:100%;height:100%;padding:10px 10px 10px 10px;font:13px bold sans-serif;color:#fff}
+  </style>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maptalks@0.40.3/dist/maptalks.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/maptalks@0.40.3/dist/maptalks.min.js"></script>
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main">
 <h3>',$status,'</h3>
 <div class="center"><div>
 <form id="datacenterform" method="POST">
@@ -288,24 +302,59 @@ echo '	</select></div>
 echo '	</select></div>
 </div>
 <div> 
-	<div><b>X</b></div> 
- 	<div><input type="text" name="x" id="x" value="',$dc->MapX,'" onblur="mueve()"></div> 
+	<div><b>Longitude</b></div> 
+ 	<div><input type="number" name="x" id="x" step="any" value="',$dc->MapX,'"></div> 
 </div> 
 <div> 
-    <div><b>Y</b></div> 
-    <div><input type="text" name="y" id="y" value="',$dc->MapY,'" onblur="mueve()"></div> 
+    <div><b>Latitude</b></div> 
+    <div><input type="number" name="y" id="y" step="any" value="',$dc->MapY,'"></div> 
 </div>'; 
 
-print "<div id=divcontainer>\n"; 
+ 
 if ($dc->ContainerID>0){
-	print "  <div><b>".__("Click on the image to select DC coordinates")."</b></div>"; 
-	$container->ContainerID=$dc->ContainerID;
-	$container->GetContainer();
-	print "<div>";
-	print $container->MakeContainerMiniImage("dc",$dc->DataCenterID);
+	print "<div id=map class=container2>\n"; 
 	print "</div>"; 
+	print "</div id=status></div>";
+	// $container->ContainerID=$dc->ContainerID;
+	// $container->GetContainer();
+
+	// print $container->MakeContainerMiniImage("dc",$dc->DataCenterID);
+
+	$db = new mysqli('localhost', 'root', 'root', 'dcim');
+
+         $sql    =   "SELECT MapX as 'lat', MapY as 'lng' FROM `fac_DataCenter` WHERE DataCenterID='$dc->DataCenterID'";
+
+        $res    =   $db->query( $sql );
+        $places=array();
+        // if( $res ) while( $rs=$res->fetch_object() ) $tempat=array_push($places,'name'=>$rs->name, 'latitude'=>$rs->lat, 'longitude'=>$rs->lng);
+         
+         while($row = $res->fetch_assoc()) {
+          $places[] = $row;
+         
+         }
+
+        
+        $mapping="[";
+
+        foreach ($places as $key) {
+          $mapping.=$key['lat'].",";
+          $mapping.=$key['lng']."]".",";
+          // echo "["."'".$key['name']."'".",";
+          // echo $key['lat'].",";
+          // echo $key['lng']."]".",";
+          // echo "<br>";
+         }
+
+  
+         $mapping= substr_replace($mapping ,"",-1);
+	
+}else{
+	print "<div id=map class=container2>\n"; 
+	print "</div>"; 
+	print "</div id=status></div>";
+
+	$mapping="[106.82713,-6.17562]";
 }
-print "</div>"; 
 
 echo '<div class="caption">';
 
@@ -336,8 +385,60 @@ echo '<div class="caption">';
 	</div>
 </div>
 
-<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>'; ?>
+'; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+</div>
+</div>
+
+<script>
+	  var mapping = <?php echo json_encode($mapping) ?>;
+      var mapping= JSON.parse(mapping);
+
+      var map = new maptalks.Map('map', {
+        center: mapping,
+        zoom: 17,
+        centerCross: true,
+        zoomControl : true,
+        baseLayer: new maptalks.TileLayer('base', {
+          urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+          subdomains: ['a','b','c','d'],
+          attribution: '&copy; <a href="http://vioint.co.id">VIO DCIM</a> '
+        }),
+        layers: [
+          new maptalks.VectorLayer('v')
+        ]
+      });
+
+      map.on('zoomend moving moveend', getStatus);
+
+      getStatus();
+
+      function getStatus() {
+        var extent = map.getExtent(),
+          ex = [
+            '{',
+            'xmin:' + extent.xmin.toFixed(5),
+            ', ymin:' + extent.ymin.toFixed(5),
+            ', xmax:' + extent.xmax.toFixed(5),
+            ', ymax:' + extent.xmax.toFixed(5),
+            '}'
+          ].join('');
+        var center = map.getCenter();
+        var mapStatus = [
+          'Center : [' + [center.x.toFixed(5), center.y.toFixed(5)].join() + ']',
+        ];
+
+        CoorX=document.getElementById("x");
+		CoorX.value=center.x.toFixed(5);
+		CoorY=document.getElementById("y");
+		CoorY.value=center.y.toFixed(5);
+
+        // document.getElementById('status').innerHTML = '<div>' + mapStatus.join('<br>') + '</div>';
+      }
+
+
+    </script>
+
 </body>
 </html>

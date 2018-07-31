@@ -177,7 +177,7 @@
 <?php
 	include( 'sidebar.inc.php' );
 ?>
-<div class="main" style="box-shadow: 10px 10px #333333;">
+<div class="main" style="box-shadow: 10px 10px #212F39;">
 
 <?php
 	if($error!=""){echo '<fieldset class="exception border error"><legend>Errors</legend>'.$error.'</fieldset>';}

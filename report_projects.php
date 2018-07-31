@@ -233,9 +233,11 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-    <div class="page">
+    <div class="backgroundpage">
+    <div class="page1 ">
+    <div class="makecenter">
 <?php
-    include('sidebar.inc.php');
+    // include('sidebar.inc.php');
 echo '      <div class="main" style="margin-top:10px">
             <form>
             <label for="projectid">',__("Project Name:"),'</label>
@@ -250,6 +252,8 @@ foreach($pList as $p){print "\t\t\t\t<option value=\"$p->ProjectID\">$p->Project
             <p><?php print __("Choose a specific project to report on, or all projects.  Output will be sent in Excel 2007 format."); ?></p>
             </div>
         </div><!-- END div.main -->
+    </div><!-- END div.page -->
+    </div><!-- END div.main -->
     </div><!-- END div.page -->
 </body>
 </html>

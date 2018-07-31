@@ -28,16 +28,19 @@
     </head>
     <body>
     <?php include( 'header.inc.php' ); ?>
-    <div class="page" style="position: fixed;">
+    <div class="backgroundpage">
+    <div class="page1 ">
+    <div class="makecenter">
+    
 <?php
-    include( 'sidebar.inc.php' );
+    // include( 'sidebar.inc.php' );
 
     $m = new Manufacturer();
     $manList = $m->GetManufacturerList();
         
  ?>
  
-    <div class="main" style="box-shadow: 10px 10px #333333;">
+    <div class="main">
     <h2>VIO DCIM</h2>
     <h3>Vendor Model Report</h3>
     <form method="post">
@@ -284,6 +287,8 @@
     }
 ?>
 
+   </div>
+   </div>
    </div>
 </body>
 </html>

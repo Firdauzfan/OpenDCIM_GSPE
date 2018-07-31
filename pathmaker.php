@@ -478,11 +478,13 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main">
 <h3>',$status,'</h3>
 <div class="center"><div><div>
 <form method="POST">
@@ -519,9 +521,11 @@ echo '</form>';
 <?php echo "<br><br>",$path,"</div><br>";
 //print_r($_POST);
 //print "<br>"; 
-echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>'; ?>
+echo ''; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+</div>
+</div>
 <script type="text/javascript">
 	$('table#parcheos table tr + tr > td + td:has(table)').css('background-color','transparent');
 </script>

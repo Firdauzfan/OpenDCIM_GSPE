@@ -31,7 +31,7 @@
 <?php
 	include( "sidebar.inc.php" );
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main" style="box-shadow: 10px 10px #212F39;">
 <div class="center" style="margin-top:20px"><div id="reports">
 <div>
 <fieldset>
@@ -82,7 +82,7 @@ echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 
 
 </div></div>
-<?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>'; ?>
+<?php echo ''; ?>
 </div>
 <div class="clear"></div>
 </div>

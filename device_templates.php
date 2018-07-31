@@ -666,7 +666,7 @@
 				width: 840,
 				modal: true,
 				resizable: false,
-				position: { my: "center", at: "top", of: window },
+				position: { my: "center", at: "center", of: window },
 				show: { effect: "blind", duration: 800 },
 				beforeClose: function(event,ui){
 				},
@@ -713,11 +713,14 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page" style="position: fixed;">
-<?php
-	include( 'sidebar.inc.php' );
+<div class="backgroundpage">
+<div class="page1" style="position: fixed;">
+<div class="makecenter">
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+<?php
+	// include( 'sidebar.inc.php' );
+
+echo '<div class="main">
 <div class="templatemaker">
 <h3>',$status,'</h3>
 <div class="center"><div>
@@ -1100,7 +1103,7 @@ if ( $template->TemplateID > 0 && isset( $deviceList ) ) {
 </div></div><!-- END div.center -->
 </div> <!-- END div.templatemaker-->
 
-<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>';
+';
 
 echo '<div id="imageselection" title="',__("Image file selector"),'">
 	',$imageselect,'
@@ -1109,6 +1112,7 @@ echo '<div id="imageselection" title="',__("Image file selector"),'">
 
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+</div>
 
 <!-- dialog: importFile -->  
 <div id="dlg_importfile" style="display:none;" title="<?php echo __("Import Template From File");?>">  

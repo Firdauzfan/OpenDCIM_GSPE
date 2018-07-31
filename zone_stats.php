@@ -194,11 +194,13 @@ $(document).ready(function() {
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page dcstats" id="mapadjust">
+<div class="backgroundpage">
+<div class="page1 dcstats" id="mapadjust">
+<div class="makecenter">
 <?php
-	include( "sidebar.inc.php" );
+	// include( "sidebar.inc.php" );
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main">
 <div class="center" style="margin-top:20px;"><div>
 <div class="centermargin" id="dcstats">
 <div class="table border">
@@ -286,7 +288,7 @@ echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 </div> <!-- END div.table -->
 </div> <!-- END div.centermargin -->
 <br>
-<div id="maptitle"><span></span><div class="nav">';
+<div id="maptitle" style="margin-bottom:3%"><span></span><div class="nav">';
 
 $select='<select>';
 	foreach(array(
@@ -338,6 +340,8 @@ echo '
 ?>
 
 </div><!-- END div.main -->
+</div><!-- END div.page -->
+</div><!-- END div.page -->
 </div><!-- END div.page -->
 <script type="text/javascript">
 	$(document).ready(function() {

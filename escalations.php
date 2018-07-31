@@ -55,11 +55,14 @@
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
-<?php
-	include( "sidebar.inc.php" );
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+<?php
+	// include( "sidebar.inc.php" );
+
+echo '<div class="main">
 <h3>',$status,'</h3>
 <div class="center"><div>
 <form method="POST">
@@ -93,8 +96,10 @@ echo '	</select></div>
 </div><!-- END div.table -->
 </form>
 </div></div>
-<?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>'; ?>
+<?php echo ''; ?>
 </div><!-- END div.main -->
 </div><!-- END div.page -->
+</div>
+</div>
 </body>
 </html>

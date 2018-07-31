@@ -20,8 +20,8 @@ class Container {
 		$this->Name=sanitize($this->Name);
 		$this->ParentID=intval($this->ParentID);
 		$this->DrawingFileName=sanitize($this->DrawingFileName);
-		$this->MapX=abs($this->MapX);
-		$this->MapY=abs($this->MapY);
+		$this->MapX=$this->MapX;
+		$this->MapY=$this->MapY;
 	}
 	
 	function MakeDisplay(){

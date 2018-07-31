@@ -180,11 +180,14 @@ $(document).ready(function() {
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page dcstats" id="mapadjust">
-<?php
-	include( "sidebar.inc.php" );
+<div class="backgroundpage">
+<div class="page1 dcstats" id="mapadjust">
+<div class="makecenter">
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+<?php
+	// include( "sidebar.inc.php" );
+
+echo '<div class="main">
 <div class="center" style="margin-top:20px;"><div>
 <div class="centermargin" id="dcstats">
 <div class="table border">
@@ -342,7 +345,7 @@ echo '<div class="main" style="box-shadow: 10px 10px #333333;">
 </div> <!-- END div.table -->
 </div> <!-- END div.centermargin -->
 <br>
-<div id="maptitle"><span></span><div class="nav">';
+<div id="maptitle" style="margin-bottom:3%"><span></span><div class="nav">';
 
 $select="\n\t<select>\n";
 	foreach(array(
@@ -395,6 +398,8 @@ echo '
 ?>
 
 </div><!-- END div.main -->
+</div><!-- END div.page -->
+</div><!-- END div.page -->
 </div><!-- END div.page -->
 <script type="text/javascript">
 	// Turn the stats box at the top into a lampshade

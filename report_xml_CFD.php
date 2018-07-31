@@ -46,9 +46,11 @@ if(!$person->SiteAdmin){
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page index">
+	<div class="backgroundpage">
+	<div class="page1 ">
+	<div class="makecenter">
 <?php
-	include( 'sidebar.inc.php' );
+	// include( 'sidebar.inc.php' );
 
 echo '
 <div class="main" style="margin-top:10px">
@@ -72,6 +74,8 @@ echo '			</select>
 </div>		
 </form>
 </div> <!-- END .center -->
+</div> <!-- END .main -->
+</div> <!-- END .page -->
 </div> <!-- END .main -->
 </div> <!-- END .page -->
 </body>

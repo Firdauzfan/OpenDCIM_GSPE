@@ -75,7 +75,7 @@
 <div class="page dcstats" id="mapadjust">
 <?php
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">
+echo '<div class="main" style="box-shadow: 10px 10px #212F39;">
 <div class="heading">
   <div>
   </div>

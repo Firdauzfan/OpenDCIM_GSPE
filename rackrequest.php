@@ -328,11 +328,13 @@ print "			$('#deviceform').validationEngine({'custom_error_messages' : {
 </head>
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page request">
+<div class="backgroundpage">
+<div class="page1 request">
+<div class="makecenter">
 <?php
-    include('sidebar.inc.php');
+    // include('sidebar.inc.php');
 
-echo '<div class="main" style="box-shadow: 10px 10px #333333;">';
+echo '<div class="main">';
 
 if($error!=""){echo '<fieldset class="exception border error"><legend>Errors</legend>'.$error.'</fieldset>';}
 
@@ -499,8 +501,12 @@ echo '			</select>
 </div> <!-- END div.table -->
 </form>
 </div></div>
-<?php echo '<a href="index.php">[ ',__("Return to Main Menu"),' ]</a>'; ?>
+
+
+<?php echo ''; ?>
 </div> <!-- END div.main -->
 </div> <!-- END div.page -->
+</div> <!-- END div.page -->
+</div> <!-- END div.main -->
 </body>
 </html>

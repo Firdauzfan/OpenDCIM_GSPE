@@ -152,13 +152,15 @@ if($config->ParameterArray["ToolTips"]=='enabled'){
 
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 <?php
-	include( "sidebar.inc.php" );
+	// include( "sidebar.inc.php" );
 ?>
-<div class="main rowview" style="margin-top:10px;">
-<div class="center" style="margin-top:20px;"><div>
-<div id="centeriehack" style="width:2000px">
+<div class="main rowview" >
+<div class="center"><div>
+<div id="centeriehack" >
 <?php
 	echo $body;
 ?>
@@ -174,6 +176,8 @@ $('#centeriehack').width($('#centeriehack div.cabinet').length * 278);
 	}
 ?>
 </div>  <!-- END div.main -->
+</div> 
+</div> 
 
 <div class="clear"></div>
 </div>

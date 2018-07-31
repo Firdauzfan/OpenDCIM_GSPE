@@ -637,11 +637,13 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 
 <body>
 <?php include( 'header.inc.php' ); ?>
-<div class="page">
+<div class="backgroundpage">
+<div class="page1">
+<div class="makecenter">
 <?php
-	include( "sidebar.inc.php" );
+	// include( "sidebar.inc.php" );
 ?>
-<div class="main cabnavigator" style="margin-top:10px;">
+<div class="main2 cabnavigator" style="min-width: 80%">
 <div class="center" style="height:1000px"><div>
 <div id="centeriehack">
 
@@ -650,7 +652,7 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 ?>
 <section id="options" style="margin-top:-70%; margin-left:-30%; max-width: 30%; ">
 <p id="show-buttons" style="max-width:10%; 	">
-<button class="show-front" style="margin-bottom:10%; color: white; background-color: #333333; border-radius: 5px;">Front</button><br/><button class="show-back" style="margin-bottom:10%; color: white; background-color: #333333; border-radius: 5px;">Back</button><br/><button class="show-right" style="margin-bottom:10%; color: white; background-color: #333333; border-radius: 5px;">Right</button><br/><button class="show-left" style="color: white; background-color: #333333; border-radius: 5px;">Left</button>
+<button class="show-front" style="margin-bottom:10%; color: white; background-color: #212F39; border-radius: 5px;">Front</button><br/><button class="show-back" style="margin-bottom:10%; color: white; background-color: #212F39; border-radius: 5px;">Back</button><br/><button class="show-right" style="margin-bottom:10%; color: white; background-color: #212F39; border-radius: 5px;">Right</button><br/><button class="show-left" style="color: white; background-color: #212F39; border-radius: 5px;">Left</button>
 </p>
 </section>
 </div> <!-- END div#centeriehack -->
@@ -681,6 +683,9 @@ if($config->ParameterArray["CDUToolTips"]=='enabled'){
 
 <div class="clear"></div>
 </div>
+</div>
+</div>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		// Move the cabinet labels around
