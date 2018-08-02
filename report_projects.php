@@ -234,7 +234,7 @@
 <body>
 <?php include( 'header.inc.php' ); ?>
     <div class="backgroundpage">
-    <div class="page1 ">
+    <div class="page1 " style="padding-bottom: 33%">
     <div class="makecenter">
 <?php
     // include('sidebar.inc.php');

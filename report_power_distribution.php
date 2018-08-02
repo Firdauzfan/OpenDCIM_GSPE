@@ -25,7 +25,7 @@ class PDF extends FPDF {
 		$this->pdfconfig = new Config();
     	$logofile = 'images/' . $this->pdfconfig->ParameterArray['PDFLogoFile'];
     	if ( file_exists( $logofile )) {
-    		$this->Image( $logofile,10,8,100);
+    		$this->Image( $logofile,8,6,80);
     	}
     	$this->SetFont($this->pdfconfig->ParameterArray['PDFfont'],'B',12);
    		$this->Cell(120);

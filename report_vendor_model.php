@@ -29,7 +29,7 @@
     <body>
     <?php include( 'header.inc.php' ); ?>
     <div class="backgroundpage">
-    <div class="page1 ">
+    <div class="page1 " style="padding-bottom: 27%">
     <div class="makecenter">
     
 <?php

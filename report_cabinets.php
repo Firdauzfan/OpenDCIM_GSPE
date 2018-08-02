@@ -110,7 +110,7 @@
     // because mpdf is so slow, selecting all cabinets in a big data center frequently times out - just disabling fo rnow
     //print "<div><div><input type=\"checkbox\" id=\"selectall\">".__("Select all")."</input></div></div>\n";
         foreach ( $cabList as $cab ) {
-            print "<div><div><input type=\"checkbox\" class=\"selectedId\" id=\"selectedId\" name=\"cabinetid[]\" value=\"$cab->CabinetID\">$cab->Location</input></div></div>\n";
+            print "<div><div style=\"font-size:18px\"><input type=\"checkbox\" class=\"selectedId\" id=\"selectedId\" name=\"cabinetid[]\" value=\"$cab->CabinetID\">$cab->Location</input></div></div>\n";
         }
     }        
 ?>

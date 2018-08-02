@@ -49,7 +49,7 @@ transform: rotate(-90deg);
                             <a href="index.php" style="text-align: center; font-size: 25px; color: white;"><i class="fas fa-home"></i> Home </b></a>
                         </li>
 
-                        <li id="topNav" style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
+                        <li id="topNav" style="padding:13px;min-width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
                             <?php 
                             if($_SERVER['PHP_SELF']=="/container_stats.php"){
                                 $NamaTab="Data Center";

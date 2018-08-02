@@ -613,7 +613,7 @@ overlap = scale;
 <body>
 <?php include( 'header.inc.php' ); ?>
     <div class="backgroundpage">
-    <div class="page1 ">
+    <div class="page1 " style="padding-bottom: 35%">
     <div class="makecenter">
 <?php
         // include('sidebar.inc.php');
