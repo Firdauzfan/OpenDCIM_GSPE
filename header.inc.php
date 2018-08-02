@@ -88,6 +88,9 @@ transform: rotate(-90deg);
                                                 <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='zone_stats.php?zone=".$row['ZoneID']."' style='color:white;'>".$row['Description']."</a></li>
                                             ";
                                         }
+
+                                        echo "<li style='font-size: 18px'><a href='storageroom.php?dc=".$dc->DataCenterID."' style='color:white;''>Data Center Storage Room</a></li>";
+
                                     }elseif($_SERVER['PHP_SELF']=="/zone_stats.php"){
                                         $sql = "SELECT * FROM fac_CabRow WHERE ZoneID=$zone->ZoneID";
                                         $query = $conn->query($sql);
