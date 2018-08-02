@@ -26,6 +26,9 @@ transform: rotate(-90deg);
 <link href="css/search.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"> 
 
+<style type="text/css">
+    #topNav ul { max-height:600px; overflow-y:auto; }
+</style>
 
         <div id="header3" class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-bottom: 0px;">
             <div class="container" style="width: 100%;">
@@ -46,14 +49,16 @@ transform: rotate(-90deg);
                             <a href="index.php" style="text-align: center; font-size: 25px; color: white;"><i class="fas fa-home"></i> Home </b></a>
                         </li>
 
-                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
+                        <li id="topNav" style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
                             <?php 
                             if($_SERVER['PHP_SELF']=="/container_stats.php"){
                                 $NamaTab="Data Center";
                             }elseif($_SERVER['PHP_SELF']=="/dc_stats.php"){
                                 $NamaTab="Zone";
                             }elseif($_SERVER['PHP_SELF']=="/zone_stats.php"){
-                                $NamaTab="Row of Cabinet";
+                                $NamaTab="Cabinet Row";
+                            }elseif($_SERVER['PHP_SELF']=="/rowview.php"){
+                                $NamaTab="Cabinet";
                             }else{
                                 $NamaTab="Container";
                             }
@@ -98,6 +103,15 @@ transform: rotate(-90deg);
                                         while($row = $query->fetch_assoc()){
                                             echo "
                                                 <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='rowview.php?row=".$row['CabRowID']."' style='color:white;'>".$row['Name']."</a></li>
+                                            ";
+                                        }
+                                    }elseif($_SERVER['PHP_SELF']=="/rowview.php"){
+                                        $sql = "SELECT * FROM fac_Cabinet WHERE CabRowID=$cabrow->CabRowID";
+                                        $query = $conn->query($sql);
+
+                                        while($row = $query->fetch_assoc()){
+                                            echo "
+                                                <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='cabnavigator.php?cabinetid=".$row['CabinetID']."' style='color:white;'>".$row['Location']."</a></li>
                                             ";
                                         }
                                     }else{
