@@ -165,7 +165,8 @@
 				"<?php echo __("Yes"); ?>": function(){
 					$.post('', {datacenterid: $('#datacenterid').val(),confirmdelete: '',junkremoval: $('#deletemodal select').val()}, function(data){
 						if(data.trim()=='ok'){
-							self.location=$('.main > a').last().attr('href');
+							self.location="datacenter.php";
+							console.log(self.location);
 							$(this).dialog("destroy");
 						}else{
 							alert("Danger, Will Robinson! DANGER!  Something didn't go as planned.");
@@ -314,7 +315,6 @@ echo '	</select></div>
 if ($dc->ContainerID>0){
 	print "<div id=map class=container2>\n"; 
 	print "</div>"; 
-	print "</div id=status></div>";
 	// $container->ContainerID=$dc->ContainerID;
 	// $container->GetContainer();
 
@@ -348,12 +348,6 @@ if ($dc->ContainerID>0){
   
          $mapping= substr_replace($mapping ,"",-1);
 	
-}else{
-	print "<div id=map class=container2>\n"; 
-	print "</div>"; 
-	print "</div id=status></div>";
-
-	$mapping="[106.82713,-6.17562]";
 }
 
 echo '<div class="caption">';
@@ -380,7 +374,7 @@ echo '<div class="caption">';
 <div class="hide">
 	<div title="',__("Data Center Deletion Confirmation"),'" id="deletemodal">
 		<div id="modaltext"><img src="images/mushroom_cloud.jpg" class="floatleft">',__("Are you sure that you want to delete this data center and all contents within it?"),'
-			<p><b>',__("Move the contents of this datacenter's storage room to the general storage or delete them?"),'</b> &nbsp;&nbsp;<select><option value="delete">',__("Delete"),'</option><option value="move">',__("Move"),'</option></select></p>
+			&nbsp;&nbsp;<select><option value="delete">',__("Delete"),'</option></select></p>
 		</div>
 	</div>
 </div>

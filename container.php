@@ -152,6 +152,7 @@
 		$('button[value="Delete"]').click(function(e){
 			var form=$(this).parents('form');
 			var btn=$(this);
+			console.log(form);
 <?php
 print '		var dialog=$("<div>").prop("title","'.__("Verify Delete Container").'").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"float:left; margin:0 7px 20px 0;\"></span><span></span></p>");';
 print '		dialog.find("span + span").html("'.__("This container will be deleted and there is no undo. Their direct descendants will be moved to \'home\'.").'<br>'.__("Are you sure?").'");'; 
@@ -272,17 +273,17 @@ echo '	</select></div>
 </div>
 <div> 
 	<div><b>Longitude</b></div> 
- 	<div><input type="number" step="any" name="x" id="x" value="',$c->MapX,'" ></div> 
+ 	<div><input type="number" step="any" name="x" id="x" onblur="mueve()" value="',$c->MapX,'" ></div> 
 </div> 
 <div> 
     <div><b>Latitude</b></div> 
-    <div><input type="number" step="any" name="y" id="y" step="any" value="',$c->MapY,'"></div> 
+    <div><input type="number" step="any" name="y" id="y" onblur="mueve()" value="',$c->MapY,'"></div> 
 </div>'; 
 
 if ($c->ContainerID>0){
 	print "<div id=map class=container2>\n"; 
 	print "</div>"; 
-	print "</div id=status></div>";
+
 
 	$db = new mysqli('localhost', 'root', 'root', 'dcim');
 
@@ -290,7 +291,6 @@ if ($c->ContainerID>0){
 
         $res    =   $db->query( $sql );
         $places=array();
-        // if( $res ) while( $rs=$res->fetch_object() ) $tempat=array_push($places,'name'=>$rs->name, 'latitude'=>$rs->lat, 'longitude'=>$rs->lng);
          
          while($row = $res->fetch_assoc()) {
           $places[] = $row;
@@ -314,10 +314,10 @@ if ($c->ContainerID>0){
 // 	<div><b>'.__("Click on the image to select container coordinates").'</b></div>
 // 	<div>'.$container->MakeContainerMiniImage("container",$c->ContainerID).'</div>
 // </div>'; 
-}else{
+}
+else{
 	print "<div id=map class=container2>\n"; 
 	print "</div>"; 
-	print "</div id=status></div>";
 
 	$mapping="[106.82713,-6.17562]";
 }

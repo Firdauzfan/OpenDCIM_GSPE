@@ -42,32 +42,81 @@ transform: rotate(-90deg);
                 </div>
                 <div class="collapse navbar-collapse" style="margin-bottom: -1; background-color: #00A2E9; font-family: 'PT Sans Narrow', sans-serif;">
                     <ul class="nav navbar-nav">
-                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
+                        <li style="padding:13px;min-width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
                             <a href="index.php" style="text-align: center; font-size: 25px; color: white;"><i class="fas fa-home"></i> Home </b></a>
                         </li>
 
                         <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center; font-size: 25px; color: white;">Data Center <b class="caret"></b></a>
+                            <?php 
+                            if($_SERVER['PHP_SELF']=="/container_stats.php"){
+                                $NamaTab="Data Center";
+                            }elseif($_SERVER['PHP_SELF']=="/dc_stats.php"){
+                                $NamaTab="Zone";
+                            }elseif($_SERVER['PHP_SELF']=="/zone_stats.php"){
+                                $NamaTab="Row of Cabinet";
+                            }else{
+                                $NamaTab="Container";
+                            }
+                            ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center; font-size: 25px; color: white;"><?php echo $NamaTab; ?> <b class="caret"></b></a>
 
-                            <ul class="dropdown-menu" style="background-color: #212F39;">
+                            <ul class="dropdown-menu" style="padding:13px;min-width: 200px;background-color: #212F39;">
+
                                      <?php
                                         //connection
-                                        $conn = new mysqli('localhost', 'root', 'root', 'dcim');
+                                     $conn = new mysqli('localhost', 'root', 'root', 'dcim');
+
+                                    ?>
+
+                                    <?php if($_SERVER['PHP_SELF']=="/container_stats.php"){
+
+                                        $NamaTab="Data Center";
+                                        $sql = "SELECT * FROM fac_DataCenter WHERE ContainerID=$c->ContainerID";
+                                        $query = $conn->query($sql);
                  
+                                        while($row = $query->fetch_assoc()){
+                                            echo "
+                                                <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='dc_stats.php?dc=".$row['DataCenterID']."' style='color:white;'>".$row['Name']."</a></li>
+                                            ";
+                                        }
+                                    }elseif($_SERVER['PHP_SELF']=="/dc_stats.php"){
+                                        $sql = "SELECT * FROM fac_Zone WHERE DataCenterID=$dc->DataCenterID";
+                                        $query = $conn->query($sql);
+
+                                        while($row = $query->fetch_assoc()){
+                                            echo "
+                                                <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='zone_stats.php?zone=".$row['ZoneID']."' style='color:white;'>".$row['Description']."</a></li>
+                                            ";
+                                        }
+                                    }elseif($_SERVER['PHP_SELF']=="/zone_stats.php"){
+                                        $sql = "SELECT * FROM fac_CabRow WHERE ZoneID=$zone->ZoneID";
+                                        $query = $conn->query($sql);
+
+                                        while($row = $query->fetch_assoc()){
+                                            echo "
+                                                <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='rowview.php?row=".$row['CabRowID']."' style='color:white;'>".$row['Name']."</a></li>
+                                            ";
+                                        }
+                                    }else{
                                         $sql = "SELECT * FROM fac_Container";
                                         $query = $conn->query($sql);
                  
                                         while($row = $query->fetch_assoc()){
                                             echo "
-                                                <li style='font-size: 18px'><a href='container_stats.php?container=".$row['ContainerID']."' style='color:white;'>".$row['Name']."</a></li>
+                                                <li class='dropdown-toggle' data-toggle='dropdown' style='font-size: 18px'><a href='container_stats.php?container=".$row['ContainerID']."' style='color:white;'>".$row['Name']."</a></li>
                                             ";
                                         }
+                                        echo "<li style='font-size: 18px'><a href='storageroom.php' style='color:white;''>General Storage Room</a></li>";
+                                    }
+
+
                                     ?>
-                                    <li style="font-size: 18px"><a href="storageroom.php" style="color:white;">General Storage Room</a></li>
+
+                                    
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
+                        <li style="padding:13px;min-width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center; font-size: 25px; color: white;">Initialization <b class="caret"></b></a>
 
                             <ul class="dropdown-menu" style="background-color: #212F39;">
@@ -158,7 +207,7 @@ transform: rotate(-90deg);
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
+                        <li style="padding:13px;min-width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 25px; color: white;">Operation <b class="caret"></b></a>
 
                             <ul class="dropdown-menu" style="background-color: #212F39;">
@@ -225,7 +274,7 @@ transform: rotate(-90deg);
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
+                        <li style="padding:13px;min-width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 25px; color: white;">Manage <b class="caret"></b></a>
 
                             <ul class="dropdown-menu" style="margin-left: 25px; background-color: #212F39;">
@@ -255,7 +304,7 @@ transform: rotate(-90deg);
                             </ul>
                         </li>
 
-                        <li style="padding:13px;width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;" >
+                        <li style="padding:13px;min-width: 200px; border-radius:0px; -webkit-border-radius:0px;background-color: #00A2E9;" >
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: center;font-size: 25px; color: white;">Reports <b class="caret"></b></a>
 
                             <ul class="dropdown-menu" style="margin-left: 5px; background-color: #212F39;">

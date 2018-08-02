@@ -345,6 +345,8 @@ echo '<div class="main">
 </div> <!-- END div.table -->
 </div> <!-- END div.centermargin -->
 <br>
+<a href="storageroom.php?dc='.$dc->DataCenterID.'" style="margin-left:0.5%;font-size:17px;font-weight:bold"> Storageroom Menu </a>
+<br>
 <div id="maptitle" style="margin-bottom:3%"><span></span><div class="nav">';
 
 $select="\n\t<select>\n";

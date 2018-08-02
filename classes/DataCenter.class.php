@@ -672,6 +672,5 @@ class DataCenter {
 		
 		return $tree;
 	}
-	
 }
 ?>
