@@ -833,13 +833,13 @@ if ( $config->ParameterArray["WorkOrderBuilder"]=='enabled' ) {
     window.addEventListener( 'DOMContentLoaded', init, false);
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	window.onload = function() {
     if(!window.location.hash) {
         window.location = window.location + '#loaded';
         window.location.reload();
     }
 }
-</script>
+</script> -->
 </body>
 </html>
