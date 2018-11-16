@@ -41,10 +41,10 @@ exit;
 ## Membuat User Access:
 1. sudo nano /var/www/dcim/.htaccess
 2. Lalu tambahkan
-AuthType Basic
-AuthName "openDCIM"
-AuthUserFile /var/www/opendcim.password
-Require valid-user
+	AuthType Basic
+	AuthName "openDCIM"
+	AuthUserFile /var/www/opendcim.password
+	Require valid-user
 3. Save dan lakukan command sudo htpasswd -cb /var/www/opendcim.password dcim dcim
 
 ## Enable Apache dan Site
